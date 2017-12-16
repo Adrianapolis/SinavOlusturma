@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -72,11 +73,29 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="AnaEkranForm.Designer.vb">
+      <DependentUpon>AnaEkranForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AnaEkranForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="DenemeForm.Designer.vb">
+      <DependentUpon>DenemeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DenemeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HosgeldinForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HosgeldinForm.Designer.vb">
+      <DependentUpon>HosgeldinForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MevcutEklemeForm.Designer.vb">
+      <DependentUpon>MevcutEklemeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MevcutEklemeForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,6 +115,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AnaEkranForm.resx">
+      <DependentUpon>AnaEkranForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DenemeForm.resx">
+      <DependentUpon>DenemeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HosgeldinForm.resx">
+      <DependentUpon>HosgeldinForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MevcutEklemeForm.resx">
+      <DependentUpon>MevcutEklemeForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
