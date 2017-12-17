@@ -22,14 +22,14 @@ Partial Class AnaEkranForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3})
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
-        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode5, TreeNode6})
-        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode7})
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode9, TreeNode10, TreeNode11})
+        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
+        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
+        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14})
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode12, TreeNode15})
         Me.BtnYeniSinav = New System.Windows.Forms.Button()
         Me.BtnMevcudat = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -43,25 +43,14 @@ Partial Class AnaEkranForm
         Me.BtnDerslikDuzenleme = New System.Windows.Forms.Button()
         Me.BtnDersDuzenleme = New System.Windows.Forms.Button()
         Me.GbYeniSinavOlustur = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.LbAsistanSecilecekSayi = New System.Windows.Forms.Label()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.GbDerslikSec = New System.Windows.Forms.GroupBox()
         Me.LbOgrenciYerlestirilecekSayi = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.flAsistanlar = New System.Windows.Forms.FlowLayoutPanel()
+        Me.flSinifListele = New System.Windows.Forms.FlowLayoutPanel()
+        Me.LbAsistanSecilecekSayi = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.BtnSinavIptal = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GbOgrenciDosya = New System.Windows.Forms.GroupBox()
         Me.LbOgrenciSayiGoster = New System.Windows.Forms.Label()
         Me.LbOgrenciSayiBilgi = New System.Windows.Forms.Label()
@@ -73,12 +62,10 @@ Partial Class AnaEkranForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.BtnSinavIptal = New System.Windows.Forms.Button()
+        Me.lblError = New System.Windows.Forms.Label()
         Me.GbAnaSayfa.SuspendLayout()
         Me.GbMevcudatDuzenle.SuspendLayout()
         Me.GbYeniSinavOlustur.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GbDerslikSec.SuspendLayout()
         Me.GbOgrenciDosya.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -156,23 +143,23 @@ Partial Class AnaEkranForm
         Me.TreeView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TreeView1.Location = New System.Drawing.Point(782, 211)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode1.Name = "Node2"
-        TreeNode1.Text = "C"
-        TreeNode2.Name = "Node3"
-        TreeNode2.Text = "Görsel"
-        TreeNode3.Name = "Node5"
-        TreeNode3.Text = "Mat2"
-        TreeNode4.Name = "Node1"
-        TreeNode4.Text = "Vize"
-        TreeNode5.Name = "Node7"
-        TreeNode5.Text = "PDG"
-        TreeNode6.Name = "Node9"
-        TreeNode6.Text = "Görsel Programlama"
-        TreeNode7.Name = "Node6"
-        TreeNode7.Text = "Veri Yapıları"
-        TreeNode8.Name = "Node0"
-        TreeNode8.Text = "2017"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode8})
+        TreeNode9.Name = "Node2"
+        TreeNode9.Text = "C"
+        TreeNode10.Name = "Node3"
+        TreeNode10.Text = "Görsel"
+        TreeNode11.Name = "Node5"
+        TreeNode11.Text = "Mat2"
+        TreeNode12.Name = "Node1"
+        TreeNode12.Text = "Vize"
+        TreeNode13.Name = "Node7"
+        TreeNode13.Text = "PDG"
+        TreeNode14.Name = "Node9"
+        TreeNode14.Text = "Görsel Programlama"
+        TreeNode15.Name = "Node6"
+        TreeNode15.Text = "Veri Yapıları"
+        TreeNode16.Name = "Node0"
+        TreeNode16.Text = "2017"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16})
         Me.TreeView1.Size = New System.Drawing.Size(240, 292)
         Me.TreeView1.TabIndex = 6
         '
@@ -245,10 +232,15 @@ Partial Class AnaEkranForm
         'GbYeniSinavOlustur
         '
         Me.GbYeniSinavOlustur.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.GbYeniSinavOlustur.Controls.Add(Me.lblError)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.LbOgrenciYerlestirilecekSayi)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.Label5)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.flAsistanlar)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.flSinifListele)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.LbAsistanSecilecekSayi)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.Label7)
         Me.GbYeniSinavOlustur.Controls.Add(Me.BtnSinavIptal)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label6)
-        Me.GbYeniSinavOlustur.Controls.Add(Me.GroupBox2)
-        Me.GbYeniSinavOlustur.Controls.Add(Me.GbDerslikSec)
         Me.GbYeniSinavOlustur.Controls.Add(Me.GbOgrenciDosya)
         Me.GbYeniSinavOlustur.Controls.Add(Me.DateTimePicker1)
         Me.GbYeniSinavOlustur.Controls.Add(Me.CbTurSecim)
@@ -266,6 +258,65 @@ Partial Class AnaEkranForm
         Me.GbYeniSinavOlustur.Text = "Yeni Sınav Oluştur"
         Me.GbYeniSinavOlustur.Visible = False
         '
+        'LbOgrenciYerlestirilecekSayi
+        '
+        Me.LbOgrenciYerlestirilecekSayi.AutoSize = True
+        Me.LbOgrenciYerlestirilecekSayi.Location = New System.Drawing.Point(903, 112)
+        Me.LbOgrenciYerlestirilecekSayi.Name = "LbOgrenciYerlestirilecekSayi"
+        Me.LbOgrenciYerlestirilecekSayi.Size = New System.Drawing.Size(19, 13)
+        Me.LbOgrenciYerlestirilecekSayi.TabIndex = 7
+        Me.LbOgrenciYerlestirilecekSayi.Text = "50"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(752, 112)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(145, 13)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Yerleştirilecek Kalan Öğrenci:"
+        '
+        'flAsistanlar
+        '
+        Me.flAsistanlar.Location = New System.Drawing.Point(755, 341)
+        Me.flAsistanlar.Name = "flAsistanlar"
+        Me.flAsistanlar.Size = New System.Drawing.Size(225, 149)
+        Me.flAsistanlar.TabIndex = 17
+        '
+        'flSinifListele
+        '
+        Me.flSinifListele.Location = New System.Drawing.Point(755, 128)
+        Me.flSinifListele.Name = "flSinifListele"
+        Me.flSinifListele.Size = New System.Drawing.Size(225, 149)
+        Me.flSinifListele.TabIndex = 16
+        '
+        'LbAsistanSecilecekSayi
+        '
+        Me.LbAsistanSecilecekSayi.AutoSize = True
+        Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(884, 325)
+        Me.LbAsistanSecilecekSayi.Name = "LbAsistanSecilecekSayi"
+        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(13, 13)
+        Me.LbAsistanSecilecekSayi.TabIndex = 9
+        Me.LbAsistanSecilecekSayi.Text = "5"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(752, 325)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(127, 13)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Seçilecek Asistan Sayısı: "
+        '
+        'BtnSinavIptal
+        '
+        Me.BtnSinavIptal.Location = New System.Drawing.Point(325, 606)
+        Me.BtnSinavIptal.Name = "BtnSinavIptal"
+        Me.BtnSinavIptal.Size = New System.Drawing.Size(109, 47)
+        Me.BtnSinavIptal.TabIndex = 15
+        Me.BtnSinavIptal.Text = "İptal"
+        Me.BtnSinavIptal.UseVisualStyleBackColor = True
+        '
         'Label6
         '
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -275,198 +326,6 @@ Partial Class AnaEkranForm
         Me.Label6.Size = New System.Drawing.Size(108, 13)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Yeni Sınav Oluşturma"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GroupBox2.Controls.Add(Me.LbAsistanSecilecekSayi)
-        Me.GroupBox2.Controls.Add(Me.CheckBox7)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.CheckBox8)
-        Me.GroupBox2.Controls.Add(Me.CheckBox9)
-        Me.GroupBox2.Controls.Add(Me.CheckBox10)
-        Me.GroupBox2.Controls.Add(Me.CheckBox11)
-        Me.GroupBox2.Controls.Add(Me.CheckBox12)
-        Me.GroupBox2.Location = New System.Drawing.Point(756, 345)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(266, 132)
-        Me.GroupBox2.TabIndex = 13
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "6-)  Asistan Seçiniz"
-        '
-        'LbAsistanSecilecekSayi
-        '
-        Me.LbAsistanSecilecekSayi.AutoSize = True
-        Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(173, 31)
-        Me.LbAsistanSecilecekSayi.Name = "LbAsistanSecilecekSayi"
-        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(13, 13)
-        Me.LbAsistanSecilecekSayi.TabIndex = 9
-        Me.LbAsistanSecilecekSayi.Text = "5"
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(153, 102)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox7.TabIndex = 11
-        Me.CheckBox7.Text = "CheckBox7"
-        Me.CheckBox7.UseVisualStyleBackColor = True
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(22, 31)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(127, 13)
-        Me.Label7.TabIndex = 8
-        Me.Label7.Text = "Seçilecek Asistan Sayısı: "
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(153, 79)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox8.TabIndex = 10
-        Me.CheckBox8.Text = "CheckBox8"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(153, 55)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox9.TabIndex = 9
-        Me.CheckBox9.Text = "CheckBox9"
-        Me.CheckBox9.UseVisualStyleBackColor = True
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(25, 102)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox10.TabIndex = 8
-        Me.CheckBox10.Text = "CheckBox10"
-        Me.CheckBox10.UseVisualStyleBackColor = True
-        '
-        'CheckBox11
-        '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(25, 79)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox11.TabIndex = 7
-        Me.CheckBox11.Text = "CheckBox11"
-        Me.CheckBox11.UseVisualStyleBackColor = True
-        '
-        'CheckBox12
-        '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Location = New System.Drawing.Point(25, 55)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox12.TabIndex = 6
-        Me.CheckBox12.Text = "CheckBox12"
-        Me.CheckBox12.UseVisualStyleBackColor = True
-        '
-        'GbDerslikSec
-        '
-        Me.GbDerslikSec.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GbDerslikSec.Controls.Add(Me.LbOgrenciYerlestirilecekSayi)
-        Me.GbDerslikSec.Controls.Add(Me.Label5)
-        Me.GbDerslikSec.Controls.Add(Me.CheckBox4)
-        Me.GbDerslikSec.Controls.Add(Me.CheckBox5)
-        Me.GbDerslikSec.Controls.Add(Me.CheckBox6)
-        Me.GbDerslikSec.Controls.Add(Me.CheckBox3)
-        Me.GbDerslikSec.Controls.Add(Me.CheckBox2)
-        Me.GbDerslikSec.Controls.Add(Me.CheckBox1)
-        Me.GbDerslikSec.Location = New System.Drawing.Point(756, 128)
-        Me.GbDerslikSec.Name = "GbDerslikSec"
-        Me.GbDerslikSec.Size = New System.Drawing.Size(266, 141)
-        Me.GbDerslikSec.TabIndex = 12
-        Me.GbDerslikSec.TabStop = False
-        Me.GbDerslikSec.Text = "5-) Derslik Seçiniz"
-        '
-        'LbOgrenciYerlestirilecekSayi
-        '
-        Me.LbOgrenciYerlestirilecekSayi.AutoSize = True
-        Me.LbOgrenciYerlestirilecekSayi.Location = New System.Drawing.Point(173, 27)
-        Me.LbOgrenciYerlestirilecekSayi.Name = "LbOgrenciYerlestirilecekSayi"
-        Me.LbOgrenciYerlestirilecekSayi.Size = New System.Drawing.Size(19, 13)
-        Me.LbOgrenciYerlestirilecekSayi.TabIndex = 7
-        Me.LbOgrenciYerlestirilecekSayi.Text = "50"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(22, 27)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(145, 13)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Yerleştirilecek Kalan Öğrenci:"
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(153, 103)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox4.TabIndex = 5
-        Me.CheckBox4.Text = "CheckBox4"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(153, 80)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox5.TabIndex = 4
-        Me.CheckBox5.Text = "CheckBox5"
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(153, 56)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox6.TabIndex = 3
-        Me.CheckBox6.Text = "CheckBox6"
-        Me.CheckBox6.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(25, 103)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox3.TabIndex = 2
-        Me.CheckBox3.Text = "CheckBox3"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(25, 80)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox2.TabIndex = 1
-        Me.CheckBox2.Text = "CheckBox2"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(25, 56)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'GbOgrenciDosya
         '
@@ -573,14 +432,14 @@ Partial Class AnaEkranForm
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "1-)  Oluşturmak İstediğiniz dersi seçiniz."
         '
-        'BtnSinavIptal
+        'lblError
         '
-        Me.BtnSinavIptal.Location = New System.Drawing.Point(325, 606)
-        Me.BtnSinavIptal.Name = "BtnSinavIptal"
-        Me.BtnSinavIptal.Size = New System.Drawing.Size(109, 47)
-        Me.BtnSinavIptal.TabIndex = 15
-        Me.BtnSinavIptal.Text = "İptal"
-        Me.BtnSinavIptal.UseVisualStyleBackColor = True
+        Me.lblError.AutoSize = True
+        Me.lblError.Location = New System.Drawing.Point(752, 52)
+        Me.lblError.Name = "lblError"
+        Me.lblError.Size = New System.Drawing.Size(45, 13)
+        Me.lblError.TabIndex = 18
+        Me.lblError.Text = "Label10"
         '
         'AnaEkranForm
         '
@@ -599,10 +458,6 @@ Partial Class AnaEkranForm
         Me.GbMevcudatDuzenle.PerformLayout()
         Me.GbYeniSinavOlustur.ResumeLayout(False)
         Me.GbYeniSinavOlustur.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GbDerslikSec.ResumeLayout(False)
-        Me.GbDerslikSec.PerformLayout()
         Me.GbOgrenciDosya.ResumeLayout(False)
         Me.GbOgrenciDosya.PerformLayout()
         Me.ResumeLayout(False)
@@ -617,24 +472,10 @@ Partial Class AnaEkranForm
     Friend WithEvents GbAnaSayfa As GroupBox
     Friend WithEvents GbYeniSinavOlustur As GroupBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents LbAsistanSecilecekSayi As Label
-    Friend WithEvents CheckBox7 As CheckBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents CheckBox10 As CheckBox
-    Friend WithEvents CheckBox11 As CheckBox
-    Friend WithEvents CheckBox12 As CheckBox
-    Friend WithEvents GbDerslikSec As GroupBox
     Friend WithEvents LbOgrenciYerlestirilecekSayi As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents GbOgrenciDosya As GroupBox
     Friend WithEvents LbOgrenciSayiGoster As Label
     Friend WithEvents LbOgrenciSayiBilgi As Label
@@ -654,4 +495,7 @@ Partial Class AnaEkranForm
     Friend WithEvents BtnDerslikDuzenleme As Button
     Friend WithEvents TreeView1 As TreeView
     Friend WithEvents BtnSinavIptal As Button
+    Friend WithEvents flAsistanlar As FlowLayoutPanel
+    Friend WithEvents flSinifListele As FlowLayoutPanel
+    Friend WithEvents lblError As Label
 End Class
