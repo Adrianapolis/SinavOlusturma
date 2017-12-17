@@ -1,5 +1,5 @@
 ﻿Public Class database
-    Shared vt As New GorselDBEntities1
+    Shared vt As New gorseldbEntities
     'Asistan
     Public Shared Sub AsistanEkle(ByVal asistan As Asistan)
         vt.Asistan.Add(asistan)

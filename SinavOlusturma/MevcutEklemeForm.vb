@@ -31,8 +31,8 @@ Public Class MevcutEklemeForm
                     BtnDevam.Text = "Bitir"
                 End If
             Else 'Kurulum bittiyse
-                System.IO.File.WriteAllText("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status", "")
-                Dim wr As New StreamWriter("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+                System.IO.File.WriteAllText("status", "")
+                Dim wr As New StreamWriter("status")
                 durumlar(0) = 1
                 durumlar(1) = 0
                 wr.WriteLine(durumlar(0))
@@ -45,8 +45,8 @@ Public Class MevcutEklemeForm
             End If
         Else
             'Anasayfadan geliyor
-            System.IO.File.WriteAllText("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status", "")
-            Dim wr As New StreamWriter("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+            System.IO.File.WriteAllText("status", "")
+            Dim wr As New StreamWriter("status")
             durumlar(0) = 1
             durumlar(1) = 0
             wr.WriteLine(durumlar(0))
@@ -97,7 +97,7 @@ Public Class MevcutEklemeForm
     End Sub
 
     Private Sub MevcutEklemeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim sr As New StreamReader("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+        Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1
             durum = sr.ReadLine()

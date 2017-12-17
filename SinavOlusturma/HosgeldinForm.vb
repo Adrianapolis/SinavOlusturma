@@ -11,15 +11,15 @@ Public Class HosgeldinForm
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
-        System.IO.File.WriteAllText("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status", "")
-        Dim wr As New StreamWriter("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+        System.IO.File.WriteAllText("status", "")
+        Dim wr As New StreamWriter("status")
         wr.WriteLine(durumlar(0))
         wr.WriteLine(durumlar(1))
         wr.Close()
     End Sub
 
     Private Sub HosgeldinForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim sr As New StreamReader("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+        Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1
             durum = sr.ReadLine()
