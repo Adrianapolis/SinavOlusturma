@@ -22,14 +22,14 @@ Partial Class AnaEkranForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
-        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
-        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
-        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode9, TreeNode10, TreeNode11})
-        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
-        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
-        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14})
-        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode12, TreeNode15})
+        Dim TreeNode25 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
+        Dim TreeNode26 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
+        Dim TreeNode27 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
+        Dim TreeNode28 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode25, TreeNode26, TreeNode27})
+        Dim TreeNode29 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
+        Dim TreeNode30 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
+        Dim TreeNode31 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode29, TreeNode30})
+        Dim TreeNode32 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode28, TreeNode31})
         Me.BtnYeniSinav = New System.Windows.Forms.Button()
         Me.BtnMevcudat = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -62,7 +62,8 @@ Partial Class AnaEkranForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblError = New System.Windows.Forms.Label()
+        Me.btnListeEkle = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GbAnaSayfa.SuspendLayout()
         Me.GbMevcudatDuzenle.SuspendLayout()
         Me.GbYeniSinavOlustur.SuspendLayout()
@@ -72,7 +73,7 @@ Partial Class AnaEkranForm
         'BtnYeniSinav
         '
         Me.BtnYeniSinav.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnYeniSinav.Location = New System.Drawing.Point(18, 250)
+        Me.BtnYeniSinav.Location = New System.Drawing.Point(18, 273)
         Me.BtnYeniSinav.Name = "BtnYeniSinav"
         Me.BtnYeniSinav.Size = New System.Drawing.Size(271, 73)
         Me.BtnYeniSinav.TabIndex = 0
@@ -82,7 +83,7 @@ Partial Class AnaEkranForm
         'BtnMevcudat
         '
         Me.BtnMevcudat.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnMevcudat.Location = New System.Drawing.Point(18, 384)
+        Me.BtnMevcudat.Location = New System.Drawing.Point(18, 407)
         Me.BtnMevcudat.Name = "BtnMevcudat"
         Me.BtnMevcudat.Size = New System.Drawing.Size(271, 73)
         Me.BtnMevcudat.TabIndex = 1
@@ -93,7 +94,7 @@ Partial Class AnaEkranForm
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(850, 178)
+        Me.Label1.Location = New System.Drawing.Point(850, 201)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(111, 13)
         Me.Label1.TabIndex = 2
@@ -102,7 +103,7 @@ Partial Class AnaEkranForm
         'BtnMailGonder
         '
         Me.BtnMailGonder.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnMailGonder.Location = New System.Drawing.Point(782, 534)
+        Me.BtnMailGonder.Location = New System.Drawing.Point(782, 557)
         Me.BtnMailGonder.Name = "BtnMailGonder"
         Me.BtnMailGonder.Size = New System.Drawing.Size(240, 46)
         Me.BtnMailGonder.TabIndex = 4
@@ -113,7 +114,7 @@ Partial Class AnaEkranForm
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(479, 107)
+        Me.Label2.Location = New System.Drawing.Point(479, 130)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 13)
         Me.Label2.TabIndex = 5
@@ -133,7 +134,7 @@ Partial Class AnaEkranForm
         Me.GbAnaSayfa.Controls.Add(Me.Label1)
         Me.GbAnaSayfa.Location = New System.Drawing.Point(75, 12)
         Me.GbAnaSayfa.Name = "GbAnaSayfa"
-        Me.GbAnaSayfa.Size = New System.Drawing.Size(1119, 681)
+        Me.GbAnaSayfa.Size = New System.Drawing.Size(1119, 727)
         Me.GbAnaSayfa.TabIndex = 6
         Me.GbAnaSayfa.TabStop = False
         Me.GbAnaSayfa.Text = "Ana Sayfa"
@@ -141,25 +142,25 @@ Partial Class AnaEkranForm
         'TreeView1
         '
         Me.TreeView1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TreeView1.Location = New System.Drawing.Point(782, 211)
+        Me.TreeView1.Location = New System.Drawing.Point(782, 234)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode9.Name = "Node2"
-        TreeNode9.Text = "C"
-        TreeNode10.Name = "Node3"
-        TreeNode10.Text = "Görsel"
-        TreeNode11.Name = "Node5"
-        TreeNode11.Text = "Mat2"
-        TreeNode12.Name = "Node1"
-        TreeNode12.Text = "Vize"
-        TreeNode13.Name = "Node7"
-        TreeNode13.Text = "PDG"
-        TreeNode14.Name = "Node9"
-        TreeNode14.Text = "Görsel Programlama"
-        TreeNode15.Name = "Node6"
-        TreeNode15.Text = "Veri Yapıları"
-        TreeNode16.Name = "Node0"
-        TreeNode16.Text = "2017"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16})
+        TreeNode25.Name = "Node2"
+        TreeNode25.Text = "C"
+        TreeNode26.Name = "Node3"
+        TreeNode26.Text = "Görsel"
+        TreeNode27.Name = "Node5"
+        TreeNode27.Text = "Mat2"
+        TreeNode28.Name = "Node1"
+        TreeNode28.Text = "Vize"
+        TreeNode29.Name = "Node7"
+        TreeNode29.Text = "PDG"
+        TreeNode30.Name = "Node9"
+        TreeNode30.Text = "Görsel Programlama"
+        TreeNode31.Name = "Node6"
+        TreeNode31.Text = "Veri Yapıları"
+        TreeNode32.Name = "Node0"
+        TreeNode32.Text = "2017"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode32})
         Me.TreeView1.Size = New System.Drawing.Size(240, 292)
         Me.TreeView1.TabIndex = 6
         '
@@ -175,7 +176,7 @@ Partial Class AnaEkranForm
         Me.GbMevcudatDuzenle.Controls.Add(Me.BtnDersDuzenleme)
         Me.GbMevcudatDuzenle.Location = New System.Drawing.Point(1184, 161)
         Me.GbMevcudatDuzenle.Name = "GbMevcudatDuzenle"
-        Me.GbMevcudatDuzenle.Size = New System.Drawing.Size(1043, 504)
+        Me.GbMevcudatDuzenle.Size = New System.Drawing.Size(1043, 550)
         Me.GbMevcudatDuzenle.TabIndex = 8
         Me.GbMevcudatDuzenle.TabStop = False
         Me.GbMevcudatDuzenle.Text = "Mevcut Ders -Derslik - Asistan Düzenleme"
@@ -186,7 +187,7 @@ Partial Class AnaEkranForm
         Me.BtnMevcudatGeri.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnMevcudatGeri.AutoSize = True
         Me.BtnMevcudatGeri.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnMevcudatGeri.Location = New System.Drawing.Point(54, 369)
+        Me.BtnMevcudatGeri.Location = New System.Drawing.Point(54, 392)
         Me.BtnMevcudatGeri.Name = "BtnMevcudatGeri"
         Me.BtnMevcudatGeri.Size = New System.Drawing.Size(141, 61)
         Me.BtnMevcudatGeri.TabIndex = 3
@@ -198,7 +199,7 @@ Partial Class AnaEkranForm
         Me.BtnAsistanDuzenleme.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnAsistanDuzenleme.AutoSize = True
         Me.BtnAsistanDuzenleme.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAsistanDuzenleme.Location = New System.Drawing.Point(739, 89)
+        Me.BtnAsistanDuzenleme.Location = New System.Drawing.Point(739, 112)
         Me.BtnAsistanDuzenleme.Name = "BtnAsistanDuzenleme"
         Me.BtnAsistanDuzenleme.Size = New System.Drawing.Size(250, 85)
         Me.BtnAsistanDuzenleme.TabIndex = 2
@@ -210,7 +211,7 @@ Partial Class AnaEkranForm
         Me.BtnDerslikDuzenleme.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnDerslikDuzenleme.AutoSize = True
         Me.BtnDerslikDuzenleme.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnDerslikDuzenleme.Location = New System.Drawing.Point(398, 89)
+        Me.BtnDerslikDuzenleme.Location = New System.Drawing.Point(398, 112)
         Me.BtnDerslikDuzenleme.Name = "BtnDerslikDuzenleme"
         Me.BtnDerslikDuzenleme.Size = New System.Drawing.Size(250, 85)
         Me.BtnDerslikDuzenleme.TabIndex = 0
@@ -222,7 +223,7 @@ Partial Class AnaEkranForm
         Me.BtnDersDuzenleme.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnDersDuzenleme.AutoSize = True
         Me.BtnDersDuzenleme.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnDersDuzenleme.Location = New System.Drawing.Point(54, 89)
+        Me.BtnDersDuzenleme.Location = New System.Drawing.Point(54, 112)
         Me.BtnDersDuzenleme.Name = "BtnDersDuzenleme"
         Me.BtnDersDuzenleme.Size = New System.Drawing.Size(250, 85)
         Me.BtnDersDuzenleme.TabIndex = 1
@@ -232,7 +233,7 @@ Partial Class AnaEkranForm
         'GbYeniSinavOlustur
         '
         Me.GbYeniSinavOlustur.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.GbYeniSinavOlustur.Controls.Add(Me.lblError)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.btnListeEkle)
         Me.GbYeniSinavOlustur.Controls.Add(Me.LbOgrenciYerlestirilecekSayi)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label5)
         Me.GbYeniSinavOlustur.Controls.Add(Me.flAsistanlar)
@@ -250,7 +251,7 @@ Partial Class AnaEkranForm
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label3)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label8)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label9)
-        Me.GbYeniSinavOlustur.Location = New System.Drawing.Point(12, 12)
+        Me.GbYeniSinavOlustur.Location = New System.Drawing.Point(12, 35)
         Me.GbYeniSinavOlustur.Name = "GbYeniSinavOlustur"
         Me.GbYeniSinavOlustur.Size = New System.Drawing.Size(1119, 681)
         Me.GbYeniSinavOlustur.TabIndex = 7
@@ -263,9 +264,8 @@ Partial Class AnaEkranForm
         Me.LbOgrenciYerlestirilecekSayi.AutoSize = True
         Me.LbOgrenciYerlestirilecekSayi.Location = New System.Drawing.Point(903, 112)
         Me.LbOgrenciYerlestirilecekSayi.Name = "LbOgrenciYerlestirilecekSayi"
-        Me.LbOgrenciYerlestirilecekSayi.Size = New System.Drawing.Size(19, 13)
+        Me.LbOgrenciYerlestirilecekSayi.Size = New System.Drawing.Size(0, 13)
         Me.LbOgrenciYerlestirilecekSayi.TabIndex = 7
-        Me.LbOgrenciYerlestirilecekSayi.Text = "50"
         '
         'Label5
         '
@@ -293,7 +293,7 @@ Partial Class AnaEkranForm
         'LbAsistanSecilecekSayi
         '
         Me.LbAsistanSecilecekSayi.AutoSize = True
-        Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(884, 325)
+        Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(913, 325)
         Me.LbAsistanSecilecekSayi.Name = "LbAsistanSecilecekSayi"
         Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(13, 13)
         Me.LbAsistanSecilecekSayi.TabIndex = 9
@@ -304,9 +304,9 @@ Partial Class AnaEkranForm
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(752, 325)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(127, 13)
+        Me.Label7.Size = New System.Drawing.Size(168, 13)
         Me.Label7.TabIndex = 8
-        Me.Label7.Text = "Seçilecek Asistan Sayısı: "
+        Me.Label7.Text = "Seçilmesi Gereken Asistan Sayısı: "
         '
         'BtnSinavIptal
         '
@@ -332,7 +332,7 @@ Partial Class AnaEkranForm
         Me.GbOgrenciDosya.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GbOgrenciDosya.Controls.Add(Me.LbOgrenciSayiGoster)
         Me.GbOgrenciDosya.Controls.Add(Me.LbOgrenciSayiBilgi)
-        Me.GbOgrenciDosya.Location = New System.Drawing.Point(146, 448)
+        Me.GbOgrenciDosya.Location = New System.Drawing.Point(146, 483)
         Me.GbOgrenciDosya.Name = "GbOgrenciDosya"
         Me.GbOgrenciDosya.Size = New System.Drawing.Size(218, 96)
         Me.GbOgrenciDosya.TabIndex = 11
@@ -368,6 +368,7 @@ Partial Class AnaEkranForm
         '
         Me.CbTurSecim.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CbTurSecim.FormattingEnabled = True
+        Me.CbTurSecim.Items.AddRange(New Object() {"Vize", "Final", "Bütünleme"})
         Me.CbTurSecim.Location = New System.Drawing.Point(146, 277)
         Me.CbTurSecim.Name = "CbTurSecim"
         Me.CbTurSecim.Size = New System.Drawing.Size(187, 21)
@@ -432,20 +433,24 @@ Partial Class AnaEkranForm
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "1-)  Oluşturmak İstediğiniz dersi seçiniz."
         '
-        'lblError
+        'btnListeEkle
         '
-        Me.lblError.AutoSize = True
-        Me.lblError.Location = New System.Drawing.Point(752, 52)
-        Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(45, 13)
-        Me.lblError.TabIndex = 18
-        Me.lblError.Text = "Label10"
+        Me.btnListeEkle.Location = New System.Drawing.Point(146, 454)
+        Me.btnListeEkle.Name = "btnListeEkle"
+        Me.btnListeEkle.Size = New System.Drawing.Size(206, 23)
+        Me.btnListeEkle.TabIndex = 19
+        Me.btnListeEkle.Text = "Liste Ekle"
+        Me.btnListeEkle.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'AnaEkranForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1196, 681)
+        Me.ClientSize = New System.Drawing.Size(1196, 727)
         Me.Controls.Add(Me.GbMevcudatDuzenle)
         Me.Controls.Add(Me.GbYeniSinavOlustur)
         Me.Controls.Add(Me.GbAnaSayfa)
@@ -497,5 +502,6 @@ Partial Class AnaEkranForm
     Friend WithEvents BtnSinavIptal As Button
     Friend WithEvents flAsistanlar As FlowLayoutPanel
     Friend WithEvents flSinifListele As FlowLayoutPanel
-    Friend WithEvents lblError As Label
+    Friend WithEvents btnListeEkle As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

@@ -39,7 +39,7 @@ Public Class AnaEkranForm
             'lblAcilanDosya.Text = "Açılan Dosya - " + dosyaacici.FileName
         End If
         'flSinifListele.l
-        LbOgrenciSayiGoster.Text = ogrenciSayisi
+        LbOgrenciYerlestirilecekSayi.Text = ogrenciSayisi
 
     End Sub
     Private Sub cbAsistan_click(sender As Object, e As EventArgs)
@@ -56,7 +56,7 @@ Public Class AnaEkranForm
 
         Dim SecilenSiniflarinKapasitesi = database.DerslikKapasiteGetir(ulasilanDerslik.Name)
         If ogrenciSayisi <= 0 Then
-            lblError.Text = "Lütfen ilk önce öğrenci listesini yükleyiniz"
+            'lblError.Text = "Lütfen ilk önce öğrenci listesini yükleyiniz"
             ulasilanDerslik.Checked = False
         Else
 
@@ -64,7 +64,7 @@ Public Class AnaEkranForm
 
                 yerlestirilenOgrenciSayisi = yerlestirilenOgrenciSayisi + SecilenSiniflarinKapasitesi
                 secilenSinifsayi = secilenSinifsayi + 1
-                lblError.Text = "Yeteri kadar sınıf seçildi"
+                'lblError.Text = "Yeteri kadar sınıf seçildi"
                 seciliSiniflar.Add(ulasilanDerslik.Name)
 
             ElseIf ulasilanDerslik.Checked = False Then
@@ -74,12 +74,9 @@ Public Class AnaEkranForm
                 seciliSiniflar.Remove(ulasilanDerslik.Name)
 
             ElseIf yerlestirilenOgrenciSayisi > ogrenciSayisi Then
-                lblError.Text = "Sınıf Seçmek Gerekli"
+                'lblError.Text = "Sınıf Seçmek Gerekli"
                 ulasilanDerslik.Checked = False
             End If
-            'lblsnfsyi.Text = "Seçilen Sınıf Sayısı : " + secilenSinifsayi                    -----------\
-            'lblyrlssayi.Text = "Yerleştirilen Öğrenci Sayısı : " + yerlestirilenOgrenciSayisi------------> "lblsclnsnf" gibi labeller pek hoş değildi :)
-            'lblOgrenciSayisi1.Text = ogrenciSayisi.ToString()                                -----------/
 
 
         End If
@@ -98,6 +95,39 @@ Public Class AnaEkranForm
     Private Sub BtnSinavOlustur_Click(sender As Object, e As EventArgs) Handles BtnSinavOlustur.Click
         GbAnaSayfa.Visible = True
         GbYeniSinavOlustur.Visible = False
+
+        'gereği kadar Liste objesi yaratılıyor
+        For i As Integer = 0 To seciliSiniflar.Count - 1
+            Dim gecici As New SinifListeleri
+            Dim ogrenciSayisi As Integer = Ogrenciler.Count - 1
+            gecici.PSinifAdi = seciliSiniflar(i)
+            gecici.PDersAdi = CbDersSecim.SelectedItem.ToString()
+            gecici.PSinifKapasite = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
+            gecici.PbosSira = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
+            gecici.PSinavTur = CbTurSecim.SelectedItem.ToString()
+            gecici.PTarih = DateTimePicker1.Value
+            listeler.Add(gecici)
+        Next
+        'yaratılan liste objelerine öğrenciler atanıyor
+        For i As Integer = 0 To ogrenciSayisi
+            For j As Integer = 0 To seciliSiniflar.Count - 1
+                If listeler(j).PbosSira > 0 Then
+                    Dim OgrenciIndex As Integer = random.Next(Ogrenciler.Count)
+                    If Ogrenciler.Count > 0 Then
+                        If listeler(j).PbosSira > 0 Then
+                            listeler(j).POgrenciler.Add(Ogrenciler(OgrenciIndex))
+                            listeler(j).PbosSira -= 1
+                            Ogrenciler.RemoveAt(OgrenciIndex)
+                        End If
+                    End If
+                End If
+            Next
+        Next
+        For i As Integer = 0 To seciliSiniflar.Count - 1
+            Dim asistanIndex As Integer = random.Next(seciliAsistanlar.Count)
+            listeler(i).PAsistanAdi = seciliAsistanlar(asistanIndex)
+            seciliAsistanlar.RemoveAt(asistanIndex)
+        Next
         MessageBox.Show("İşleminiz başarı ile gerçekleştirildi")
     End Sub
 
@@ -140,8 +170,8 @@ Public Class AnaEkranForm
     End Sub
 
     Private Sub BtnDerslikDuzenleme_Click(sender As Object, e As EventArgs) Handles BtnDerslikDuzenleme.Click
-        System.IO.File.WriteAllText("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status", "")
-        Dim wr As New StreamWriter("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+        System.IO.File.WriteAllText("status", "")
+        Dim wr As New StreamWriter("status")
         wr.WriteLine(1)
         wr.WriteLine(1)
         wr.Close()
@@ -153,8 +183,8 @@ Public Class AnaEkranForm
     End Sub
 
     Private Sub BtnDersDuzenleme_Click(sender As Object, e As EventArgs) Handles BtnDersDuzenleme.Click
-        System.IO.File.WriteAllText("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status", "")
-        Dim wr As New StreamWriter("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+        System.IO.File.WriteAllText("status", "")
+        Dim wr As New StreamWriter("status")
         wr.WriteLine(1)
         wr.WriteLine(0)
         wr.Close()
@@ -165,8 +195,8 @@ Public Class AnaEkranForm
     End Sub
 
     Private Sub BtnAsistanDuzenleme_Click(sender As Object, e As EventArgs) Handles BtnAsistanDuzenleme.Click
-        System.IO.File.WriteAllText("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status", "")
-        Dim wr As New StreamWriter("C:\Users\Fatih\Desktop\VB\SinavOlusturma\SinavOlusturma\bin\Debug\status")
+        System.IO.File.WriteAllText("status", "")
+        Dim wr As New StreamWriter("status")
         wr.WriteLine(1)
         wr.WriteLine(2)
         wr.Close()
@@ -184,6 +214,10 @@ Public Class AnaEkranForm
             GbAnaSayfa.Visible = True
             GbYeniSinavOlustur.Visible = False
         End If
+    End Sub
+
+    Private Sub btnListeEkle_Click(sender As Object, e As EventArgs) Handles btnListeEkle.Click
+        OgrenciListesiniOku()
     End Sub
 
 
