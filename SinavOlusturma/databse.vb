@@ -1,4 +1,5 @@
-﻿Public Class database
+﻿
+Public Class database
     Shared vt As New GorselDBEntities1
     'Asistan
     Public Shared Sub AsistanEkle(ByVal asistan As Asistan)
@@ -35,5 +36,12 @@
     Public Shared Function DerslikGetir()
         Return vt.Derslik.Select(Function(x) x.DerslikAdi).ToList()
     End Function
+
+    Public Shared Sub ogrenciListesiEkle(ByVal SinavListesi As Liste)
+        vt.Liste.Add(SinavListesi)
+        vt.SaveChanges()
+
+    End Sub
+
 
 End Class

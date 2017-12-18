@@ -11,11 +11,16 @@ Public Class AnaEkranForm
     Dim Ogrenciler As New List(Of String)
     Shared random As New Random()
     Dim listeler As New List(Of SinifListeleri)
+    Private Function ogrenciListesiOlustur(ByVal SiniftakiOgrenciler As List(Of String))
+
+        Dim liste As New StringBuilder
+        For i As Integer = 0 To SiniftakiOgrenciler.Count - 1
+            liste.Append(SiniftakiOgrenciler(i) & ";")
+        Next
+        Return liste
+    End Function
 
     Private Sub OgrenciListesiniOku()
-        Dim sayac As Integer = -1   'öğrenci okumak için
-        Dim oku As String 'satır satır okumak için kullanılan değişken
-        Dim fs As FileStream 'dosyayı okumak için kullanılır
         Dim dosyaacici As New OpenFileDialog() 'windowsta dosya açmak için
         dosyaacici.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*" 'yalnızca text dosyalarını açmak için
         If dosyaacici.ShowDialog = DialogResult.OK Then
@@ -33,15 +38,19 @@ Public Class AnaEkranForm
     End Sub
     Private Sub cbAsistan_click(sender As Object, e As EventArgs)
         Dim ulasilanAsistan As CheckBox = CType(sender, CheckBox)
-
-        If ulasilanAsistan.Checked And secilenAsistanSayi < secilenSinifsayi Then
-            seciliAsistanlar.Add(ulasilanAsistan.Text)
-            secilenAsistanSayi = secilenAsistanSayi + 1
-        ElseIf ulasilanAsistan.Checked = False Then
-            seciliAsistanlar.Remove(ulasilanAsistan.Text)
-            secilenAsistanSayi = secilenAsistanSayi - 1
-        ElseIf secilenAsistanSayi >= secilenSinifsayi Then
+        If secilenSinifsayi < 1 Then
+            'lblerror.text = "Lütfen İlk Önce Sinif Seçiniz"
             ulasilanAsistan.Checked = False
+        Else
+            If ulasilanAsistan.Checked And secilenAsistanSayi < secilenSinifsayi Then
+                seciliAsistanlar.Add(ulasilanAsistan.Text)
+                secilenAsistanSayi = secilenAsistanSayi + 1
+            ElseIf ulasilanAsistan.Checked = False Then
+                seciliAsistanlar.Remove(ulasilanAsistan.Text)
+                secilenAsistanSayi = secilenAsistanSayi - 1
+            ElseIf secilenAsistanSayi >= secilenSinifsayi Then
+                ulasilanAsistan.Checked = False
+            End If
         End If
     End Sub
 
@@ -138,6 +147,31 @@ Public Class AnaEkranForm
             listeler(i).PAsistanAdi = seciliAsistanlar(asistanIndex)
             seciliAsistanlar.RemoveAt(asistanIndex)
         Next
+
+        'Dim liste As New StringBuilder
+        'For i As Integer = 0 To Ogrenciler.Count - 1
+        '    liste.Append(Ogrenciler(i) & ";")
+        'Next
+        'Dim listeStr = liste.ToString()
+        'Dim x(1) As Char
+        'x(0) = ";"
+        'Dim y As List(Of String) = listeStr.Split(x).ToList()
+
+
+
+
+        For i As Integer = 0 To seciliSiniflar.Count - 1
+            Dim dbEklenecekListe As New Liste
+
+            dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler)
+            dbEklenecekListe.Sinav.Dersler.DersAdi = listeler(i).PDersAdi
+            dbEklenecekListe.Sinav.SinavTuru = listeler(i).PSinavTur
+            dbEklenecekListe.Sinav.Yillar.Yil = listeler(i).PTarih.ToString()
+            dbEklenecekListe.Asistan.AsistanAdi = listeler(i).PAsistanAdi
+            dbEklenecekListe.Derslik.DerslikAdi = listeler(i).PDersAdi
+            database.ogrenciListesiEkle(dbEklenecekListe)
+        Next
+
         MessageBox.Show("İşleminiz başarı ile gerçekleştirildi")
     End Sub
 
@@ -229,6 +263,10 @@ Public Class AnaEkranForm
 
     Private Sub btnListeEkle_Click(sender As Object, e As EventArgs) Handles btnListeEkle.Click
         OgrenciListesiniOku()
+    End Sub
+
+    Private Sub GbYeniSinavOlustur_Enter(sender As Object, e As EventArgs) Handles GbYeniSinavOlustur.Enter
+
     End Sub
 
 

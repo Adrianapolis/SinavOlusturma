@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0451116ad6624471919e96c4decf13b7" Name="Diagram1">
-        <EntityTypeShape EntityType="gorseldbModel.Asistan" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gorseldbModel.Asistan" Width="1.5" PointX="9.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="gorseldbModel.Dersler" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="gorseldbModel.Derslik" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="gorseldbModel.Donem" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="gorseldbModel.Liste" Width="1.5" PointX="7" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="gorseldbModel.Sinav" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="gorseldbModel.Yillar" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="gorseldbModel.Derslik" Width="1.5" PointX="9.125" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gorseldbModel.Donem" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gorseldbModel.Liste" Width="1.5" PointX="7" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gorseldbModel.Sinav" Width="1.5" PointX="4.375" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gorseldbModel.Yillar" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="gorseldbModel.FK_Liste_Asistan" ManuallyRouted="false" />
         <AssociationConnector Association="gorseldbModel.FK_Sinav_Sinav" ManuallyRouted="false" />
         <AssociationConnector Association="gorseldbModel.FK_Liste_Derslik" ManuallyRouted="false" />

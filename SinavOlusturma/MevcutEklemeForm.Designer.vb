@@ -119,9 +119,9 @@ Partial Class MevcutEklemeForm
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Sil})
-        Me.DataGridView2.Location = New System.Drawing.Point(610, 278)
+        Me.DataGridView2.Location = New System.Drawing.Point(558, 121)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(270, 269)
+        Me.DataGridView2.Size = New System.Drawing.Size(382, 269)
         Me.DataGridView2.TabIndex = 10
         '
         'Sil
