@@ -16,7 +16,7 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
                     BtnGeri.Visible = False
                     BtnDevam.Text = "Devam"
-                    DataGridView1.Columns(0).HeaderCell.Value = "Ders Adı"
+                    DataGridView2.Columns(0).HeaderCell.Value = "Ders Adı"
                     'veri tabınına ekleme kısmı
                     Try
                         Dim eklenecekDers As New Dersler
@@ -34,7 +34,7 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Kapasite Giriniz:"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Devam"
-                    DataGridView1.Columns(0).HeaderCell.Value = "Derslik Adı"
+                    DataGridView2.Columns(0).HeaderCell.Value = "Derslik Adı"
                     'veri tabanına ekleme kısmı
                     Try
                         Dim eklenecekDerslik As New Derslik
@@ -50,7 +50,7 @@ Public Class MevcutEklemeForm
                     LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                     LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                     BtnGeri.Visible = True
-                    DataGridView1.Columns(0).HeaderCell.Value = "Asistan Adı"
+                    DataGridView2.Columns(0).HeaderCell.Value = "Asistan Adı"
                     BtnDevam.Text = "Bitir"
                     'veri tabanına ekleme kısmı
                     Try
@@ -101,7 +101,7 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
                     BtnGeri.Visible = False
                     BtnDevam.Text = "Devam"
-                    DataGridView1.Columns(1).HeaderCell.Value = "Ders Adı"
+                    DataGridView2.Columns(1).HeaderCell.Value = "Ders Adı"
                     'veri tabınına ekleme kısmı
                     Try
                         Dim eklenecekDers As New Dersler
@@ -119,7 +119,7 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Kapasite Giriniz:"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Devam"
-                    DataGridView1.Columns(1).HeaderCell.Value = "Derslik Adı"
+                    DataGridView2.Columns(1).HeaderCell.Value = "Derslik Adı"
                     'veri tabanına ekleme kısmı
                     Try
                         Dim eklenecekDerslik As New Derslik
@@ -136,7 +136,7 @@ Public Class MevcutEklemeForm
                     LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                     LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                     BtnGeri.Visible = True
-                    DataGridView1.Columns(1).HeaderCell.Value = "Asistan Adı"
+                    DataGridView2.Columns(1).HeaderCell.Value = "Asistan Adı"
                     BtnDevam.Text = "Bitir"
                     'veri tabanına ekleme kısmı
                     Try
@@ -163,6 +163,7 @@ Public Class MevcutEklemeForm
     End Sub
 
     Private Sub MevcutEklemeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView2.DataSource = database.AsistanGrid
         Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1
@@ -179,7 +180,7 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Devam"
-                DataGridView1.Columns(1).HeaderCell.Value = "Ders Adı"
+                DataGridView2.Columns(1).HeaderCell.Value = "Ders Adı"
                 'veri tabınına ekleme kısmı
                 Try
                     Dim eklenecekDers As New Dersler
@@ -197,7 +198,7 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Kapasite Giriniz:"
                 BtnGeri.Visible = True
                 BtnDevam.Text = "Devam"
-                DataGridView1.Columns(1).HeaderCell.Value = "Derslik Adı"
+                DataGridView2.Columns(1).HeaderCell.Value = "Derslik Adı"
                 'veri tabanına ekleme kısmı
                 Try
                     Dim eklenecekDerslik As New Derslik
@@ -214,7 +215,7 @@ Public Class MevcutEklemeForm
                 LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                 LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                 BtnGeri.Visible = True
-                DataGridView1.Columns(1).HeaderCell.Value = "Asistan Adı"
+                DataGridView2.Columns(1).HeaderCell.Value = "Asistan Adı"
                 BtnDevam.Text = "Bitir"
                 'veri tabanına ekleme kısmı
                 Try
@@ -236,7 +237,7 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
-                DataGridView1.Columns(1).HeaderCell.Value = "Ders Adı"
+                'DataGridView2.Columns(1).HeaderCell.Value = "Ders Adı"
                 'veri tabınına ekleme kısmı
                 Try
                     Dim eklenecekDers As New Dersler
@@ -254,7 +255,7 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Kapasite Giriniz:"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
-                DataGridView1.Columns(1).HeaderCell.Value = "Derslik Adı"
+                DataGridView2.Columns(1).HeaderCell.Value = "Derslik Adı"
                 'veri tabanına ekleme kısmı
                 Try
                     Dim eklenecekDerslik As New Derslik
@@ -272,13 +273,14 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
-                DataGridView1.Columns(1).HeaderCell.Value = "Asistan Adı"
+                DataGridView2.Columns(1).HeaderCell.Value = "Asistan Adı"
                 'veri tabanına ekleme kısmı
                 Try
                     Dim eklenecekAsistan As New Asistan
                     eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
                     eklenecekAsistan.Mail = TbKoduGiriniz.Text
                     database.AsistanEkle(eklenecekAsistan)
+                    DataGridView2.Refresh()
                 Catch ex As Exception
 
                 End Try
@@ -291,10 +293,11 @@ Public Class MevcutEklemeForm
     End Sub '//FORM LOAD
 
     Private Sub BtnEkle_Click(sender As Object, e As EventArgs) Handles BtnEkle.Click
-        Me.DataGridView1.Rows.Add("X", TbAdiGiriniz.Text)
+        'Me.DataGridView1.Rows.Add("X", TbAdiGiriniz.Text)
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        'Satırı silecek kod
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+        Dim x As Integer = e.RowIndex
     End Sub
 End Class

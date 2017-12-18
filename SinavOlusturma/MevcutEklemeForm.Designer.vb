@@ -29,12 +29,11 @@ Partial Class MevcutEklemeForm
         Me.TbKoduGiriniz = New System.Windows.Forms.TextBox()
         Me.BtnEkle = New System.Windows.Forms.Button()
         Me.BtnDevam = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnGeri = New System.Windows.Forms.Button()
-        Me.SilColumn = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.IcerilColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LblEkleyiniz
@@ -96,15 +95,6 @@ Partial Class MevcutEklemeForm
         Me.BtnDevam.Text = "Devam"
         Me.BtnDevam.UseVisualStyleBackColor = True
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SilColumn, Me.IcerilColumn})
-        Me.DataGridView1.Location = New System.Drawing.Point(609, 118)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(270, 260)
-        Me.DataGridView1.TabIndex = 7
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -124,30 +114,29 @@ Partial Class MevcutEklemeForm
         Me.BtnGeri.UseVisualStyleBackColor = True
         Me.BtnGeri.Visible = False
         '
-        'SilColumn
+        'DataGridView2
         '
-        Me.SilColumn.FillWeight = 25.0!
-        Me.SilColumn.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.SilColumn.HeaderText = "Sil"
-        Me.SilColumn.Name = "SilColumn"
-        Me.SilColumn.Width = 25
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Sil})
+        Me.DataGridView2.Location = New System.Drawing.Point(610, 278)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(270, 269)
+        Me.DataGridView2.TabIndex = 10
         '
-        'IcerilColumn
+        'Sil
         '
-        Me.IcerilColumn.HeaderText = "Adı"
-        Me.IcerilColumn.Name = "IcerilColumn"
-        Me.IcerilColumn.ReadOnly = True
-        Me.IcerilColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.IcerilColumn.Width = 200
+        Me.Sil.HeaderText = "Sil"
+        Me.Sil.Name = "Sil"
         '
         'MevcutEklemeForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(991, 572)
+        Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.BtnGeri)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.BtnDevam)
         Me.Controls.Add(Me.BtnEkle)
         Me.Controls.Add(Me.TbKoduGiriniz)
@@ -158,7 +147,7 @@ Partial Class MevcutEklemeForm
         Me.Name = "MevcutEklemeForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MevcutEklemeForm"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,9 +160,8 @@ Partial Class MevcutEklemeForm
     Friend WithEvents TbKoduGiriniz As TextBox
     Friend WithEvents BtnEkle As Button
     Friend WithEvents BtnDevam As Button
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnGeri As Button
-    Friend WithEvents SilColumn As DataGridViewButtonColumn
-    Friend WithEvents IcerilColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Sil As DataGridViewButtonColumn
 End Class

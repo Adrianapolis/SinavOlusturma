@@ -1,8 +1,10 @@
 ﻿Imports System.IO
+Imports System.Text
 Public Class AnaEkranForm
     Dim ogrenciSayisi As Integer
     Dim yerlestirilenOgrenciSayisi As Integer = 0
     Dim secilenSinifsayi As Integer = 0
+    Dim secilenAsistanSayi As Integer = 0
     Dim listeOlusturucu As String
     Dim seciliSiniflar As New List(Of String)
     Dim seciliAsistanlar As New List(Of String)
@@ -17,22 +19,8 @@ Public Class AnaEkranForm
         Dim dosyaacici As New OpenFileDialog() 'windowsta dosya açmak için
         dosyaacici.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*" 'yalnızca text dosyalarını açmak için
         If dosyaacici.ShowDialog = DialogResult.OK Then
-            fs = New FileStream(dosyaacici.FileName, FileMode.Open)
-            Dim sr As StreamReader = New StreamReader(fs, System.Text.Encoding.Default) 'fsten üretilmiş okumak için kullanılır
-
-            Do
-                oku = sr.ReadLine
-                sayac = sayac + 1
-                Ogrenciler.Add(oku)
-
-                'Try
-                '    RichTextBox1.AppendText(oku + vbNewLine) 'ilk okurken boş geldiği için try içine alındı
-                'Catch ex As Exception
-                'End Try
-
-            Loop Until oku Is Nothing
-            ogrenciSayisi = sayac
-            fs.Close()
+            Ogrenciler = File.ReadAllLines(dosyaacici.FileName, Encoding.Default).ToList()
+            ogrenciSayisi = Ogrenciler.Count
             'lblOgrenciSayisi.Text = ogrenciSayisi
             'lblOgrenciSayisi.Text = "Öğrenci Sayısı : " + ogrenciSayisi.ToString
             'lblError.Text = "Lütfen yukarıdan sınıf seçiniz."
@@ -40,14 +28,20 @@ Public Class AnaEkranForm
         End If
         'flSinifListele.l
         LbOgrenciYerlestirilecekSayi.Text = ogrenciSayisi
+        LbOgrenciSayiGoster.Text = ogrenciSayisi
 
     End Sub
     Private Sub cbAsistan_click(sender As Object, e As EventArgs)
         Dim ulasilanAsistan As CheckBox = CType(sender, CheckBox)
-        If ulasilanAsistan.Checked Then
+
+        If ulasilanAsistan.Checked And secilenAsistanSayi < secilenSinifsayi Then
             seciliAsistanlar.Add(ulasilanAsistan.Text)
+            secilenAsistanSayi = secilenAsistanSayi + 1
         ElseIf ulasilanAsistan.Checked = False Then
             seciliAsistanlar.Remove(ulasilanAsistan.Text)
+            secilenAsistanSayi = secilenAsistanSayi - 1
+        ElseIf secilenAsistanSayi >= secilenSinifsayi Then
+            ulasilanAsistan.Checked = False
         End If
     End Sub
 
@@ -80,7 +74,20 @@ Public Class AnaEkranForm
 
 
         End If
+        If (yerlestirilenOgrenciSayisi < 0) Then
+            LbOgrenciYerlestirilecekSayi.Text = 0
+        Else
+            LbOgrenciYerlestirilecekSayi.Text = yerlestirilenOgrenciSayisi
+        End If
 
+        Dim liste As New StringBuilder
+        For i As Integer = 0 To Ogrenciler.Count - 1
+            liste.Append(Ogrenciler(i) & ";")
+        Next
+        Dim listeStr = liste.ToString()
+        Dim x(1) As Char
+        x(0) = ";"
+        Dim y As List(Of String) = listeStr.Split(x).ToList()
     End Sub
 
 
@@ -116,6 +123,9 @@ Public Class AnaEkranForm
                     If Ogrenciler.Count > 0 Then
                         If listeler(j).PbosSira > 0 Then
                             listeler(j).POgrenciler.Add(Ogrenciler(OgrenciIndex))
+                            If listeler(j).POgrenciler.Contains(Nothing) Then
+                                Dim a As Integer = 10
+                            End If
                             listeler(j).PbosSira -= 1
                             Ogrenciler.RemoveAt(OgrenciIndex)
                         End If
@@ -145,6 +155,7 @@ Public Class AnaEkranForm
     End Sub
 
     Private Sub AnaEkranForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DateTimePicker1.MinDate = DateTime.Now
         Me.WindowState = FormWindowState.Maximized
         GbAnaSayfa.Top = (Me.ClientSize.Height / 2) - (GbAnaSayfa.Height / 2)
         GbAnaSayfa.Left = (Me.ClientSize.Width / 2) - (GbAnaSayfa.Width / 2)

@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="gorseldbModel.Dersler" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="gorseldbModel.Derslik" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="gorseldbModel.Donem" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="gorseldbModel.Liste" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="gorseldbModel.Liste" Width="1.5" PointX="7" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="gorseldbModel.Sinav" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="gorseldbModel.Yillar" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
         <AssociationConnector Association="gorseldbModel.FK_Liste_Asistan" ManuallyRouted="false" />

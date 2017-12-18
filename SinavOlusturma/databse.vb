@@ -1,5 +1,5 @@
 ﻿Public Class database
-    Shared vt As New gorseldbEntities
+    Shared vt As New GorselDBEntities1
     'Asistan
     Public Shared Sub AsistanEkle(ByVal asistan As Asistan)
         vt.Asistan.Add(asistan)
@@ -9,7 +9,10 @@
     Public Shared Function AsistanListesiAl()
         Return vt.Asistan.Select(Function(x) x.AsistanAdi).ToList()
     End Function
-
+    Public Shared Function AsistanGrid()
+        Return (From x In vt.Asistan
+                Select New With {x.AsistanAdi, x.Mail}).ToList()
+    End Function
     'Ders
     Public Shared Sub DersEkle(ByVal ders As Dersler)
         vt.Dersler.Add(ders)
