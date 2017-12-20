@@ -163,13 +163,13 @@ Public Class AnaEkranForm
         For i As Integer = 0 To seciliSiniflar.Count - 1
             Dim dbEklenecekListe As New Liste
 
-            dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler)
-            dbEklenecekListe.Sinav.Dersler.DersAdi = listeler(i).PDersAdi
-            dbEklenecekListe.Sinav.SinavTuru = listeler(i).PSinavTur
-            dbEklenecekListe.Sinav.Yillar.Yil = listeler(i).PTarih.ToString()
-            dbEklenecekListe.Asistan.AsistanAdi = listeler(i).PAsistanAdi
-            dbEklenecekListe.Derslik.DerslikAdi = listeler(i).PDersAdi
-            database.ogrenciListesiEkle(dbEklenecekListe)
+            'dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler)
+            'dbEklenecekListe.Sinav.Dersler.DersAdi = listeler(i).PDersAdi
+            'dbEklenecekListe.Sinav.SinavTuru = listeler(i).PSinavTur
+            'dbEklenecekListe.Sinav.Yillar.Yil = listeler(i).PTarih.ToString()
+            'dbEklenecekListe.Asistan.AsistanAdi = listeler(i).PAsistanAdi
+            'dbEklenecekListe.Derslik.DerslikAdi = listeler(i).PDersAdi
+            'database.ogrenciListesiEkle(dbEklenecekListe)
         Next
 
         MessageBox.Show("İşleminiz başarı ile gerçekleştirildi")

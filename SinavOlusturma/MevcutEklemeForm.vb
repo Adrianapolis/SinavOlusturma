@@ -16,16 +16,6 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
                     BtnGeri.Visible = False
                     BtnDevam.Text = "Devam"
-                    DataGridView2.Columns(0).HeaderCell.Value = "Ders Adı"
-                    'veri tabınına ekleme kısmı
-                    Try
-                        Dim eklenecekDers As New Dersler
-                        eklenecekDers.DersAdi = LblAdiGiriniz.Text
-                        eklenecekDers.DersKodu = LblKoduGiriniz.Text
-                        database.DersEkle(eklenecekDers)
-                    Catch ex As Exception
-
-                    End Try
 
 
                 ElseIf (durumlar(1) = 1) Then
@@ -34,33 +24,13 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Kapasite Giriniz:"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Devam"
-                    DataGridView2.Columns(0).HeaderCell.Value = "Derslik Adı"
-                    'veri tabanına ekleme kısmı
-                    Try
-                        Dim eklenecekDerslik As New Derslik
-                        eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
-                        eklenecekDerslik.Kapasite = TbKoduGiriniz.Text
-                        database.DerslikEkle(eklenecekDerslik)
-                    Catch ex As Exception
-
-                    End Try
 
                 ElseIf (durumlar(1) = 2) Then
                     LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
                     LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                     LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                     BtnGeri.Visible = True
-                    DataGridView2.Columns(0).HeaderCell.Value = "Asistan Adı"
                     BtnDevam.Text = "Bitir"
-                    'veri tabanına ekleme kısmı
-                    Try
-                        Dim eklenecekAsistan As New Asistan
-                        eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
-                        eklenecekAsistan.Mail = TbKoduGiriniz.Text
-                        database.AsistanEkle(eklenecekAsistan)
-                    Catch ex As Exception
-
-                    End Try
 
 
                 End If
@@ -101,16 +71,6 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
                     BtnGeri.Visible = False
                     BtnDevam.Text = "Devam"
-                    DataGridView2.Columns(1).HeaderCell.Value = "Ders Adı"
-                    'veri tabınına ekleme kısmı
-                    Try
-                        Dim eklenecekDers As New Dersler
-                        eklenecekDers.DersAdi = LblAdiGiriniz.Text
-                        eklenecekDers.DersKodu = LblKoduGiriniz.Text
-                        database.DersEkle(eklenecekDers)
-                    Catch ex As Exception
-
-                    End Try
 
 
                 ElseIf (durumlar(1) = 1) Then
@@ -119,16 +79,6 @@ Public Class MevcutEklemeForm
                     LblKoduGiriniz.Text = "Kapasite Giriniz:"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Devam"
-                    DataGridView2.Columns(1).HeaderCell.Value = "Derslik Adı"
-                    'veri tabanına ekleme kısmı
-                    Try
-                        Dim eklenecekDerslik As New Derslik
-                        eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
-                        eklenecekDerslik.Kapasite = TbKoduGiriniz.Text
-                        database.DerslikEkle(eklenecekDerslik)
-                    Catch ex As Exception
-
-                    End Try
 
 
                 ElseIf (durumlar(1) = 2) Then
@@ -136,17 +86,7 @@ Public Class MevcutEklemeForm
                     LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                     LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                     BtnGeri.Visible = True
-                    DataGridView2.Columns(1).HeaderCell.Value = "Asistan Adı"
                     BtnDevam.Text = "Bitir"
-                    'veri tabanına ekleme kısmı
-                    Try
-                        Dim eklenecekAsistan As New Asistan
-                        eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
-                        eklenecekAsistan.Mail = TbKoduGiriniz.Text
-                        database.AsistanEkle(eklenecekAsistan)
-                    Catch ex As Exception
-
-                    End Try
 
                 End If
             Else 'İlk sayfadaysa  /BU KOD SİLİNEBİLİR
@@ -181,15 +121,6 @@ Public Class MevcutEklemeForm
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Devam"
                 DataGridView2.Columns(1).HeaderCell.Value = "Ders Adı"
-                'veri tabınına ekleme kısmı
-                Try
-                    Dim eklenecekDers As New Dersler
-                    eklenecekDers.DersAdi = LblAdiGiriniz.Text
-                    eklenecekDers.DersKodu = LblKoduGiriniz.Text
-                    database.DersEkle(eklenecekDers)
-                Catch ex As Exception
-
-                End Try
 
 
             ElseIf (durumlar(1) = 1) Then
@@ -198,16 +129,6 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Kapasite Giriniz:"
                 BtnGeri.Visible = True
                 BtnDevam.Text = "Devam"
-                DataGridView2.Columns(1).HeaderCell.Value = "Derslik Adı"
-                'veri tabanına ekleme kısmı
-                Try
-                    Dim eklenecekDerslik As New Derslik
-                    eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
-                    eklenecekDerslik.Kapasite = TbKoduGiriniz.Text
-                    database.DerslikEkle(eklenecekDerslik)
-                Catch ex As Exception
-
-                End Try
 
 
             ElseIf (durumlar(1) = 2) Then
@@ -215,17 +136,7 @@ Public Class MevcutEklemeForm
                 LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                 LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                 BtnGeri.Visible = True
-                DataGridView2.Columns(1).HeaderCell.Value = "Asistan Adı"
                 BtnDevam.Text = "Bitir"
-                'veri tabanına ekleme kısmı
-                Try
-                    Dim eklenecekAsistan As New Asistan
-                    eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
-                    eklenecekAsistan.Mail = TbKoduGiriniz.Text
-                    database.AsistanEkle(eklenecekAsistan)
-                Catch ex As Exception
-
-                End Try
 
 
             End If
@@ -237,16 +148,6 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
-                'DataGridView2.Columns(1).HeaderCell.Value = "Ders Adı"
-                'veri tabınına ekleme kısmı
-                Try
-                    Dim eklenecekDers As New Dersler
-                    eklenecekDers.DersAdi = LblAdiGiriniz.Text
-                    eklenecekDers.DersKodu = LblKoduGiriniz.Text
-                    database.DersEkle(eklenecekDers)
-                Catch ex As Exception
-
-                End Try
 
 
             ElseIf (durumlar(1) = 1) Then
@@ -255,16 +156,6 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Kapasite Giriniz:"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
-                DataGridView2.Columns(1).HeaderCell.Value = "Derslik Adı"
-                'veri tabanına ekleme kısmı
-                Try
-                    Dim eklenecekDerslik As New Derslik
-                    eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
-                    eklenecekDerslik.Kapasite = TbKoduGiriniz.Text
-                    database.DerslikEkle(eklenecekDerslik)
-                Catch ex As Exception
-
-                End Try
 
 
             ElseIf (durumlar(1) = 2) Then
@@ -273,17 +164,7 @@ Public Class MevcutEklemeForm
                 LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
-                DataGridView2.Columns(1).HeaderCell.Value = "Asistan Adı"
-                'veri tabanına ekleme kısmı
-                Try
-                    Dim eklenecekAsistan As New Asistan
-                    eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
-                    eklenecekAsistan.Mail = TbKoduGiriniz.Text
-                    database.AsistanEkle(eklenecekAsistan)
-                    DataGridView2.Refresh()
-                Catch ex As Exception
 
-                End Try
 
 
             End If
@@ -294,6 +175,22 @@ Public Class MevcutEklemeForm
 
     Private Sub BtnEkle_Click(sender As Object, e As EventArgs) Handles BtnEkle.Click
         'Me.DataGridView1.Rows.Add("X", TbAdiGiriniz.Text)
+        If durumlar(1) = 0 Then 'ders
+            Dim eklenecekDers As New Dersler
+            eklenecekDers.DersAdi = TbAdiGiriniz.Text
+            eklenecekDers.DersKodu = TbKoduGiriniz.Text
+            database.DersEkle(eklenecekDers)
+        ElseIf durumlar(1) = 1 Then 'derslik
+            Dim eklenecekDerslik As New Derslik
+            eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
+            eklenecekDerslik.Kapasite = TbKoduGiriniz.Text
+            database.DerslikEkle(eklenecekDerslik)
+        ElseIf durumlar(1) = 2 Then 'asistan
+            Dim eklenecekAsistan As New Asistan
+            eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
+            eklenecekAsistan.Mail = TbKoduGiriniz.Text
+            database.AsistanEkle(eklenecekAsistan)
+        End If
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
