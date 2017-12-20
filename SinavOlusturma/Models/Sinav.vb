@@ -19,7 +19,7 @@ Partial Public Class Sinav
 
     Public Overridable Property Dersler As Dersler
     Public Overridable Property Donem As Donem
-    Public Overridable Property Listes As ICollection(Of Liste) = New HashSet(Of Liste)
+    Public Overridable Property Liste As ICollection(Of Liste) = New HashSet(Of Liste)
     Public Overridable Property Tarihler As Tarihler
 
 End Class

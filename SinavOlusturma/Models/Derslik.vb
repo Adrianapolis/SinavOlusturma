@@ -15,6 +15,6 @@ Partial Public Class Derslik
     Public Property DerslikAdi As String
     Public Property Kapasite As Integer
 
-    Public Overridable Property Listes As ICollection(Of Liste) = New HashSet(Of Liste)
+    Public Overridable Property Liste As ICollection(Of Liste) = New HashSet(Of Liste)
 
 End Class

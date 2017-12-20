@@ -28,6 +28,6 @@ Partial Public Class gorseldbEntities
     Public Overridable Property Donem() As DbSet(Of Donem)
     Public Overridable Property Liste() As DbSet(Of Liste)
     Public Overridable Property Sinav() As DbSet(Of Sinav)
-    Public Overridable Property Yillar() As DbSet(Of Yillar)
+    Public Overridable Property Tarihler() As DbSet(Of Tarihler)
 
 End Class

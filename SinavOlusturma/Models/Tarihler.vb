@@ -14,6 +14,6 @@ Partial Public Class Tarihler
     Public Property TarihID As Integer
     Public Property Tarih As Date
 
-    Public Overridable Property Sinavs As ICollection(Of Sinav) = New HashSet(Of Sinav)
+    Public Overridable Property Sinav As ICollection(Of Sinav) = New HashSet(Of Sinav)
 
 End Class

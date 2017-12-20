@@ -111,19 +111,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Asistan.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Dersler.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Derslik.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donem.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Liste.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LocalVeriTabani.Context.vb">
       <AutoGen>True</AutoGen>
@@ -141,13 +141,13 @@
       <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sinav.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.vb">
+    <Compile Include="Models\sysdiagrams.vb">
       <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tarihler.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\veritabani.Context.vb">
       <AutoGen>True</AutoGen>
@@ -162,9 +162,6 @@
     <Compile Include="Models\veritabani.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>veritabani.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Yillar.vb">
       <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -205,10 +202,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\veritabani.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>veritabani.Designer.vb</LastGenOutput>
-    </EntityDeploy>
     <EntityDeploy Include="Models\LocalVeriTabani.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LocalVeriTabani.Designer.vb</LastGenOutput>
@@ -216,6 +209,10 @@
     <None Include="Models\LocalVeriTabani.edmx.diagram">
       <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="Models\veritabani.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>veritabani.Designer.vb</LastGenOutput>
+    </EntityDeploy>
     <None Include="Models\veritabani.edmx.diagram">
       <DependentUpon>veritabani.edmx</DependentUpon>
     </None>
@@ -228,7 +225,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

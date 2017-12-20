@@ -202,7 +202,7 @@
           <Property Name="AsistanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AsistanAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Listes" Relationship="Self.FK_Liste_Asistan" FromRole="Asistan" ToRole="Liste" />
+          <NavigationProperty Name="Liste" Relationship="Self.FK_Liste_Asistan" FromRole="Asistan" ToRole="Liste" />
         </EntityType>
         <EntityType Name="Dersler">
           <Key>
@@ -210,7 +210,7 @@
           </Key>
           <Property Name="DersKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Sinavs" Relationship="Self.FK_Sinav_Sinav" FromRole="Dersler" ToRole="Sinav" />
+          <NavigationProperty Name="Sinav" Relationship="Self.FK_Sinav_Sinav" FromRole="Dersler" ToRole="Sinav" />
         </EntityType>
         <EntityType Name="Derslik">
           <Key>
@@ -219,7 +219,7 @@
           <Property Name="DerslikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DerslikAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Kapasite" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Listes" Relationship="Self.FK_Liste_Derslik" FromRole="Derslik" ToRole="Liste" />
+          <NavigationProperty Name="Liste" Relationship="Self.FK_Liste_Derslik" FromRole="Derslik" ToRole="Liste" />
         </EntityType>
         <EntityType Name="Donem">
           <Key>
@@ -227,7 +227,7 @@
           </Key>
           <Property Name="DonemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DonemAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Sinavs" Relationship="Self.FK_Sinav_Donem" FromRole="Donem" ToRole="Sinav" />
+          <NavigationProperty Name="Sinav" Relationship="Self.FK_Sinav_Donem" FromRole="Donem" ToRole="Sinav" />
         </EntityType>
         <EntityType Name="Liste">
           <Key>
@@ -253,10 +253,10 @@
           <Property Name="SinavTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Dersler" Relationship="Self.FK_Sinav_Sinav" FromRole="Sinav" ToRole="Dersler" />
           <NavigationProperty Name="Donem" Relationship="Self.FK_Sinav_Donem" FromRole="Sinav" ToRole="Donem" />
-          <NavigationProperty Name="Listes" Relationship="Self.FK_Liste_Sinav" FromRole="Sinav" ToRole="Liste" />
+          <NavigationProperty Name="Liste" Relationship="Self.FK_Liste_Sinav" FromRole="Sinav" ToRole="Liste" />
           <NavigationProperty Name="Tarihler" Relationship="Self.FK_Sinav_Tarihler" FromRole="Sinav" ToRole="Tarihler" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -272,7 +272,7 @@
           </Key>
           <Property Name="TarihID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Sinavs" Relationship="Self.FK_Sinav_Tarihler" FromRole="Tarihler" ToRole="Sinav" />
+          <NavigationProperty Name="Sinav" Relationship="Self.FK_Sinav_Tarihler" FromRole="Tarihler" ToRole="Sinav" />
         </EntityType>
         <Association Name="FK_Liste_Asistan">
           <End Role="Asistan" Type="Self.Asistan" Multiplicity="1">
@@ -359,37 +359,37 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="GorselDBEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Asistans" EntityType="Self.Asistan" />
-          <EntitySet Name="Derslers" EntityType="Self.Dersler" />
-          <EntitySet Name="Dersliks" EntityType="Self.Derslik" />
-          <EntitySet Name="Donems" EntityType="Self.Donem" />
-          <EntitySet Name="Listes" EntityType="Self.Liste" />
-          <EntitySet Name="Sinavs" EntityType="Self.Sinav" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="Tarihlers" EntityType="Self.Tarihler" />
+          <EntitySet Name="Asistan" EntityType="Self.Asistan" />
+          <EntitySet Name="Dersler" EntityType="Self.Dersler" />
+          <EntitySet Name="Derslik" EntityType="Self.Derslik" />
+          <EntitySet Name="Donem" EntityType="Self.Donem" />
+          <EntitySet Name="Liste" EntityType="Self.Liste" />
+          <EntitySet Name="Sinav" EntityType="Self.Sinav" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Tarihler" EntityType="Self.Tarihler" />
           <AssociationSet Name="FK_Liste_Asistan" Association="Self.FK_Liste_Asistan">
-            <End Role="Asistan" EntitySet="Asistans" />
-            <End Role="Liste" EntitySet="Listes" />
+            <End Role="Asistan" EntitySet="Asistan" />
+            <End Role="Liste" EntitySet="Liste" />
           </AssociationSet>
           <AssociationSet Name="FK_Sinav_Sinav" Association="Self.FK_Sinav_Sinav">
-            <End Role="Dersler" EntitySet="Derslers" />
-            <End Role="Sinav" EntitySet="Sinavs" />
+            <End Role="Dersler" EntitySet="Dersler" />
+            <End Role="Sinav" EntitySet="Sinav" />
           </AssociationSet>
           <AssociationSet Name="FK_Liste_Derslik" Association="Self.FK_Liste_Derslik">
-            <End Role="Derslik" EntitySet="Dersliks" />
-            <End Role="Liste" EntitySet="Listes" />
+            <End Role="Derslik" EntitySet="Derslik" />
+            <End Role="Liste" EntitySet="Liste" />
           </AssociationSet>
           <AssociationSet Name="FK_Sinav_Donem" Association="Self.FK_Sinav_Donem">
-            <End Role="Donem" EntitySet="Donems" />
-            <End Role="Sinav" EntitySet="Sinavs" />
+            <End Role="Donem" EntitySet="Donem" />
+            <End Role="Sinav" EntitySet="Sinav" />
           </AssociationSet>
           <AssociationSet Name="FK_Liste_Sinav" Association="Self.FK_Liste_Sinav">
-            <End Role="Sinav" EntitySet="Sinavs" />
-            <End Role="Liste" EntitySet="Listes" />
+            <End Role="Sinav" EntitySet="Sinav" />
+            <End Role="Liste" EntitySet="Liste" />
           </AssociationSet>
           <AssociationSet Name="FK_Sinav_Tarihler" Association="Self.FK_Sinav_Tarihler">
-            <End Role="Tarihler" EntitySet="Tarihlers" />
-            <End Role="Sinav" EntitySet="Sinavs" />
+            <End Role="Tarihler" EntitySet="Tarihler" />
+            <End Role="Sinav" EntitySet="Sinav" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -398,7 +398,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GorselDBModelStoreContainer" CdmEntityContainer="GorselDBEntities1">
-          <EntitySetMapping Name="Asistans">
+          <EntitySetMapping Name="Asistan">
             <EntityTypeMapping TypeName="GorselDBModel.Asistan">
               <MappingFragment StoreEntitySet="Asistan">
                 <ScalarProperty Name="AsistanID" ColumnName="AsistanID" />
@@ -407,7 +407,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Derslers">
+          <EntitySetMapping Name="Dersler">
             <EntityTypeMapping TypeName="GorselDBModel.Dersler">
               <MappingFragment StoreEntitySet="Dersler">
                 <ScalarProperty Name="DersKodu" ColumnName="DersKodu" />
@@ -415,7 +415,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Dersliks">
+          <EntitySetMapping Name="Derslik">
             <EntityTypeMapping TypeName="GorselDBModel.Derslik">
               <MappingFragment StoreEntitySet="Derslik">
                 <ScalarProperty Name="DerslikID" ColumnName="DerslikID" />
@@ -424,7 +424,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Donems">
+          <EntitySetMapping Name="Donem">
             <EntityTypeMapping TypeName="GorselDBModel.Donem">
               <MappingFragment StoreEntitySet="Donem">
                 <ScalarProperty Name="DonemID" ColumnName="DonemID" />
@@ -432,7 +432,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Listes">
+          <EntitySetMapping Name="Liste">
             <EntityTypeMapping TypeName="GorselDBModel.Liste">
               <MappingFragment StoreEntitySet="Liste">
                 <ScalarProperty Name="ListeID" ColumnName="ListeID" />
@@ -443,7 +443,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Sinavs">
+          <EntitySetMapping Name="Sinav">
             <EntityTypeMapping TypeName="GorselDBModel.Sinav">
               <MappingFragment StoreEntitySet="Sinav">
                 <ScalarProperty Name="SinavID" ColumnName="SinavID" />
@@ -455,7 +455,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="GorselDBModel.sysdiagram">
+            <EntityTypeMapping TypeName="GorselDBModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -465,7 +465,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tarihlers">
+          <EntitySetMapping Name="Tarihler">
             <EntityTypeMapping TypeName="GorselDBModel.Tarihler">
               <MappingFragment StoreEntitySet="Tarihler">
                 <ScalarProperty Name="TarihID" ColumnName="TarihID" />
@@ -487,7 +487,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
