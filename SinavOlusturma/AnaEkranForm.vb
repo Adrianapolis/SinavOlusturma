@@ -42,11 +42,14 @@ Public Class AnaEkranForm
             If ulasilanAsistan.Checked And secilenAsistanSayi < secilenSinifsayi Then
                 seciliAsistanlar.Add(ulasilanAsistan.Text)
                 secilenAsistanSayi = secilenAsistanSayi + 1
+                LbAsistanSecilecekSayi.Text = secilenAsistanSayi
             ElseIf ulasilanAsistan.Checked = False Then
                 seciliAsistanlar.Remove(ulasilanAsistan.Text)
                 secilenAsistanSayi = secilenAsistanSayi - 1
+                LbAsistanSecilecekSayi.Text = secilenAsistanSayi
             ElseIf secilenAsistanSayi >= secilenSinifsayi Then
                 ulasilanAsistan.Checked = False
+                LbAsistanSecilecekSayi.Text = secilenAsistanSayi
             End If
         End If
     End Sub
