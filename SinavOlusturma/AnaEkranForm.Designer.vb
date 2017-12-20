@@ -22,14 +22,14 @@ Partial Class AnaEkranForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
-        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
-        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
-        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode9, TreeNode10, TreeNode11})
-        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
-        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
-        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14})
-        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode12, TreeNode15})
+        Dim TreeNode33 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
+        Dim TreeNode34 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
+        Dim TreeNode35 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
+        Dim TreeNode36 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode33, TreeNode34, TreeNode35})
+        Dim TreeNode37 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
+        Dim TreeNode38 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
+        Dim TreeNode39 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode37, TreeNode38})
+        Dim TreeNode40 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode36, TreeNode39})
         Me.BtnYeniSinav = New System.Windows.Forms.Button()
         Me.BtnMevcudat = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -56,6 +56,7 @@ Partial Class AnaEkranForm
         Me.LbOgrenciSayiGoster = New System.Windows.Forms.Label()
         Me.LbOgrenciSayiBilgi = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.cbDonemSec = New System.Windows.Forms.ComboBox()
         Me.CbTurSecim = New System.Windows.Forms.ComboBox()
         Me.CbDersSecim = New System.Windows.Forms.ComboBox()
         Me.BtnSinavOlustur = New System.Windows.Forms.Button()
@@ -64,7 +65,6 @@ Partial Class AnaEkranForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.cbDonemSec = New System.Windows.Forms.ComboBox()
         Me.GbAnaSayfa.SuspendLayout()
         Me.GbMevcudatDuzenle.SuspendLayout()
         Me.GbYeniSinavOlustur.SuspendLayout()
@@ -145,23 +145,23 @@ Partial Class AnaEkranForm
         Me.TreeView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TreeView1.Location = New System.Drawing.Point(782, 234)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode9.Name = "Node2"
-        TreeNode9.Text = "C"
-        TreeNode10.Name = "Node3"
-        TreeNode10.Text = "Görsel"
-        TreeNode11.Name = "Node5"
-        TreeNode11.Text = "Mat2"
-        TreeNode12.Name = "Node1"
-        TreeNode12.Text = "Vize"
-        TreeNode13.Name = "Node7"
-        TreeNode13.Text = "PDG"
-        TreeNode14.Name = "Node9"
-        TreeNode14.Text = "Görsel Programlama"
-        TreeNode15.Name = "Node6"
-        TreeNode15.Text = "Veri Yapıları"
-        TreeNode16.Name = "Node0"
-        TreeNode16.Text = "2017"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16})
+        TreeNode33.Name = "Node2"
+        TreeNode33.Text = "C"
+        TreeNode34.Name = "Node3"
+        TreeNode34.Text = "Görsel"
+        TreeNode35.Name = "Node5"
+        TreeNode35.Text = "Mat2"
+        TreeNode36.Name = "Node1"
+        TreeNode36.Text = "Vize"
+        TreeNode37.Name = "Node7"
+        TreeNode37.Text = "PDG"
+        TreeNode38.Name = "Node9"
+        TreeNode38.Text = "Görsel Programlama"
+        TreeNode39.Name = "Node6"
+        TreeNode39.Text = "Veri Yapıları"
+        TreeNode40.Name = "Node0"
+        TreeNode40.Text = "2017"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode40})
         Me.TreeView1.Size = New System.Drawing.Size(240, 292)
         Me.TreeView1.TabIndex = 6
         '
@@ -376,6 +376,18 @@ Partial Class AnaEkranForm
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 10
+        Me.DateTimePicker1.Value = New Date(2017, 12, 22, 0, 0, 0, 0)
+        '
+        'cbDonemSec
+        '
+        Me.cbDonemSec.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cbDonemSec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbDonemSec.FormattingEnabled = True
+        Me.cbDonemSec.Items.AddRange(New Object() {"Vize", "Final", "Bütünleme"})
+        Me.cbDonemSec.Location = New System.Drawing.Point(400, 277)
+        Me.cbDonemSec.Name = "cbDonemSec"
+        Me.cbDonemSec.Size = New System.Drawing.Size(187, 21)
+        Me.cbDonemSec.TabIndex = 9
         '
         'CbTurSecim
         '
@@ -452,17 +464,6 @@ Partial Class AnaEkranForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'cbDonemSec
-        '
-        Me.cbDonemSec.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cbDonemSec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbDonemSec.FormattingEnabled = True
-        Me.cbDonemSec.Items.AddRange(New Object() {"Vize", "Final", "Bütünleme"})
-        Me.cbDonemSec.Location = New System.Drawing.Point(400, 277)
-        Me.cbDonemSec.Name = "cbDonemSec"
-        Me.cbDonemSec.Size = New System.Drawing.Size(187, 21)
-        Me.cbDonemSec.TabIndex = 9
-        '
         'AnaEkranForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -501,7 +502,6 @@ Partial Class AnaEkranForm
     Friend WithEvents GbOgrenciDosya As GroupBox
     Friend WithEvents LbOgrenciSayiGoster As Label
     Friend WithEvents LbOgrenciSayiBilgi As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents CbTurSecim As ComboBox
     Friend WithEvents CbDersSecim As ComboBox
     Friend WithEvents BtnSinavOlusturIptal As Button
@@ -522,4 +522,5 @@ Partial Class AnaEkranForm
     Friend WithEvents btnListeEkle As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents cbDonemSec As ComboBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

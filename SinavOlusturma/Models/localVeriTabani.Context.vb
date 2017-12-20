@@ -22,13 +22,13 @@ Partial Public Class GorselDBEntities1
         Throw New UnintentionalCodeFirstException()
     End Sub
 
-    Public Overridable Property Asistan() As DbSet(Of Asistan)
-    Public Overridable Property Dersler() As DbSet(Of Dersler)
-    Public Overridable Property Derslik() As DbSet(Of Derslik)
-    Public Overridable Property Donem() As DbSet(Of Donem)
-    Public Overridable Property Liste() As DbSet(Of Liste)
-    Public Overridable Property Sinav() As DbSet(Of Sinav)
-    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
-    Public Overridable Property Tarihler() As DbSet(Of Tarihler)
+    Public Overridable Property Asistans() As DbSet(Of Asistan)
+    Public Overridable Property Derslers() As DbSet(Of Dersler)
+    Public Overridable Property Dersliks() As DbSet(Of Derslik)
+    Public Overridable Property Donems() As DbSet(Of Donem)
+    Public Overridable Property Listes() As DbSet(Of Liste)
+    Public Overridable Property Sinavs() As DbSet(Of Sinav)
+    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagram)
+    Public Overridable Property Tarihlers() As DbSet(Of Tarihler)
 
 End Class

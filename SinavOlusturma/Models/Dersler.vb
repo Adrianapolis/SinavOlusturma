@@ -14,6 +14,6 @@ Partial Public Class Dersler
     Public Property DersKodu As String
     Public Property DersAdi As String
 
-    Public Overridable Property Sinav As ICollection(Of Sinav) = New HashSet(Of Sinav)
+    Public Overridable Property Sinavs As ICollection(Of Sinav) = New HashSet(Of Sinav)
 
 End Class

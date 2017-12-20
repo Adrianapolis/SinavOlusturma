@@ -15,6 +15,6 @@ Partial Public Class Asistan
     Public Property AsistanAdi As String
     Public Property Mail As String
 
-    Public Overridable Property Liste As ICollection(Of Liste) = New HashSet(Of Liste)
+    Public Overridable Property Listes As ICollection(Of Liste) = New HashSet(Of Liste)
 
 End Class

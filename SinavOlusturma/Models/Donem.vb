@@ -14,6 +14,6 @@ Partial Public Class Donem
     Public Property DonemID As Integer
     Public Property DonemAdi As String
 
-    Public Overridable Property Sinav As ICollection(Of Sinav) = New HashSet(Of Sinav)
+    Public Overridable Property Sinavs As ICollection(Of Sinav) = New HashSet(Of Sinav)
 
 End Class

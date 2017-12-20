@@ -124,6 +124,7 @@ Public Class AnaEkranForm
             gecici.PTarih = DateTimePicker1.Value
             gecici.PDonem = cbDonemSec.SelectedItem.ToString()
             listeler.Add(gecici)
+
         Next
         'yaratılan liste objelerine öğrenciler atanıyor
         For i As Integer = 0 To ogrenciSayisi
@@ -162,7 +163,11 @@ Public Class AnaEkranForm
         Dim OlusturulanSinav As New Sinav
         OlusturulanSinav.DersKodu = database.DersKoduGetir(listeler(0).PDersAdi)
         OlusturulanSinav.DonemID = database.DonemIDGetir(listeler(0).PDonem)
+        OlusturulanSinav.SinavTuru = listeler(0).PSinavTur
+        OlusturulanSinav.TarihID = database.TarihIDGetir(listeler(0).PTarih)
+        database.SinavEkle(OlusturulanSinav)
 
+        Dim SinavID = database.SinavIDGetir(OlusturulanSinav.DersKodu, OlusturulanSinav.TarihID)
         'LİSTE 0 IN SINAV İLE İLGİLİ OLAN KISIMLARINI AT
         'EKLENEN SINAVIN IDSİNİ ELDE ET
 
@@ -170,14 +175,11 @@ Public Class AnaEkranForm
 
         For i As Integer = 0 To seciliSiniflar.Count - 1
             Dim dbEklenecekListe As New Liste
-            'dbEklenecekListe.SinavID
-            'dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler)
-            'dbEklenecekListe.Sinav.Dersler.DersAdi = listeler(i).PDersAdi
-            'dbEklenecekListe.Sinav.SinavTuru = listeler(i).PSinavTur
-            'dbEklenecekListe.Sinav.Yillar.Yil = listeler(i).PTarih.ToString()
-            'dbEklenecekListe.Asistan.AsistanAdi = listeler(i).PAsistanAdi
-            'dbEklenecekListe.Derslik.DerslikAdi = listeler(i).PDersAdi
-            'database.ogrenciListesiEkle(dbEklenecekListe)
+            dbEklenecekListe.SinavID = SinavID
+            dbEklenecekListe.DerslikID = database.derslikIDGetir(listeler(i).PSinifAdi)
+            dbEklenecekListe.AsistanID = database.AsistanIDGetir(listeler(i).PAsistanAdi)
+            dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler).ToString()
+            database.ListeEkle(dbEklenecekListe)
         Next
 
         MessageBox.Show("İşleminiz başarı ile gerçekleştirildi")

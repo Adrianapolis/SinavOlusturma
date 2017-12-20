@@ -143,7 +143,7 @@
     <Compile Include="Models\Sinav.vb">
       <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagrams.vb">
+    <Compile Include="Models\sysdiagram.vb">
       <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tarihler.vb">

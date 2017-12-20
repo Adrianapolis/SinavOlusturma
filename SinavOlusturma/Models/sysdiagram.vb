@@ -10,7 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class sysdiagrams
+Partial Public Class sysdiagram
     Public Property name As String
     Public Property principal_id As Integer
     Public Property diagram_id As Integer
