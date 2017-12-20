@@ -111,40 +111,43 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Asistan.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Dersler.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Derslik.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donem.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Liste.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\localVeriTabani.Context.vb">
+    <Compile Include="Models\LocalVeriTabani.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>localVeriTabani.Context.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\localVeriTabani.Designer.vb">
+    <Compile Include="Models\LocalVeriTabani.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>localVeriTabani.edmx</DependentUpon>
+      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\localVeriTabani.vb">
+    <Compile Include="Models\LocalVeriTabani.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>localVeriTabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sinav.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.vb">
-      <DependentUpon>localVeriTabani.tt</DependentUpon>
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tarihler.vb">
+      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\veritabani.Context.vb">
       <AutoGen>True</AutoGen>
@@ -202,17 +205,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\localVeriTabani.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>localVeriTabani.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\localVeriTabani.edmx.diagram">
-      <DependentUpon>localVeriTabani.edmx</DependentUpon>
-    </None>
     <EntityDeploy Include="Models\veritabani.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>veritabani.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Models\LocalVeriTabani.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LocalVeriTabani.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\LocalVeriTabani.edmx.diagram">
+      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
+    </None>
     <None Include="Models\veritabani.edmx.diagram">
       <DependentUpon>veritabani.edmx</DependentUpon>
     </None>
@@ -229,15 +232,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\localVeriTabani.Context.tt">
+    <Content Include="Models\LocalVeriTabani.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>localVeriTabani.edmx</DependentUpon>
-      <LastGenOutput>localVeriTabani.Context.vb</LastGenOutput>
+      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
+      <LastGenOutput>LocalVeriTabani.Context.vb</LastGenOutput>
     </Content>
-    <Content Include="Models\localVeriTabani.tt">
+    <Content Include="Models\LocalVeriTabani.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>localVeriTabani.edmx</DependentUpon>
-      <LastGenOutput>localVeriTabani.vb</LastGenOutput>
+      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
+      <LastGenOutput>LocalVeriTabani.vb</LastGenOutput>
     </Content>
     <Content Include="Models\veritabani.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

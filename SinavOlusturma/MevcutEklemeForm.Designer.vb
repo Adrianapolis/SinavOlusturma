@@ -33,6 +33,8 @@ Partial Class MevcutEklemeForm
         Me.BtnGeri = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnKaydet = New System.Windows.Forms.Button()
+        Me.btnİptal = New System.Windows.Forms.Button()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -121,6 +123,7 @@ Partial Class MevcutEklemeForm
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Sil})
         Me.DataGridView2.Location = New System.Drawing.Point(485, 67)
         Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.Size = New System.Drawing.Size(483, 323)
         Me.DataGridView2.TabIndex = 10
         '
@@ -129,11 +132,33 @@ Partial Class MevcutEklemeForm
         Me.Sil.HeaderText = "Sil"
         Me.Sil.Name = "Sil"
         '
+        'btnKaydet
+        '
+        Me.btnKaydet.Location = New System.Drawing.Point(272, 328)
+        Me.btnKaydet.Name = "btnKaydet"
+        Me.btnKaydet.Size = New System.Drawing.Size(75, 23)
+        Me.btnKaydet.TabIndex = 11
+        Me.btnKaydet.Text = "Kaydet"
+        Me.btnKaydet.UseVisualStyleBackColor = True
+        Me.btnKaydet.Visible = False
+        '
+        'btnİptal
+        '
+        Me.btnİptal.Location = New System.Drawing.Point(184, 328)
+        Me.btnİptal.Name = "btnİptal"
+        Me.btnİptal.Size = New System.Drawing.Size(75, 23)
+        Me.btnİptal.TabIndex = 12
+        Me.btnİptal.Text = "İptal"
+        Me.btnİptal.UseVisualStyleBackColor = True
+        Me.btnİptal.Visible = False
+        '
         'MevcutEklemeForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(991, 572)
+        Me.Controls.Add(Me.btnİptal)
+        Me.Controls.Add(Me.btnKaydet)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.BtnGeri)
         Me.Controls.Add(Me.Label4)
@@ -164,4 +189,6 @@ Partial Class MevcutEklemeForm
     Friend WithEvents BtnGeri As Button
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Sil As DataGridViewButtonColumn
+    Friend WithEvents btnKaydet As Button
+    Friend WithEvents btnİptal As Button
 End Class

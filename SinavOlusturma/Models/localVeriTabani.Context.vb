@@ -29,6 +29,6 @@ Partial Public Class GorselDBEntities1
     Public Overridable Property Liste() As DbSet(Of Liste)
     Public Overridable Property Sinav() As DbSet(Of Sinav)
     Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
-    Public Overridable Property Yillar() As DbSet(Of Yillar)
+    Public Overridable Property Tarihler() As DbSet(Of Tarihler)
 
 End Class

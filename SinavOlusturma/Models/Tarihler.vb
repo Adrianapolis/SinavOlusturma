@@ -10,16 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Sinav
-    Public Property SinavID As Integer
-    Public Property DersKodu As String
-    Public Property DonemID As Integer
+Partial Public Class Tarihler
     Public Property TarihID As Integer
-    Public Property SinavTuru As String
+    Public Property Tarih As Date
 
-    Public Overridable Property Dersler As Dersler
-    Public Overridable Property Donem As Donem
-    Public Overridable Property Liste As ICollection(Of Liste) = New HashSet(Of Liste)
-    Public Overridable Property Tarihler As Tarihler
+    Public Overridable Property Sinav As ICollection(Of Sinav) = New HashSet(Of Sinav)
 
 End Class

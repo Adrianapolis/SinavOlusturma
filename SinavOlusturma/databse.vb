@@ -18,6 +18,7 @@ Public Class database
         vt.Asistan.Remove(silinecek)
         vt.SaveChanges()
     End Sub
+
     'Ders
     Public Shared Sub DersEkle(ByVal ders As Dersler)
         vt.Dersler.Add(ders)
@@ -28,13 +29,16 @@ Public Class database
     End Function
     Public Shared Function DersGrid()
         Return (From x In vt.Dersler
-                Select New With {x.DersKodu, x.DersAdi}).OrderBy(Function(x) x.DersKodu).ToList()
+                Select New With {x.DersAdi, x.DersKodu}).OrderBy(Function(x) x.DersKodu).ToList()
     End Function
     Public Shared Sub DersSil(ByVal Ders As String)
         Dim silinecek As Dersler = vt.Dersler.Where(Function(x) x.DersKodu = Ders).FirstOrDefault()
         vt.Dersler.Remove(silinecek)
         vt.SaveChanges()
     End Sub
+    Public Shared Function DersKoduGetir(ByVal ArananDersAdi As String)
+        Return vt.Dersler.Where(Function(x) x.DersAdi = ArananDersAdi).Select(Function(x) x.DersKodu).FirstOrDefault()
+    End Function
 
     'Derslik
     Public Shared Sub DerslikEkle(ByVal derslik As Derslik)
@@ -67,6 +71,14 @@ Public Class database
     Public Shared Function DonemGetir()
         Return vt.Donem.Select(Function(x) x.DonemAdi).ToList()
     End Function
+    Public Shared Function DonemIDGetir(ByVal arananDonemAdi As String)
+        Return vt.Donem.Where(Function(x) x.DonemAdi = arananDonemAdi).Select(Function(x) x.DonemID).FirstOrDefault()
+    End Function
+    'tarih
+    Public Shared Sub TarihEkle(ByVal eklenecekTarih As Tarihler)
+        vt.Tarihler.Add(eklenecekTarih)
+    End Sub
+
 
 
 End Class

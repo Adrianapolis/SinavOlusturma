@@ -210,7 +210,7 @@ Public Class MevcutEklemeForm
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
         Dim SilinecekIndex As Integer = e.RowIndex
         If durumlar(1) = 0 Then 'ders
-            Dim silinecekDersKodu As String = DataGridView2.Rows(SilinecekIndex).Cells(1).Value.ToString()
+            Dim silinecekDersKodu As String = DataGridView2.Rows(SilinecekIndex).Cells(2).Value.ToString()
             database.DersSil(silinecekDersKodu)
             DataGridView2.DataSource = database.DersGrid
         ElseIf durumlar(1) = 1 Then 'derslik
@@ -224,4 +224,14 @@ Public Class MevcutEklemeForm
         End If
     End Sub
 
+    Private Sub DataGridView2_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentDoubleClick
+        MessageBox.Show("ÇİFT  TIKLADIN REİS")
+
+        Dim duzenlenecekIndex As Integer = e.RowIndex
+        btnKaydet.Visible = True
+        btnİptal.Visible = True
+        BtnEkle.Visible = False
+        TbAdiGiriniz.Text = "Hİ" 'DataGridView2.Rows(duzenlenecekIndex).Cells(1).Value.ToString()
+        TbKoduGiriniz.Text = DataGridView2.Rows(duzenlenecekIndex).Cells(2).Value.ToString()
+    End Sub
 End Class

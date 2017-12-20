@@ -52,7 +52,7 @@
           <Property Name="SinavID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DersKodu" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DonemID" Type="int" Nullable="false" />
-          <Property Name="YilID" Type="int" Nullable="false" />
+          <Property Name="TarihID" Type="int" Nullable="false" />
           <Property Name="SinavTuru" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -65,12 +65,12 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="Yillar">
+        <EntityType Name="Tarihler">
           <Key>
-            <PropertyRef Name="YilID" />
+            <PropertyRef Name="TarihID" />
           </Key>
-          <Property Name="YilID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Yil" Type="int" Nullable="false" />
+          <Property Name="TarihID" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
         </EntityType>
         <Association Name="FK_Liste_Asistan">
           <End Role="Asistan" Type="Self.Asistan" Multiplicity="1">
@@ -142,17 +142,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sinav_Yil">
-          <End Role="Yillar" Type="Self.Yillar" Multiplicity="1">
+        <Association Name="FK_Sinav_Tarihler">
+          <End Role="Tarihler" Type="Self.Tarihler" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Sinav" Type="Self.Sinav" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Yillar">
-              <PropertyRef Name="YilID" />
+            <Principal Role="Tarihler">
+              <PropertyRef Name="TarihID" />
             </Principal>
             <Dependent Role="Sinav">
-              <PropertyRef Name="YilID" />
+              <PropertyRef Name="TarihID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -164,7 +164,7 @@
           <EntitySet Name="Liste" EntityType="Self.Liste" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sinav" EntityType="Self.Sinav" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Yillar" EntityType="Self.Yillar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarihler" EntityType="Self.Tarihler" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Liste_Asistan" Association="Self.FK_Liste_Asistan">
             <End Role="Asistan" EntitySet="Asistan" />
             <End Role="Liste" EntitySet="Liste" />
@@ -185,8 +185,8 @@
             <End Role="Dersler" EntitySet="Dersler" />
             <End Role="Sinav" EntitySet="Sinav" />
           </AssociationSet>
-          <AssociationSet Name="FK_Sinav_Yil" Association="Self.FK_Sinav_Yil">
-            <End Role="Yillar" EntitySet="Yillar" />
+          <AssociationSet Name="FK_Sinav_Tarihler" Association="Self.FK_Sinav_Tarihler">
+            <End Role="Tarihler" EntitySet="Tarihler" />
             <End Role="Sinav" EntitySet="Sinav" />
           </AssociationSet>
         </EntityContainer>
@@ -249,12 +249,12 @@
           <Property Name="SinavID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DersKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DonemID" Type="Int32" Nullable="false" />
-          <Property Name="YilID" Type="Int32" Nullable="false" />
+          <Property Name="TarihID" Type="Int32" Nullable="false" />
           <Property Name="SinavTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Dersler" Relationship="Self.FK_Sinav_Sinav" FromRole="Sinav" ToRole="Dersler" />
           <NavigationProperty Name="Donem" Relationship="Self.FK_Sinav_Donem" FromRole="Sinav" ToRole="Donem" />
           <NavigationProperty Name="Liste" Relationship="Self.FK_Liste_Sinav" FromRole="Sinav" ToRole="Liste" />
-          <NavigationProperty Name="Yillar" Relationship="Self.FK_Sinav_Yil" FromRole="Sinav" ToRole="Yillar" />
+          <NavigationProperty Name="Tarihler" Relationship="Self.FK_Sinav_Tarihler" FromRole="Sinav" ToRole="Tarihler" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -266,13 +266,13 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Yillar">
+        <EntityType Name="Tarihler">
           <Key>
-            <PropertyRef Name="YilID" />
+            <PropertyRef Name="TarihID" />
           </Key>
-          <Property Name="YilID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Yil" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Sinav" Relationship="Self.FK_Sinav_Yil" FromRole="Yillar" ToRole="Sinav" />
+          <Property Name="TarihID" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Sinav" Relationship="Self.FK_Sinav_Tarihler" FromRole="Tarihler" ToRole="Sinav" />
         </EntityType>
         <Association Name="FK_Liste_Asistan">
           <End Role="Asistan" Type="Self.Asistan" Multiplicity="1">
@@ -344,17 +344,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sinav_Yil">
-          <End Role="Yillar" Type="Self.Yillar" Multiplicity="1">
+        <Association Name="FK_Sinav_Tarihler">
+          <End Role="Tarihler" Type="Self.Tarihler" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Sinav" Type="Self.Sinav" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Yillar">
-              <PropertyRef Name="YilID" />
+            <Principal Role="Tarihler">
+              <PropertyRef Name="TarihID" />
             </Principal>
             <Dependent Role="Sinav">
-              <PropertyRef Name="YilID" />
+              <PropertyRef Name="TarihID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -366,7 +366,7 @@
           <EntitySet Name="Liste" EntityType="Self.Liste" />
           <EntitySet Name="Sinav" EntityType="Self.Sinav" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="Yillar" EntityType="Self.Yillar" />
+          <EntitySet Name="Tarihler" EntityType="Self.Tarihler" />
           <AssociationSet Name="FK_Liste_Asistan" Association="Self.FK_Liste_Asistan">
             <End Role="Asistan" EntitySet="Asistan" />
             <End Role="Liste" EntitySet="Liste" />
@@ -387,8 +387,8 @@
             <End Role="Sinav" EntitySet="Sinav" />
             <End Role="Liste" EntitySet="Liste" />
           </AssociationSet>
-          <AssociationSet Name="FK_Sinav_Yil" Association="Self.FK_Sinav_Yil">
-            <End Role="Yillar" EntitySet="Yillar" />
+          <AssociationSet Name="FK_Sinav_Tarihler" Association="Self.FK_Sinav_Tarihler">
+            <End Role="Tarihler" EntitySet="Tarihler" />
             <End Role="Sinav" EntitySet="Sinav" />
           </AssociationSet>
         </EntityContainer>
@@ -449,7 +449,7 @@
                 <ScalarProperty Name="SinavID" ColumnName="SinavID" />
                 <ScalarProperty Name="DersKodu" ColumnName="DersKodu" />
                 <ScalarProperty Name="DonemID" ColumnName="DonemID" />
-                <ScalarProperty Name="YilID" ColumnName="YilID" />
+                <ScalarProperty Name="TarihID" ColumnName="TarihID" />
                 <ScalarProperty Name="SinavTuru" ColumnName="SinavTuru" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -465,11 +465,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Yillar">
-            <EntityTypeMapping TypeName="GorselDBModel.Yillar">
-              <MappingFragment StoreEntitySet="Yillar">
-                <ScalarProperty Name="YilID" ColumnName="YilID" />
-                <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <EntitySetMapping Name="Tarihler">
+            <EntityTypeMapping TypeName="GorselDBModel.Tarihler">
+              <MappingFragment StoreEntitySet="Tarihler">
+                <ScalarProperty Name="TarihID" ColumnName="TarihID" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
