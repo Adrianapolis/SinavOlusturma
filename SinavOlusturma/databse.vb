@@ -2,7 +2,7 @@
 Imports System.Data.Entity.Validation
 
 Public Class database
-    Shared vt As New GorselDBEntities1
+    Shared vt As New gorseldbEntities
     'Asistan
     Public Shared Sub AsistanEkle(ByVal asistan As Asistan)
         vt.Asistans.Add(asistan)
