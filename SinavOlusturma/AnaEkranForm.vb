@@ -5,6 +5,7 @@ Imports System.Drawing.Text
 Public Class AnaEkranForm
     Dim ogrenciSayisi As Integer
     Dim yerlestirilenOgrenciSayisi As Integer = 0
+    Dim kalanogrencisayisi As Integer = 0
     Dim secilenSinifsayi As Integer = 0
     Dim secilenAsistanSayi As Integer = 0
     Dim secilmesiGerekenAsistanSayi As Integer = 0
@@ -85,7 +86,14 @@ Public Class AnaEkranForm
 
             If ulasilanDerslik.Checked And yerlestirilenOgrenciSayisi < ogrenciSayisi Then
 
+                lblOgrenciHata.Text = ""
                 yerlestirilenOgrenciSayisi = yerlestirilenOgrenciSayisi + SecilenSiniflarinKapasitesi
+                If ogrenciSayisi - yerlestirilenOgrenciSayisi < 0 Then
+                    Lbkalanogrenci.Text = "0-Bütün Öğrenciler Yerleştirildi."
+                Else
+                    Lbkalanogrenci.Text = ogrenciSayisi - yerlestirilenOgrenciSayisi
+                End If
+
                 secilenSinifsayi = secilenSinifsayi + 1
                 'lblError.Text = "Yeteri kadar sınıf seçildi"
                 seciliSiniflar.Add(ulasilanDerslik.Name)
@@ -94,7 +102,9 @@ Public Class AnaEkranForm
 
             ElseIf ulasilanDerslik.Checked = False Then
 
+                lblOgrenciHata.Text = ""
                 yerlestirilenOgrenciSayisi = yerlestirilenOgrenciSayisi - SecilenSiniflarinKapasitesi
+                Lbkalanogrenci.Text = ogrenciSayisi - yerlestirilenOgrenciSayisi
                 secilenSinifsayi = secilenSinifsayi - 1
                 seciliSiniflar.Remove(ulasilanDerslik.Name)
                 secilmesiGerekenAsistanSayi -= 1
@@ -103,6 +113,7 @@ Public Class AnaEkranForm
             ElseIf yerlestirilenOgrenciSayisi > ogrenciSayisi Then
                 'lblError.Text = "Sınıf Seçmek Gerekli"
                 ulasilanDerslik.Checked = False
+                lblOgrenciHata.Text = "Yeteri Kadar Sınıf Seçildi"
             End If
 
 
