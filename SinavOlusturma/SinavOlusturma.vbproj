@@ -180,6 +180,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SinifListeleri.vb" />
+    <Compile Include="Windows\Forms.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AnaEkranForm.resx">

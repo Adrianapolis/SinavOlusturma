@@ -503,9 +503,9 @@ Partial Class AnaEkranForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1196, 727)
+        Me.Controls.Add(Me.GbYeniSinavOlustur)
         Me.Controls.Add(Me.GbAnaSayfa)
         Me.Controls.Add(Me.GbMevcudatDuzenle)
-        Me.Controls.Add(Me.GbYeniSinavOlustur)
         Me.Name = "AnaEkranForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AnaEkranForm"
