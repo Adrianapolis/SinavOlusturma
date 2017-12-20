@@ -16,18 +16,17 @@ Public Class AnaEkranForm
     Dim listeler As New List(Of SinifListeleri)
 
     Public Sub resimYukle()
-        BtnDersDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
+        BtnDersDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
         BtnDersDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-        BtnAsistanDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "asistan.png")
+        BtnAsistanDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "asistan.png")
         BtnAsistanDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-        BtnDerslikDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "derslik.png")
+        BtnDerslikDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "derslik.png")
         BtnDerslikDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-
-        'BtnYeniSinav.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
-        'BtnYeniSinav.BackgroundImageLayout = ImageLayout.Stretch
-        BtnMevcudat.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "düzenle.png")
+        BtnYeniSinav.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
+        BtnYeniSinav.BackgroundImageLayout = ImageLayout.Stretch
+        BtnMevcudat.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "düzenle.png")
         BtnMevcudat.BackgroundImageLayout = ImageLayout.Stretch
-        BtnMailGonder.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "mail.png")
+        BtnMailGonder.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "mail.png")
         BtnMailGonder.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 

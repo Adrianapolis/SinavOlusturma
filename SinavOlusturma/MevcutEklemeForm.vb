@@ -4,10 +4,7 @@ Public Class MevcutEklemeForm
     Dim durumlar(2) As String
 
 
-    Public Sub resimYukle()
-        BtnEkle.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle(6Oran).png")
-        BtnEkle.BackgroundImageLayout = ImageLayout.Stretch
-    End Sub
+
     Private Sub BtnDevam_Click(sender As Object, e As EventArgs) Handles BtnDevam.Click
         If (durumlar(0) = 0) Then 'Program kuruluyorsa
             If (durumlar(1) < 2) Then
@@ -113,8 +110,6 @@ Public Class MevcutEklemeForm
     End Sub
 
     Private Sub MevcutEklemeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'resimYukle()
-
         Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1
@@ -191,11 +186,7 @@ Public Class MevcutEklemeForm
 
     Private Sub BtnEkle_Click(sender As Object, e As EventArgs) Handles BtnEkle.Click
         'Me.DataGridView1.Rows.Add("X", TbAdiGiriniz.Text)
-        If TbKoduGiriniz.Text = "" Or TbAdiGiriniz.Text = "" Then
-            MessageBox.Show("Alanlar boş bırakılamaz.")
-            TbAdiGiriniz.Clear()
-            TbKoduGiriniz.Clear()
-        ElseIf durumlar(1) = 0 Then 'ders
+        If durumlar(1) = 0 Then 'ders
             Dim eklenecekDers As New Dersler
             eklenecekDers.DersAdi = TbAdiGiriniz.Text
             eklenecekDers.DersKodu = TbKoduGiriniz.Text

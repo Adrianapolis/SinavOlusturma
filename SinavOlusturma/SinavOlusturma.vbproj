@@ -231,7 +231,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Resimler\ekle.png" />
     <Content Include="Models\LocalVeriTabani.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
