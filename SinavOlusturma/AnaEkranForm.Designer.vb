@@ -22,14 +22,14 @@ Partial Class AnaEkranForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode33 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
-        Dim TreeNode34 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
-        Dim TreeNode35 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
-        Dim TreeNode36 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode33, TreeNode34, TreeNode35})
-        Dim TreeNode37 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
-        Dim TreeNode38 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
-        Dim TreeNode39 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode37, TreeNode38})
-        Dim TreeNode40 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode36, TreeNode39})
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("C")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel")
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Mat2")
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Vize", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3})
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("PDG")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Görsel Programlama")
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Veri Yapıları", New System.Windows.Forms.TreeNode() {TreeNode5, TreeNode6})
+        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("2017", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode7})
         Me.BtnYeniSinav = New System.Windows.Forms.Button()
         Me.BtnMevcudat = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -145,23 +145,23 @@ Partial Class AnaEkranForm
         Me.TreeView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TreeView1.Location = New System.Drawing.Point(782, 234)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode33.Name = "Node2"
-        TreeNode33.Text = "C"
-        TreeNode34.Name = "Node3"
-        TreeNode34.Text = "Görsel"
-        TreeNode35.Name = "Node5"
-        TreeNode35.Text = "Mat2"
-        TreeNode36.Name = "Node1"
-        TreeNode36.Text = "Vize"
-        TreeNode37.Name = "Node7"
-        TreeNode37.Text = "PDG"
-        TreeNode38.Name = "Node9"
-        TreeNode38.Text = "Görsel Programlama"
-        TreeNode39.Name = "Node6"
-        TreeNode39.Text = "Veri Yapıları"
-        TreeNode40.Name = "Node0"
-        TreeNode40.Text = "2017"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode40})
+        TreeNode1.Name = "Node2"
+        TreeNode1.Text = "C"
+        TreeNode2.Name = "Node3"
+        TreeNode2.Text = "Görsel"
+        TreeNode3.Name = "Node5"
+        TreeNode3.Text = "Mat2"
+        TreeNode4.Name = "Node1"
+        TreeNode4.Text = "Vize"
+        TreeNode5.Name = "Node7"
+        TreeNode5.Text = "PDG"
+        TreeNode6.Name = "Node9"
+        TreeNode6.Text = "Görsel Programlama"
+        TreeNode7.Name = "Node6"
+        TreeNode7.Text = "Veri Yapıları"
+        TreeNode8.Name = "Node0"
+        TreeNode8.Text = "2017"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode8})
         Me.TreeView1.Size = New System.Drawing.Size(240, 292)
         Me.TreeView1.TabIndex = 6
         '
@@ -308,9 +308,8 @@ Partial Class AnaEkranForm
         Me.LbAsistanSecilecekSayi.AutoSize = True
         Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(913, 325)
         Me.LbAsistanSecilecekSayi.Name = "LbAsistanSecilecekSayi"
-        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(13, 13)
+        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(0, 13)
         Me.LbAsistanSecilecekSayi.TabIndex = 9
-        Me.LbAsistanSecilecekSayi.Text = "5"
         '
         'Label7
         '
@@ -356,9 +355,8 @@ Partial Class AnaEkranForm
         Me.LbOgrenciSayiGoster.AutoSize = True
         Me.LbOgrenciSayiGoster.Location = New System.Drawing.Point(128, 16)
         Me.LbOgrenciSayiGoster.Name = "LbOgrenciSayiGoster"
-        Me.LbOgrenciSayiGoster.Size = New System.Drawing.Size(25, 13)
+        Me.LbOgrenciSayiGoster.Size = New System.Drawing.Size(0, 13)
         Me.LbOgrenciSayiGoster.TabIndex = 1
-        Me.LbOgrenciSayiGoster.Text = "250"
         '
         'LbOgrenciSayiBilgi
         '
