@@ -1,7 +1,18 @@
 ﻿Imports System.IO
+Imports System.Drawing.Text
+
 Public Class HosgeldinForm
     Dim durum As String = ""
     Dim durumlar(2) As String
+
+    Public Sub resimFontYukle()
+        PictureBox1.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "giris.png")
+        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
+        Dim pfc As New PrivateFontCollection()
+        pfc.AddFontFile(AppDomain.CurrentDomain.BaseDirectory & "Fontlar\\helvetica.ttf")
+        Label1.Font = New Font(pfc.Families(0), (16), FontStyle.Regular)
+        Button1.Font = New Font(pfc.Families(0), (16), FontStyle.Regular)
+    End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim MevcutEklemeForm As MevcutEklemeForm
@@ -19,6 +30,8 @@ Public Class HosgeldinForm
     End Sub
 
     Private Sub HosgeldinForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        resimFontYukle() 'resim font yükle
         Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1
