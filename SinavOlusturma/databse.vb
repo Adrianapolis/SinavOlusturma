@@ -1,4 +1,6 @@
-﻿
+﻿Imports System.Text
+Imports System.Data.Entity.Validation
+
 Public Class database
     Shared vt As New GorselDBEntities1
     'Asistan
@@ -106,7 +108,27 @@ Public Class database
     'liste
     Public Shared Sub ListeEkle(ByVal EklenecekListe As Liste)
         vt.Listes.Add(EklenecekListe)
-        vt.SaveChanges()
+        'vt.SaveChanges()
+
+        Try
+            vt.SaveChanges()
+
+        Catch ex As DbEntityValidationException
+
+            Dim msg As New StringBuilder
+            msg.AppendLine(ex.Message)
+
+            For Each vr As DbEntityValidationResult In ex.EntityValidationErrors
+                For Each ve As DbValidationError In vr.ValidationErrors
+                    msg.AppendLine(String.Format("{0}: {1}", ve.PropertyName, ve.ErrorMessage))
+                Next
+            Next
+
+            Throw New DbEntityValidationException(msg.ToString, ex.EntityValidationErrors, ex)
+
+        End Try
+
+
     End Sub
 
 

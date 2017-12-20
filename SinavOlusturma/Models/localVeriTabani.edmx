@@ -43,7 +43,7 @@
           <Property Name="SinavID" Type="int" Nullable="false" />
           <Property Name="DerslikID" Type="int" Nullable="false" />
           <Property Name="AsistanID" Type="int" Nullable="false" />
-          <Property Name="OgrString" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OgrString" Type="varchar" MaxLength="8000" Nullable="false" />
         </EntityType>
         <EntityType Name="Sinav">
           <Key>
@@ -237,7 +237,7 @@
           <Property Name="SinavID" Type="Int32" Nullable="false" />
           <Property Name="DerslikID" Type="Int32" Nullable="false" />
           <Property Name="AsistanID" Type="Int32" Nullable="false" />
-          <Property Name="OgrString" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OgrString" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Asistan" Relationship="Self.FK_Liste_Asistan" FromRole="Liste" ToRole="Asistan" />
           <NavigationProperty Name="Derslik" Relationship="Self.FK_Liste_Derslik" FromRole="Liste" ToRole="Derslik" />
           <NavigationProperty Name="Sinav" Relationship="Self.FK_Liste_Sinav" FromRole="Liste" ToRole="Sinav" />
