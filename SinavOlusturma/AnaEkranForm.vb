@@ -5,6 +5,7 @@ Public Class AnaEkranForm
     Dim yerlestirilenOgrenciSayisi As Integer = 0
     Dim secilenSinifsayi As Integer = 0
     Dim secilenAsistanSayi As Integer = 0
+    Dim secilmesiGerekenAsistanSayi As Integer = 0
     Dim listeOlusturucu As String
     Dim seciliSiniflar As New List(Of String)
     Dim seciliAsistanlar As New List(Of String)
@@ -26,10 +27,6 @@ Public Class AnaEkranForm
         If dosyaacici.ShowDialog = DialogResult.OK Then
             Ogrenciler = File.ReadAllLines(dosyaacici.FileName, Encoding.Default).ToList()
             ogrenciSayisi = Ogrenciler.Count
-            'lblOgrenciSayisi.Text = ogrenciSayisi
-            'lblOgrenciSayisi.Text = "Öğrenci Sayısı : " + ogrenciSayisi.ToString
-            'lblError.Text = "Lütfen yukarıdan sınıf seçiniz."
-            'lblAcilanDosya.Text = "Açılan Dosya - " + dosyaacici.FileName
         End If
         'flSinifListele.l
         LbOgrenciYerlestirilecekSayi.Text = ogrenciSayisi
@@ -72,12 +69,16 @@ Public Class AnaEkranForm
                 secilenSinifsayi = secilenSinifsayi + 1
                 'lblError.Text = "Yeteri kadar sınıf seçildi"
                 seciliSiniflar.Add(ulasilanDerslik.Name)
+                secilmesiGerekenAsistanSayi += 1
+                LbAsistanSecilecekSayi.Text = secilmesiGerekenAsistanSayi
 
             ElseIf ulasilanDerslik.Checked = False Then
 
                 yerlestirilenOgrenciSayisi = yerlestirilenOgrenciSayisi - SecilenSiniflarinKapasitesi
                 secilenSinifsayi = secilenSinifsayi - 1
                 seciliSiniflar.Remove(ulasilanDerslik.Name)
+                secilmesiGerekenAsistanSayi -= 1
+                LbAsistanSecilecekSayi.Text = secilmesiGerekenAsistanSayi
 
             ElseIf yerlestirilenOgrenciSayisi > ogrenciSayisi Then
                 'lblError.Text = "Sınıf Seçmek Gerekli"

@@ -32,9 +32,9 @@ Partial Class MevcutEklemeForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnGeri = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnKaydet = New System.Windows.Forms.Button()
         Me.btnİptal = New System.Windows.Forms.Button()
+        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -127,11 +127,6 @@ Partial Class MevcutEklemeForm
         Me.DataGridView2.Size = New System.Drawing.Size(483, 323)
         Me.DataGridView2.TabIndex = 10
         '
-        'Sil
-        '
-        Me.Sil.HeaderText = "Sil"
-        Me.Sil.Name = "Sil"
-        '
         'btnKaydet
         '
         Me.btnKaydet.Location = New System.Drawing.Point(272, 328)
@@ -151,6 +146,16 @@ Partial Class MevcutEklemeForm
         Me.btnİptal.Text = "İptal"
         Me.btnİptal.UseVisualStyleBackColor = True
         Me.btnİptal.Visible = False
+        '
+        'Sil
+        '
+        Me.Sil.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Sil.FillWeight = 10.0!
+        Me.Sil.HeaderText = "Sil"
+        Me.Sil.Name = "Sil"
+        Me.Sil.ReadOnly = True
+        Me.Sil.Text = "X"
+        Me.Sil.UseColumnTextForButtonValue = True
         '
         'MevcutEklemeForm
         '
@@ -188,7 +193,7 @@ Partial Class MevcutEklemeForm
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnGeri As Button
     Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents Sil As DataGridViewButtonColumn
     Friend WithEvents btnKaydet As Button
     Friend WithEvents btnİptal As Button
+    Friend WithEvents Sil As DataGridViewButtonColumn
 End Class
