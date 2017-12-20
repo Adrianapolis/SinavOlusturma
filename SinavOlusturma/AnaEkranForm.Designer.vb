@@ -64,6 +64,7 @@ Partial Class AnaEkranForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.cbDonemSec = New System.Windows.Forms.ComboBox()
         Me.GbAnaSayfa.SuspendLayout()
         Me.GbMevcudatDuzenle.SuspendLayout()
         Me.GbYeniSinavOlustur.SuspendLayout()
@@ -244,6 +245,7 @@ Partial Class AnaEkranForm
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label6)
         Me.GbYeniSinavOlustur.Controls.Add(Me.GbOgrenciDosya)
         Me.GbYeniSinavOlustur.Controls.Add(Me.DateTimePicker1)
+        Me.GbYeniSinavOlustur.Controls.Add(Me.cbDonemSec)
         Me.GbYeniSinavOlustur.Controls.Add(Me.CbTurSecim)
         Me.GbYeniSinavOlustur.Controls.Add(Me.CbDersSecim)
         Me.GbYeniSinavOlustur.Controls.Add(Me.BtnSinavOlustur)
@@ -287,6 +289,7 @@ Partial Class AnaEkranForm
         '
         'flAsistanlar
         '
+        Me.flAsistanlar.AutoScroll = True
         Me.flAsistanlar.Location = New System.Drawing.Point(755, 341)
         Me.flAsistanlar.Name = "flAsistanlar"
         Me.flAsistanlar.Size = New System.Drawing.Size(225, 149)
@@ -294,6 +297,7 @@ Partial Class AnaEkranForm
         '
         'flSinifListele
         '
+        Me.flSinifListele.AutoScroll = True
         Me.flSinifListele.Location = New System.Drawing.Point(755, 128)
         Me.flSinifListele.Name = "flSinifListele"
         Me.flSinifListele.Size = New System.Drawing.Size(225, 149)
@@ -448,6 +452,17 @@ Partial Class AnaEkranForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'cbDonemSec
+        '
+        Me.cbDonemSec.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cbDonemSec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbDonemSec.FormattingEnabled = True
+        Me.cbDonemSec.Items.AddRange(New Object() {"Vize", "Final", "Bütünleme"})
+        Me.cbDonemSec.Location = New System.Drawing.Point(400, 277)
+        Me.cbDonemSec.Name = "cbDonemSec"
+        Me.cbDonemSec.Size = New System.Drawing.Size(187, 21)
+        Me.cbDonemSec.TabIndex = 9
+        '
         'AnaEkranForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -506,4 +521,5 @@ Partial Class AnaEkranForm
     Friend WithEvents flSinifListele As FlowLayoutPanel
     Friend WithEvents btnListeEkle As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents cbDonemSec As ComboBox
 End Class

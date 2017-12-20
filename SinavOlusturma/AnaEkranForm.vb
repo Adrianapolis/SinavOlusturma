@@ -122,6 +122,7 @@ Public Class AnaEkranForm
             gecici.PbosSira = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
             gecici.PSinavTur = CbTurSecim.SelectedItem.ToString()
             gecici.PTarih = DateTimePicker1.Value
+            gecici.PDonem = cbDonemSec.SelectedItem.ToString()
             listeler.Add(gecici)
         Next
         'yaratılan liste objelerine öğrenciler atanıyor
@@ -158,18 +159,21 @@ Public Class AnaEkranForm
         'Dim y As List(Of String) = listeStr.Split(x).ToList()
 
 
-
-
+        Dim OlusturulanSinav As New Sinav
+        'LİSTE 0 IN SINAV İLE İLGİLİ OLAN KISIMLARINI AT
+        'EKLENEN SINAVIN IDSİNİ ELDE ET
         For i As Integer = 0 To seciliSiniflar.Count - 1
             Dim dbEklenecekListe As New Liste
+            'dbEklenecekListe.SinavID
 
-            'dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler)
+
+            dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler)
             'dbEklenecekListe.Sinav.Dersler.DersAdi = listeler(i).PDersAdi
             'dbEklenecekListe.Sinav.SinavTuru = listeler(i).PSinavTur
             'dbEklenecekListe.Sinav.Yillar.Yil = listeler(i).PTarih.ToString()
             'dbEklenecekListe.Asistan.AsistanAdi = listeler(i).PAsistanAdi
             'dbEklenecekListe.Derslik.DerslikAdi = listeler(i).PDersAdi
-            'database.ogrenciListesiEkle(dbEklenecekListe)
+            database.ogrenciListesiEkle(dbEklenecekListe)
         Next
 
         MessageBox.Show("İşleminiz başarı ile gerçekleştirildi")
@@ -194,6 +198,7 @@ Public Class AnaEkranForm
         GbAnaSayfa.Top = (Me.ClientSize.Height / 2) - (GbAnaSayfa.Height / 2)
         GbAnaSayfa.Left = (Me.ClientSize.Width / 2) - (GbAnaSayfa.Width / 2)
         CbDersSecim.DataSource = database.DersAdiGetir()
+        cbDonemSec.DataSource = database.DonemGetir()
         Dim siniflar As List(Of String) = database.DerslikGetir()
         Dim asistanlar As List(Of String) = database.AsistanListesiAl()
         For i As Integer = 0 To siniflar.Count - 1

@@ -7,6 +7,7 @@
     Dim Tarih As Date
     Dim SinavTur As String
     Dim Ogrenciler As New List(Of String)
+    Dim Donem As String
 
 
 
@@ -74,5 +75,14 @@
             Ogrenciler = value
         End Set
     End Property
+    Public Property PDonem() As String
+        Get
+            Return Donem
+        End Get
+        Set(ByVal value As String)
+            Donem = value
+        End Set
+    End Property
+
 
 End Class
