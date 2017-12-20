@@ -60,15 +60,16 @@ Public Class AnaEkranForm
         Else
             If ulasilanAsistan.Checked And secilenAsistanSayi < secilenSinifsayi Then
                 seciliAsistanlar.Add(ulasilanAsistan.Text)
-                secilenAsistanSayi = secilenAsistanSayi + 1
-                LbAsistanSecilecekSayi.Text = secilenAsistanSayi
+                secilenAsistanSayi += 1
+                secilmesiGerekenAsistanSayi -= 1
+                LbAsistanSecilecekSayi.Text = secilmesiGerekenAsistanSayi
             ElseIf ulasilanAsistan.Checked = False Then
                 seciliAsistanlar.Remove(ulasilanAsistan.Text)
-                secilenAsistanSayi = secilenAsistanSayi - 1
-                LbAsistanSecilecekSayi.Text = secilenAsistanSayi
+                secilenAsistanSayi -= 1
+                secilmesiGerekenAsistanSayi += 1
+                LbAsistanSecilecekSayi.Text = secilmesiGerekenAsistanSayi
             ElseIf secilenAsistanSayi >= secilenSinifsayi Then
                 ulasilanAsistan.Checked = False
-                LbAsistanSecilecekSayi.Text = secilenAsistanSayi
             End If
         End If
     End Sub
