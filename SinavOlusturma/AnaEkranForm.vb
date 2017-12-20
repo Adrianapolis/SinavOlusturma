@@ -16,17 +16,18 @@ Public Class AnaEkranForm
     Dim listeler As New List(Of SinifListeleri)
 
     Public Sub resimYukle()
-        BtnDersDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
+        BtnDersDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
         BtnDersDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-        BtnAsistanDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "asistan.png")
+        BtnAsistanDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "asistan.png")
         BtnAsistanDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-        BtnDerslikDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "derslik.png")
+        BtnDerslikDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "derslik.png")
         BtnDerslikDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-        BtnYeniSinav.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
-        BtnYeniSinav.BackgroundImageLayout = ImageLayout.Stretch
-        BtnMevcudat.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "düzenle.png")
+
+        'BtnYeniSinav.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
+        'BtnYeniSinav.BackgroundImageLayout = ImageLayout.Stretch
+        BtnMevcudat.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "düzenle.png")
         BtnMevcudat.BackgroundImageLayout = ImageLayout.Stretch
-        BtnMailGonder.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "mail.png")
+        BtnMailGonder.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "mail.png")
         BtnMailGonder.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
@@ -279,7 +280,7 @@ Public Class AnaEkranForm
     End Sub
 
     Private Sub AnaEkranForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        resimYukle()
+        'resimYukle()
         DateTimePicker1.MinDate = DateTime.Now
         Me.WindowState = FormWindowState.Maximized
         GbAnaSayfa.Top = (Me.ClientSize.Height / 2) - (GbAnaSayfa.Height / 2)

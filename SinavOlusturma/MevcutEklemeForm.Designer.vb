@@ -32,67 +32,75 @@ Partial Class MevcutEklemeForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnGeri = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnKaydet = New System.Windows.Forms.Button()
         Me.btnİptal = New System.Windows.Forms.Button()
-        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LblEkleyiniz
         '
         Me.LblEkleyiniz.AutoSize = True
-        Me.LblEkleyiniz.Location = New System.Drawing.Point(377, 40)
+        Me.LblEkleyiniz.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblEkleyiniz.Location = New System.Drawing.Point(440, 43)
         Me.LblEkleyiniz.Name = "LblEkleyiniz"
-        Me.LblEkleyiniz.Size = New System.Drawing.Size(125, 13)
+        Me.LblEkleyiniz.Size = New System.Drawing.Size(150, 14)
         Me.LblEkleyiniz.TabIndex = 0
         Me.LblEkleyiniz.Text = "Mevcut Dersleri Ekleyiniz"
         '
         'LblAdiGiriniz
         '
         Me.LblAdiGiriniz.AutoSize = True
-        Me.LblAdiGiriniz.Location = New System.Drawing.Point(181, 181)
+        Me.LblAdiGiriniz.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblAdiGiriniz.Location = New System.Drawing.Point(211, 195)
         Me.LblAdiGiriniz.Name = "LblAdiGiriniz"
-        Me.LblAdiGiriniz.Size = New System.Drawing.Size(81, 13)
+        Me.LblAdiGiriniz.Size = New System.Drawing.Size(100, 14)
         Me.LblAdiGiriniz.TabIndex = 1
         Me.LblAdiGiriniz.Text = "Ders Adi Giriniz:"
         '
         'LblKoduGiriniz
         '
         Me.LblKoduGiriniz.AutoSize = True
-        Me.LblKoduGiriniz.Location = New System.Drawing.Point(181, 235)
+        Me.LblKoduGiriniz.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblKoduGiriniz.Location = New System.Drawing.Point(211, 253)
         Me.LblKoduGiriniz.Name = "LblKoduGiriniz"
-        Me.LblKoduGiriniz.Size = New System.Drawing.Size(60, 13)
+        Me.LblKoduGiriniz.Size = New System.Drawing.Size(68, 14)
         Me.LblKoduGiriniz.TabIndex = 2
         Me.LblKoduGiriniz.Text = "Ders Kodu:"
         '
         'TbAdiGiriniz
         '
-        Me.TbAdiGiriniz.Location = New System.Drawing.Point(184, 198)
+        Me.TbAdiGiriniz.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TbAdiGiriniz.Location = New System.Drawing.Point(215, 213)
         Me.TbAdiGiriniz.Name = "TbAdiGiriniz"
-        Me.TbAdiGiriniz.Size = New System.Drawing.Size(163, 20)
+        Me.TbAdiGiriniz.Size = New System.Drawing.Size(189, 20)
         Me.TbAdiGiriniz.TabIndex = 3
         '
         'TbKoduGiriniz
         '
-        Me.TbKoduGiriniz.Location = New System.Drawing.Point(184, 251)
+        Me.TbKoduGiriniz.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TbKoduGiriniz.Location = New System.Drawing.Point(215, 270)
         Me.TbKoduGiriniz.Name = "TbKoduGiriniz"
-        Me.TbKoduGiriniz.Size = New System.Drawing.Size(163, 20)
+        Me.TbKoduGiriniz.Size = New System.Drawing.Size(189, 20)
         Me.TbKoduGiriniz.TabIndex = 4
         '
         'BtnEkle
         '
-        Me.BtnEkle.Location = New System.Drawing.Point(196, 287)
+        Me.BtnEkle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnEkle.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEkle.Location = New System.Drawing.Point(229, 309)
         Me.BtnEkle.Name = "BtnEkle"
-        Me.BtnEkle.Size = New System.Drawing.Size(138, 23)
+        Me.BtnEkle.Size = New System.Drawing.Size(161, 38)
         Me.BtnEkle.TabIndex = 5
         Me.BtnEkle.Text = "Ekle"
         Me.BtnEkle.UseVisualStyleBackColor = True
         '
         'BtnDevam
         '
-        Me.BtnDevam.Location = New System.Drawing.Point(380, 483)
+        Me.BtnDevam.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDevam.Location = New System.Drawing.Point(443, 520)
         Me.BtnDevam.Name = "BtnDevam"
-        Me.BtnDevam.Size = New System.Drawing.Size(167, 64)
+        Me.BtnDevam.Size = New System.Drawing.Size(195, 69)
         Me.BtnDevam.TabIndex = 6
         Me.BtnDevam.Text = "Devam"
         Me.BtnDevam.UseVisualStyleBackColor = True
@@ -100,17 +108,18 @@ Partial Class MevcutEklemeForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(620, 393)
+        Me.Label4.Location = New System.Drawing.Point(723, 423)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(247, 13)
+        Me.Label4.Size = New System.Drawing.Size(303, 14)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Daha fazla detay için imleci verinin üzerine getiriniz."
         '
         'BtnGeri
         '
-        Me.BtnGeri.Location = New System.Drawing.Point(106, 524)
+        Me.BtnGeri.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnGeri.Location = New System.Drawing.Point(124, 564)
         Me.BtnGeri.Name = "BtnGeri"
-        Me.BtnGeri.Size = New System.Drawing.Size(75, 23)
+        Me.BtnGeri.Size = New System.Drawing.Size(87, 25)
         Me.BtnGeri.TabIndex = 9
         Me.BtnGeri.Text = "Geri"
         Me.BtnGeri.UseVisualStyleBackColor = True
@@ -121,31 +130,11 @@ Partial Class MevcutEklemeForm
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Sil})
-        Me.DataGridView2.Location = New System.Drawing.Point(485, 67)
+        Me.DataGridView2.Location = New System.Drawing.Point(566, 72)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.Size = New System.Drawing.Size(483, 323)
+        Me.DataGridView2.Size = New System.Drawing.Size(563, 348)
         Me.DataGridView2.TabIndex = 10
-        '
-        'btnKaydet
-        '
-        Me.btnKaydet.Location = New System.Drawing.Point(272, 328)
-        Me.btnKaydet.Name = "btnKaydet"
-        Me.btnKaydet.Size = New System.Drawing.Size(75, 23)
-        Me.btnKaydet.TabIndex = 11
-        Me.btnKaydet.Text = "Kaydet"
-        Me.btnKaydet.UseVisualStyleBackColor = True
-        Me.btnKaydet.Visible = False
-        '
-        'btnİptal
-        '
-        Me.btnİptal.Location = New System.Drawing.Point(184, 328)
-        Me.btnİptal.Name = "btnİptal"
-        Me.btnİptal.Size = New System.Drawing.Size(75, 23)
-        Me.btnİptal.TabIndex = 12
-        Me.btnİptal.Text = "İptal"
-        Me.btnİptal.UseVisualStyleBackColor = True
-        Me.btnİptal.Visible = False
         '
         'Sil
         '
@@ -157,11 +146,33 @@ Partial Class MevcutEklemeForm
         Me.Sil.Text = "X"
         Me.Sil.UseColumnTextForButtonValue = True
         '
+        'btnKaydet
+        '
+        Me.btnKaydet.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnKaydet.Location = New System.Drawing.Point(317, 353)
+        Me.btnKaydet.Name = "btnKaydet"
+        Me.btnKaydet.Size = New System.Drawing.Size(87, 25)
+        Me.btnKaydet.TabIndex = 11
+        Me.btnKaydet.Text = "Kaydet"
+        Me.btnKaydet.UseVisualStyleBackColor = True
+        Me.btnKaydet.Visible = False
+        '
+        'btnİptal
+        '
+        Me.btnİptal.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnİptal.Location = New System.Drawing.Point(215, 353)
+        Me.btnİptal.Name = "btnİptal"
+        Me.btnİptal.Size = New System.Drawing.Size(87, 25)
+        Me.btnİptal.TabIndex = 12
+        Me.btnİptal.Text = "İptal"
+        Me.btnİptal.UseVisualStyleBackColor = True
+        Me.btnİptal.Visible = False
+        '
         'MevcutEklemeForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(991, 572)
+        Me.ClientSize = New System.Drawing.Size(1156, 616)
         Me.Controls.Add(Me.btnİptal)
         Me.Controls.Add(Me.btnKaydet)
         Me.Controls.Add(Me.DataGridView2)
@@ -174,6 +185,7 @@ Partial Class MevcutEklemeForm
         Me.Controls.Add(Me.LblKoduGiriniz)
         Me.Controls.Add(Me.LblAdiGiriniz)
         Me.Controls.Add(Me.LblEkleyiniz)
+        Me.Font = New System.Drawing.Font("Lucida Fax", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "MevcutEklemeForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MevcutEklemeForm"
