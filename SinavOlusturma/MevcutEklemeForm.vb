@@ -254,18 +254,21 @@ Public Class MevcutEklemeForm
 
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
         Dim SilinecekIndex As Integer = e.RowIndex
-        If durumlar(1) = 0 Then 'ders
-            Dim silinecekDersKodu As String = DataGridView2.Rows(SilinecekIndex).Cells(2).Value.ToString()
-            database.DersSil(silinecekDersKodu)
-            DataGridView2.DataSource = database.DersGrid
-        ElseIf durumlar(1) = 1 Then 'derslik
-            Dim silinecekDerslikAdi As String = DataGridView2.Rows(SilinecekIndex).Cells(1).Value.ToString()
-            database.DerslikSil(silinecekDerslikAdi)
-            DataGridView2.DataSource = database.DerslikGrid
-        ElseIf durumlar(1) = 2 Then 'asistan
-            Dim silinecekAsistanAdi As String = DataGridView2.Rows(SilinecekIndex).Cells(1).Value.ToString()
-            database.AsistanSil(silinecekAsistanAdi)
-            DataGridView2.DataSource = database.AsistanGrid
+        If e.ColumnIndex = 0 Then
+
+            If durumlar(1) = 0 Then 'ders
+                Dim silinecekDersKodu As String = DataGridView2.Rows(SilinecekIndex).Cells(2).Value.ToString()
+                database.DersSil(silinecekDersKodu)
+                DataGridView2.DataSource = database.DersGrid
+            ElseIf durumlar(1) = 1 Then 'derslik
+                Dim silinecekDerslikAdi As String = DataGridView2.Rows(SilinecekIndex).Cells(1).Value.ToString()
+                database.DerslikSil(silinecekDerslikAdi)
+                DataGridView2.DataSource = database.DerslikGrid
+            ElseIf durumlar(1) = 2 Then 'asistan
+                Dim silinecekAsistanAdi As String = DataGridView2.Rows(SilinecekIndex).Cells(1).Value.ToString()
+                database.AsistanSil(silinecekAsistanAdi)
+                DataGridView2.DataSource = database.AsistanGrid
+            End If
         End If
     End Sub
 

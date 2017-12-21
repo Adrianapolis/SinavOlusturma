@@ -19,7 +19,6 @@ Public Class AnaEkranForm
 
     Public Sub TwVeriEkle()
         Dim Tarih As List(Of Integer) = database.TarihGetir
-
         Dim Donemler As List(Of String) = database.DonemGetir
         Dim SinavID As List(Of Integer) = database.TumSinavIDGetir
         TreeView1.Nodes.Add(Tarih(0))

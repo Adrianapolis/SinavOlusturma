@@ -102,8 +102,11 @@ Public Class database
 
     'sınav
     Public Shared Sub SinavEkle(ByVal EklenecekSinav As Sinav)
-        vt.Sinav.Add(EklenecekSinav)
-        vt.SaveChanges()
+        If vt.Sinav.Where(Function(x) x.TarihID = EklenecekSinav.TarihID And x.DersKodu = EklenecekSinav.DersKodu).Count = 0 Then
+            vt.Sinav.Add(EklenecekSinav)
+            vt.SaveChanges()
+        End If
+
     End Sub
     Public Shared Function SinavIDGetir(ByVal gelenDersKodu As String, ByVal gelentarih As Integer)
         Return vt.Sinav.Where(Function(x) x.DersKodu = gelenDersKodu And x.TarihID = gelentarih).Select(Function(x) x.SinavID).FirstOrDefault()
