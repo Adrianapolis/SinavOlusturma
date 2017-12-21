@@ -30,7 +30,7 @@ Public Class HosgeldinForm
 
     Private Sub HosgeldinForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'resimYukle() 'resim yükle
+        resimYukle() 'resim yükle
         Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1

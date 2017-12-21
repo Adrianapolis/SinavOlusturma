@@ -76,7 +76,7 @@ Public Class AnaEkranForm
         'yenisinav oluştur gb
         BtnSinavOlustur.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
         BtnSinavOlustur.BackgroundImageLayout = ImageLayout.Stretch
-        BtnSinavIptal.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "iptal.png")
+        BtnSinavIptal.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "çarpı.png")
         BtnSinavIptal.BackgroundImageLayout = ImageLayout.Stretch
 
     End Sub

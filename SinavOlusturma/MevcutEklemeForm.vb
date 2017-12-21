@@ -16,7 +16,7 @@ Public Class MevcutEklemeForm
         End If
         BtnEkle.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle(6oran).png")
         BtnEkle.BackgroundImageLayout = ImageLayout.Stretch
-        btnİptal.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "iptal.png")
+        btnİptal.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "çarpı.png")
         btnİptal.BackgroundImageLayout = ImageLayout.Stretch
         btnKaydet.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8tamam.png")
         btnKaydet.BackgroundImageLayout = ImageLayout.Stretch
@@ -164,7 +164,7 @@ Public Class MevcutEklemeForm
     End Sub
 
     Private Sub MevcutEklemeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'resimYukle()
+        resimYukle()
         Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1
