@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MevcutEklemeForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MevcutEklemeForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LblEkleyiniz = New System.Windows.Forms.Label()
         Me.LblAdiGiriniz = New System.Windows.Forms.Label()
@@ -32,9 +32,9 @@ Partial Class MevcutEklemeForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnGeri = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnKaydet = New System.Windows.Forms.Button()
         Me.btnİptal = New System.Windows.Forms.Button()
-        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -127,6 +127,16 @@ Partial Class MevcutEklemeForm
         Me.DataGridView2.Size = New System.Drawing.Size(483, 323)
         Me.DataGridView2.TabIndex = 10
         '
+        'Sil
+        '
+        Me.Sil.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Sil.FillWeight = 10.0!
+        Me.Sil.HeaderText = "Sil"
+        Me.Sil.Name = "Sil"
+        Me.Sil.ReadOnly = True
+        Me.Sil.Text = "X"
+        Me.Sil.UseColumnTextForButtonValue = True
+        '
         'btnKaydet
         '
         Me.btnKaydet.Location = New System.Drawing.Point(272, 328)
@@ -146,16 +156,6 @@ Partial Class MevcutEklemeForm
         Me.btnİptal.Text = "İptal"
         Me.btnİptal.UseVisualStyleBackColor = True
         Me.btnİptal.Visible = False
-        '
-        'Sil
-        '
-        Me.Sil.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Sil.FillWeight = 10.0!
-        Me.Sil.HeaderText = "Sil"
-        Me.Sil.Name = "Sil"
-        Me.Sil.ReadOnly = True
-        Me.Sil.Text = "X"
-        Me.Sil.UseColumnTextForButtonValue = True
         '
         'MevcutEklemeForm
         '

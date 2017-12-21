@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text
 Imports System.Drawing.Text
-
+Imports System.Net
 Public Class AnaEkranForm
     Dim ogrenciSayisi As Integer
     Dim yerlestirilenOgrenciSayisi As Integer = 0
@@ -53,6 +53,7 @@ Public Class AnaEkranForm
         LbOgrenciSayiGoster.Text = ogrenciSayisi
 
     End Sub
+
     Private Sub cbAsistan_click(sender As Object, e As EventArgs)
         Dim ulasilanAsistan As CheckBox = CType(sender, CheckBox)
         If secilenSinifsayi < 1 Then
@@ -133,8 +134,6 @@ Public Class AnaEkranForm
         x(0) = ";"
         Dim y As List(Of String) = listeStr.Split(x).ToList()
     End Sub
-
-
 
     Private Sub BtnYeniSinav_Click(sender As Object, e As EventArgs) Handles BtnYeniSinav.Click
         GbAnaSayfa.Visible = False

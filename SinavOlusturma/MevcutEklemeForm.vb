@@ -1,8 +1,43 @@
 ﻿Imports System.IO
+Imports System.Text.RegularExpressions
 Public Class MevcutEklemeForm
     Dim durum As String = ""
     Dim durumlar(2) As String
 
+
+    Private Sub TbKoduGiriniz_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TbKoduGiriniz.Validating
+        Dim email As String = TbKoduGiriniz.Text
+        If durumlar(1) = 2 Then 'asistan
+            If emailKontrol(email) = False Then
+                Dim sonuc As DialogResult = MessageBox.Show("Girdiğiniz email geçerli değil.")
+                TbKoduGiriniz.Clear()
+                If sonuc = DialogResult.Yes Then
+                    e.Cancel = True
+                End If
+            End If
+
+        End If
+    End Sub
+
+
+    Private Sub TbKoduGiriniz_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TbKoduGiriniz.KeyPress 'derslik eklenirken kapasite sadece numerik
+        If durumlar(1) = 1 Then 'derslik
+            If Asc(e.KeyChar) <> 13 AndAlso Asc(e.KeyChar) <> 8 AndAlso Not IsNumeric(e.KeyChar) Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Public Function emailKontrol(ByVal emailAdres As String) As Boolean  'mail'in düzgünlüğünü kontrol ediyor
+        Dim pattern As String = "^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]" &
+        "*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"
+        Dim emailEslestiMi As Match = Regex.Match(emailAdres, pattern)
+        If emailEslestiMi.Success Then
+            emailKontrol = True
+        Else
+            emailKontrol = False
+        End If
+    End Function
 
 
     Private Sub BtnDevam_Click(sender As Object, e As EventArgs) Handles BtnDevam.Click
@@ -186,23 +221,33 @@ Public Class MevcutEklemeForm
 
     Private Sub BtnEkle_Click(sender As Object, e As EventArgs) Handles BtnEkle.Click
         'Me.DataGridView1.Rows.Add("X", TbAdiGiriniz.Text)
-        If durumlar(1) = 0 Then 'ders
+        If TbKoduGiriniz.Text = "" Or TbAdiGiriniz.Text = "" Then
+            MessageBox.Show("Alanlar boş bırakılamaz.")
+            TbAdiGiriniz.Clear()
+            TbKoduGiriniz.Clear()
+        ElseIf durumlar(1) = 0 Then 'ders
             Dim eklenecekDers As New Dersler
             eklenecekDers.DersAdi = TbAdiGiriniz.Text
-            eklenecekDers.DersKodu = TbKoduGiriniz.Text
+            eklenecekDers.DersKodu = TbKoduGiriniz.Text.ToUpper() 'ders kodu büyük harf olsun
             database.DersEkle(eklenecekDers)
+            TbAdiGiriniz.Clear()
+            TbKoduGiriniz.Clear()
             DataGridView2.DataSource = database.DersGrid
         ElseIf durumlar(1) = 1 Then 'derslik
             Dim eklenecekDerslik As New Derslik
             eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
             eklenecekDerslik.Kapasite = TbKoduGiriniz.Text
             database.DerslikEkle(eklenecekDerslik)
+            TbAdiGiriniz.Clear()
+            TbKoduGiriniz.Clear()
             DataGridView2.DataSource = database.DerslikGrid
         ElseIf durumlar(1) = 2 Then 'asistan
             Dim eklenecekAsistan As New Asistan
             eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
             eklenecekAsistan.Mail = TbKoduGiriniz.Text
             database.AsistanEkle(eklenecekAsistan)
+            TbAdiGiriniz.Clear()
+            TbKoduGiriniz.Clear()
             DataGridView2.DataSource = database.AsistanGrid
         End If
     End Sub
@@ -234,4 +279,6 @@ Public Class MevcutEklemeForm
         TbAdiGiriniz.Text = "Hİ" 'DataGridView2.Rows(duzenlenecekIndex).Cells(1).Value.ToString()
         TbKoduGiriniz.Text = DataGridView2.Rows(duzenlenecekIndex).Cells(2).Value.ToString()
     End Sub
+
+
 End Class
