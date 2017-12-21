@@ -16,6 +16,27 @@ Public Class AnaEkranForm
     Shared random As New Random()
     Dim listeler As New List(Of SinifListeleri)
 
+    Public Sub AsistanVeSinifGüncelle()
+        Dim siniflar As List(Of String) = database.DerslikGetir()
+        Dim asistanlar As List(Of String) = database.AsistanListesiAl()
+        For i As Integer = 0 To siniflar.Count - 1
+            Dim cbSinif As New CheckBox
+            'cbSinif.Width = 80
+            cbSinif.Text = siniflar(i).ToString() + "-" + database.DerslikKapasiteGetir(siniflar(i)).ToString()
+            cbSinif.Name = siniflar(i).ToString()
+            AddHandler cbSinif.Click, AddressOf cbSinif_click
+            flSinifListele.Controls.Add(cbSinif)
+        Next
+        For i As Integer = 0 To asistanlar.Count - 1
+            Dim cbAsistan As New CheckBox
+            'cbAsistan.Width = 80
+            cbAsistan.Text = asistanlar(i).ToString()
+            cbAsistan.Name = siniflar(i).ToString()
+            AddHandler cbAsistan.Click, AddressOf cbAsistan_click
+            flAsistanlar.Controls.Add(cbAsistan)
+        Next
+    End Sub
+
     Public Sub resimYukle()
         BtnDersDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
         BtnDersDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
@@ -141,6 +162,8 @@ Public Class AnaEkranForm
         GbYeniSinavOlustur.Visible = True
         GbYeniSinavOlustur.Top = (Me.ClientSize.Height / 2) - (GbYeniSinavOlustur.Height / 2)
         GbYeniSinavOlustur.Left = (Me.ClientSize.Width / 2) - (GbYeniSinavOlustur.Width / 2)
+        CbDersSecim.DataSource = database.DersAdiGetir
+        AsistanVeSinifGüncelle()
     End Sub
 
     Private Sub BtnSinavOlustur_Click(sender As Object, e As EventArgs) Handles BtnSinavOlustur.Click
@@ -295,48 +318,18 @@ Public Class AnaEkranForm
         OgrenciListesiniOku()
     End Sub
 
-    Private Sub GbYeniSinavOlustur_Enter(sender As Object, e As EventArgs) Handles GbYeniSinavOlustur.Enter
 
-    End Sub
 
     Private Sub AnaEkranForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'resimYukle()
+        resimYukle()
         DateTimePicker1.MinDate = DateTime.Now
         Me.WindowState = FormWindowState.Maximized
         GbAnaSayfa.Top = (Me.ClientSize.Height / 2) - (GbAnaSayfa.Height / 2)
         GbAnaSayfa.Left = (Me.ClientSize.Width / 2) - (GbAnaSayfa.Width / 2)
         CbDersSecim.DataSource = database.DersAdiGetir()
         cbDonemSec.DataSource = database.DonemGetir()
-        Dim siniflar As List(Of String) = database.DerslikGetir()
-        Dim asistanlar As List(Of String) = database.AsistanListesiAl()
-        For i As Integer = 0 To siniflar.Count - 1
-            Dim cbSinif As New CheckBox
-            'cbSinif.Width = 80
-            cbSinif.Text = siniflar(i).ToString() + "-" + database.DerslikKapasiteGetir(siniflar(i)).ToString()
-            cbSinif.Name = siniflar(i).ToString()
-            AddHandler cbSinif.Click, AddressOf cbSinif_click
-            flSinifListele.Controls.Add(cbSinif)
-        Next
-        For i As Integer = 0 To asistanlar.Count - 1
-            Dim cbAsistan As New CheckBox
-            'cbAsistan.Width = 80
-            cbAsistan.Text = asistanlar(i).ToString()
-            cbAsistan.Name = siniflar(i).ToString()
-            AddHandler cbAsistan.Click, AddressOf cbAsistan_click
-            flAsistanlar.Controls.Add(cbAsistan)
-        Next
+        AsistanVeSinifGüncelle()
     End Sub
 
-    Private Sub AnaEkranForm_FormClosed(sender As Object, e As FormClosedEventArgs)
-
-    End Sub
-
-    'Dim result As Integer = MessageBox.Show("İptal etmek istediğinize emin misiniz?", "Uyarı!", MessageBoxButtons.YesNo)
-    'If result = DialogResult.No Then
-    ''MessageBox.Show("No pressed")
-    'ElseIf result = DialogResult.Yes Then
-    '        GbAnaSayfa.Visible = True
-    '        GbYeniSinavOlustur.Visible = False
-    '    End If
 
 End Class
