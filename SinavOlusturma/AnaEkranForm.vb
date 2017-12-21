@@ -16,9 +16,23 @@ Public Class AnaEkranForm
     Shared random As New Random()
     Dim listeler As New List(Of SinifListeleri)
 
+
+    Public Sub TwVeriEkle()
+        Dim Tarih As List(Of Integer) = database.TarihGetir
+
+        Dim Donemler As List(Of String) = database.DonemGetir
+        Dim SinavID As List(Of Integer) = database.TumSinavIDGetir
+        TreeView1.Nodes.Add(Tarih(0))
+        TreeView1.SelectedNode.Nodes.Add(Donemler(0))
+
+
+    End Sub
+
     Public Sub AsistanVeSinifGüncelle()
         Dim siniflar As List(Of String) = database.DerslikGetir()
         Dim asistanlar As List(Of String) = database.AsistanListesiAl()
+        flAsistanlar.Controls.Clear()
+        flSinifListele.Controls.Clear()
         For i As Integer = 0 To siniflar.Count - 1
             Dim cbSinif As New CheckBox
             'cbSinif.Width = 80
@@ -321,6 +335,7 @@ Public Class AnaEkranForm
 
 
     Private Sub AnaEkranForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TwVeriEkle()
         resimYukle()
         DateTimePicker1.MinDate = DateTime.Now
         Me.WindowState = FormWindowState.Maximized
@@ -328,7 +343,6 @@ Public Class AnaEkranForm
         GbAnaSayfa.Left = (Me.ClientSize.Width / 2) - (GbAnaSayfa.Width / 2)
         CbDersSecim.DataSource = database.DersAdiGetir()
         cbDonemSec.DataSource = database.DonemGetir()
-        AsistanVeSinifGüncelle()
     End Sub
 
 

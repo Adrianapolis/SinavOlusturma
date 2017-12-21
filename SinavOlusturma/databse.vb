@@ -9,7 +9,7 @@ Public Class database
         vt.SaveChanges()
     End Sub
     Public Shared Function AsistanListesiAl()
-        Return vt.Asistan.Select(Function(x) x.AsistanAdi).ToList()
+        Return vt.Asistan.OrderBy(Function(x) x.AsistanAdi).Select(Function(x) x.AsistanAdi).ToList()
     End Function
     Public Shared Function AsistanGrid()
         Return (From x In vt.Asistan
@@ -31,7 +31,7 @@ Public Class database
         vt.SaveChanges()
     End Sub
     Public Shared Function DersAdiGetir()
-        Return vt.Dersler.Select(Function(x) x.DersAdi).ToArray()
+        Return vt.Dersler.OrderBy(Function(x) x.DersAdi).Select(Function(x) x.DersAdi).ToArray()
     End Function
     Public Shared Function DersGrid()
         Return (From x In vt.Dersler
@@ -55,7 +55,7 @@ Public Class database
         Return vt.Derslik.Where(Function(x) x.DerslikAdi = ArananDerslik).Select(Function(y) y.Kapasite).FirstOrDefault()
     End Function
     Public Shared Function DerslikGetir()
-        Return vt.Derslik.Select(Function(x) x.DerslikAdi).ToList()
+        Return vt.Derslik.OrderBy(Function(x) x.DerslikAdi).Select(Function(x) x.DerslikAdi).ToList()
     End Function
     Public Shared Function DerslikGrid()
         Return (From x In vt.Derslik
@@ -83,6 +83,9 @@ Public Class database
         vt.Tarihler.Add(eklenecekTarih)
         vt.SaveChanges()
     End Sub
+    Public Shared Function TarihGetir()
+        Return vt.Tarihler.OrderBy(Function(x) x.Tarih).Select(Function(x) x.Tarih.Year).ToList()
+    End Function
     Public Shared Function TarihIDGetir(ByVal ArananTarih As Date)
         Dim tarih As New Tarihler
         tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
@@ -104,6 +107,9 @@ Public Class database
     End Sub
     Public Shared Function SinavIDGetir(ByVal gelenDersKodu As String, ByVal gelentarih As Integer)
         Return vt.Sinav.Where(Function(x) x.DersKodu = gelenDersKodu And x.TarihID = gelentarih).Select(Function(x) x.SinavID).FirstOrDefault()
+    End Function
+    Public Shared Function TumSinavIDGetir()
+        Return vt.Sinav.Select(Function(x) x.SinavID).ToList()
     End Function
     'liste
     Public Shared Sub ListeEkle(ByVal EklenecekListe As Liste)
