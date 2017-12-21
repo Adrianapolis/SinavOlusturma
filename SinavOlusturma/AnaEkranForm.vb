@@ -88,7 +88,7 @@ Public Class AnaEkranForm
 
                 lblOgrenciHata.Text = ""
                 yerlestirilenOgrenciSayisi = yerlestirilenOgrenciSayisi + SecilenSiniflarinKapasitesi
-                If ogrenciSayisi - yerlestirilenOgrenciSayisi < 0 Then
+                If ogrenciSayisi - yerlestirilenOgrenciSayisi <= 0 Then
                     Lbkalanogrenci.Text = "0-Bütün Öğrenciler Yerleştirildi."
                 Else
                     Lbkalanogrenci.Text = ogrenciSayisi - yerlestirilenOgrenciSayisi
