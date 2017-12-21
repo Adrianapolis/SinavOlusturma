@@ -29,6 +29,7 @@ Public Class database
     Public Shared Sub DersEkle(ByVal ders As Dersler)
         vt.Dersler.Add(ders)
         vt.SaveChanges()
+
     End Sub
     Public Shared Function DersAdiGetir()
         Return vt.Dersler.OrderBy(Function(x) x.DersAdi).Select(Function(x) x.DersAdi).ToArray()
@@ -114,6 +115,16 @@ Public Class database
     Public Shared Function TumSinavIDGetir()
         Return vt.Sinav.Select(Function(x) x.SinavID).ToList()
     End Function
+    Public Shared Function SinavGrid()
+        Return (From x In vt.Sinav
+                Select New With {x.Dersler.DersAdi, x.DersKodu, x.SinavTuru, x.Tarihler.Tarih}).OrderBy(Function(x) x.DersAdi).ToList()
+    End Function
+    Public Shared Sub sinavSil(ByVal Dersk As String, ByVal t As Date)
+        Dim tID = database.TarihIDGetir(t)
+        Dim silinecek As Sinav = vt.Sinav.Where(Function(x) x.DersKodu = Dersk).FirstOrDefault()
+        vt.Sinav.Remove(silinecek)
+        vt.SaveChanges()
+    End Sub
     'liste
     Public Shared Sub ListeEkle(ByVal EklenecekListe As Liste)
         vt.Liste.Add(EklenecekListe)

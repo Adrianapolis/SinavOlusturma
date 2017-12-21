@@ -65,7 +65,7 @@ Public Class MevcutEklemeForm
                 durumlar(1) += 1
 
                 If (durumlar(1) = 0) Then
-                    DataGridView2.DataSource = database.DersGrid()
+                    dgMevcutEkleme.DataSource = database.DersGrid()
                     LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
                     LblAdiGiriniz.Text = "Ders Adı Giriniz:"
                     LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
@@ -74,7 +74,7 @@ Public Class MevcutEklemeForm
 
 
                 ElseIf (durumlar(1) = 1) Then
-                    DataGridView2.DataSource = database.DerslikGrid()
+                    dgMevcutEkleme.DataSource = database.DerslikGrid()
                     LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
                     LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
                     LblKoduGiriniz.Text = "Kapasite Giriniz:"
@@ -82,7 +82,7 @@ Public Class MevcutEklemeForm
                     BtnDevam.Text = "Devam"
 
                 ElseIf (durumlar(1) = 2) Then
-                    DataGridView2.DataSource = database.AsistanGrid()
+                    dgMevcutEkleme.DataSource = database.AsistanGrid()
                     LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
                     LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                     LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
@@ -123,7 +123,7 @@ Public Class MevcutEklemeForm
                 durumlar(1) -= 1
 
                 If (durumlar(1) = 0) Then
-                    DataGridView2.DataSource = database.DersGrid()
+                    dgMevcutEkleme.DataSource = database.DersGrid()
                     LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
                     LblAdiGiriniz.Text = "Ders Adı Giriniz:"
                     LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
@@ -132,7 +132,7 @@ Public Class MevcutEklemeForm
 
 
                 ElseIf (durumlar(1) = 1) Then
-                    DataGridView2.DataSource = database.DerslikGrid
+                    dgMevcutEkleme.DataSource = database.DerslikGrid
                     LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
                     LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
                     LblKoduGiriniz.Text = "Kapasite Giriniz:"
@@ -141,7 +141,7 @@ Public Class MevcutEklemeForm
 
 
                 ElseIf (durumlar(1) = 2) Then
-                    DataGridView2.DataSource = database.AsistanGrid()
+                    dgMevcutEkleme.DataSource = database.AsistanGrid()
                     LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
                     LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                     LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
@@ -150,7 +150,7 @@ Public Class MevcutEklemeForm
 
                 End If
             Else 'İlk sayfadaysa  /BU KOD SİLİNEBİLİR
-                DataGridView2.DataSource = database.DersGrid()
+                dgMevcutEkleme.DataSource = database.DersGrid()
                 LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
                 LblAdiGiriniz.Text = "Ders Adı Giriniz:"
                 LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
@@ -176,7 +176,7 @@ Public Class MevcutEklemeForm
 
         If (durumlar(0) = 0) Then
             If (durumlar(1) = 0) Then
-                DataGridView2.DataSource = database.DersGrid()
+                dgMevcutEkleme.DataSource = database.DersGrid()
                 LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
                 LblAdiGiriniz.Text = "Ders Adı Giriniz:"
                 LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
@@ -185,7 +185,7 @@ Public Class MevcutEklemeForm
 
 
             ElseIf (durumlar(1) = 1) Then
-                DataGridView2.DataSource = database.DerslikGrid()
+                dgMevcutEkleme.DataSource = database.DerslikGrid()
                 LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
                 LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
                 LblKoduGiriniz.Text = "Kapasite Giriniz:"
@@ -194,7 +194,7 @@ Public Class MevcutEklemeForm
 
 
             ElseIf (durumlar(1) = 2) Then
-                DataGridView2.DataSource = database.AsistanGrid()
+                dgMevcutEkleme.DataSource = database.AsistanGrid()
                 LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
                 LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                 LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
@@ -206,7 +206,7 @@ Public Class MevcutEklemeForm
         Else
             'Durumlar(0)=1 olduğundan kurulum daha önceden yapılmış
             If (durumlar(1) = 0) Then
-                DataGridView2.DataSource = database.DersGrid()
+                dgMevcutEkleme.DataSource = database.DersGrid()
                 LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
                 LblAdiGiriniz.Text = "Ders Adı Giriniz:"
                 LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
@@ -215,7 +215,7 @@ Public Class MevcutEklemeForm
 
 
             ElseIf (durumlar(1) = 1) Then
-                DataGridView2.DataSource = database.DerslikGrid()
+                dgMevcutEkleme.DataSource = database.DerslikGrid()
                 LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
                 LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
                 LblKoduGiriniz.Text = "Kapasite Giriniz:"
@@ -224,7 +224,7 @@ Public Class MevcutEklemeForm
 
 
             ElseIf (durumlar(1) = 2) Then
-                DataGridView2.DataSource = database.AsistanGrid()
+                dgMevcutEkleme.DataSource = database.AsistanGrid()
                 LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
                 LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
                 LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
@@ -252,7 +252,7 @@ Public Class MevcutEklemeForm
             database.DersEkle(eklenecekDers)
             TbAdiGiriniz.Clear()
             TbKoduGiriniz.Clear()
-            DataGridView2.DataSource = database.DersGrid
+            dgMevcutEkleme.DataSource = database.DersGrid
         ElseIf durumlar(1) = 1 Then 'derslik
             Dim eklenecekDerslik As New Derslik
             eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
@@ -260,7 +260,7 @@ Public Class MevcutEklemeForm
             database.DerslikEkle(eklenecekDerslik)
             TbAdiGiriniz.Clear()
             TbKoduGiriniz.Clear()
-            DataGridView2.DataSource = database.DerslikGrid
+            dgMevcutEkleme.DataSource = database.DerslikGrid
         ElseIf durumlar(1) = 2 Then 'asistan
             Dim eklenecekAsistan As New Asistan
             eklenecekAsistan.AsistanAdi = TbAdiGiriniz.Text
@@ -268,31 +268,31 @@ Public Class MevcutEklemeForm
             database.AsistanEkle(eklenecekAsistan)
             TbAdiGiriniz.Clear()
             TbKoduGiriniz.Clear()
-            DataGridView2.DataSource = database.AsistanGrid
+            dgMevcutEkleme.DataSource = database.AsistanGrid
         End If
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgMevcutEkleme.CellContentClick
         Dim SilinecekIndex As Integer = e.RowIndex
         If e.ColumnIndex = 0 Then
 
             If durumlar(1) = 0 Then 'ders
-                Dim silinecekDersKodu As String = DataGridView2.Rows(SilinecekIndex).Cells(2).Value.ToString()
+                Dim silinecekDersKodu As String = dgMevcutEkleme.Rows(SilinecekIndex).Cells(2).Value.ToString()
                 database.DersSil(silinecekDersKodu)
-                DataGridView2.DataSource = database.DersGrid
+                dgMevcutEkleme.DataSource = database.DersGrid
             ElseIf durumlar(1) = 1 Then 'derslik
-                Dim silinecekDerslikAdi As String = DataGridView2.Rows(SilinecekIndex).Cells(1).Value.ToString()
+                Dim silinecekDerslikAdi As String = dgMevcutEkleme.Rows(SilinecekIndex).Cells(1).Value.ToString()
                 database.DerslikSil(silinecekDerslikAdi)
-                DataGridView2.DataSource = database.DerslikGrid
+                dgMevcutEkleme.DataSource = database.DerslikGrid
             ElseIf durumlar(1) = 2 Then 'asistan
-                Dim silinecekAsistanAdi As String = DataGridView2.Rows(SilinecekIndex).Cells(1).Value.ToString()
+                Dim silinecekAsistanAdi As String = dgMevcutEkleme.Rows(SilinecekIndex).Cells(1).Value.ToString()
                 database.AsistanSil(silinecekAsistanAdi)
-                DataGridView2.DataSource = database.AsistanGrid
+                dgMevcutEkleme.DataSource = database.AsistanGrid
             End If
         End If
     End Sub
 
-    Private Sub DataGridView2_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentDoubleClick
+    Private Sub DataGridView2_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgMevcutEkleme.CellContentDoubleClick
         MessageBox.Show("ÇİFT  TIKLADIN REİS")
 
         Dim duzenlenecekIndex As Integer = e.RowIndex
@@ -300,7 +300,7 @@ Public Class MevcutEklemeForm
         btnİptal.Visible = True
         BtnEkle.Visible = False
         TbAdiGiriniz.Text = "Hİ" 'DataGridView2.Rows(duzenlenecekIndex).Cells(1).Value.ToString()
-        TbKoduGiriniz.Text = DataGridView2.Rows(duzenlenecekIndex).Cells(2).Value.ToString()
+        TbKoduGiriniz.Text = dgMevcutEkleme.Rows(duzenlenecekIndex).Cells(2).Value.ToString()
     End Sub
 
 

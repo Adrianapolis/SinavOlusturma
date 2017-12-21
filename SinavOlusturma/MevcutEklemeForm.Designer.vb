@@ -31,11 +31,11 @@ Partial Class MevcutEklemeForm
         Me.BtnDevam = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnGeri = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.dgMevcutEkleme = New System.Windows.Forms.DataGridView()
         Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnKaydet = New System.Windows.Forms.Button()
         Me.btnİptal = New System.Windows.Forms.Button()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgMevcutEkleme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LblEkleyiniz
@@ -116,18 +116,18 @@ Partial Class MevcutEklemeForm
         Me.BtnGeri.UseVisualStyleBackColor = True
         Me.BtnGeri.Visible = False
         '
-        'DataGridView2
+        'dgMevcutEkleme
         '
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Sil})
-        Me.DataGridView2.Location = New System.Drawing.Point(485, 67)
-        Me.DataGridView2.MultiSelect = False
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(483, 323)
-        Me.DataGridView2.TabIndex = 10
+        Me.dgMevcutEkleme.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgMevcutEkleme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgMevcutEkleme.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Sil})
+        Me.dgMevcutEkleme.Location = New System.Drawing.Point(485, 67)
+        Me.dgMevcutEkleme.MultiSelect = False
+        Me.dgMevcutEkleme.Name = "dgMevcutEkleme"
+        Me.dgMevcutEkleme.ReadOnly = True
+        Me.dgMevcutEkleme.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgMevcutEkleme.Size = New System.Drawing.Size(483, 323)
+        Me.dgMevcutEkleme.TabIndex = 10
         '
         'Sil
         '
@@ -166,7 +166,7 @@ Partial Class MevcutEklemeForm
         Me.ClientSize = New System.Drawing.Size(991, 572)
         Me.Controls.Add(Me.btnİptal)
         Me.Controls.Add(Me.btnKaydet)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.dgMevcutEkleme)
         Me.Controls.Add(Me.BtnGeri)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.BtnDevam)
@@ -179,7 +179,7 @@ Partial Class MevcutEklemeForm
         Me.Name = "MevcutEklemeForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MevcutEklemeForm"
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgMevcutEkleme, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -194,7 +194,7 @@ Partial Class MevcutEklemeForm
     Friend WithEvents BtnDevam As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnGeri As Button
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents dgMevcutEkleme As DataGridView
     Friend WithEvents btnKaydet As Button
     Friend WithEvents btnİptal As Button
     Friend WithEvents Sil As DataGridViewButtonColumn

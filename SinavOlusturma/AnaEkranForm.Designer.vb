@@ -28,7 +28,6 @@ Partial Class AnaEkranForm
         Me.BtnMailGonder = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GbAnaSayfa = New System.Windows.Forms.GroupBox()
-        Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.GbMevcudatDuzenle = New System.Windows.Forms.GroupBox()
         Me.BtnMevcudatGeri = New System.Windows.Forms.Button()
         Me.BtnAsistanDuzenleme = New System.Windows.Forms.Button()
@@ -60,10 +59,14 @@ Partial Class AnaEkranForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.dgAnaSayfa = New System.Windows.Forms.DataGridView()
+        Me.Mail = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GbAnaSayfa.SuspendLayout()
         Me.GbMevcudatDuzenle.SuspendLayout()
         Me.GbYeniSinavOlustur.SuspendLayout()
         Me.GbOgrenciDosya.SuspendLayout()
+        CType(Me.dgAnaSayfa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnYeniSinav
@@ -92,7 +95,7 @@ Partial Class AnaEkranForm
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(850, 201)
+        Me.Label1.Location = New System.Drawing.Point(806, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(111, 13)
         Me.Label1.TabIndex = 2
@@ -124,7 +127,7 @@ Partial Class AnaEkranForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GbAnaSayfa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.GbAnaSayfa.Controls.Add(Me.TreeView1)
+        Me.GbAnaSayfa.Controls.Add(Me.dgAnaSayfa)
         Me.GbAnaSayfa.Controls.Add(Me.BtnYeniSinav)
         Me.GbAnaSayfa.Controls.Add(Me.Label2)
         Me.GbAnaSayfa.Controls.Add(Me.BtnMevcudat)
@@ -136,14 +139,6 @@ Partial Class AnaEkranForm
         Me.GbAnaSayfa.TabIndex = 6
         Me.GbAnaSayfa.TabStop = False
         Me.GbAnaSayfa.Text = "Ana Sayfa"
-        '
-        'TreeView1
-        '
-        Me.TreeView1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TreeView1.Location = New System.Drawing.Point(782, 234)
-        Me.TreeView1.Name = "TreeView1"
-        Me.TreeView1.Size = New System.Drawing.Size(240, 292)
-        Me.TreeView1.TabIndex = 6
         '
         'GbMevcudatDuzenle
         '
@@ -473,6 +468,37 @@ Partial Class AnaEkranForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'dgAnaSayfa
+        '
+        Me.dgAnaSayfa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgAnaSayfa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgAnaSayfa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Mail, Me.Sil})
+        Me.dgAnaSayfa.Location = New System.Drawing.Point(620, 86)
+        Me.dgAnaSayfa.MultiSelect = False
+        Me.dgAnaSayfa.Name = "dgAnaSayfa"
+        Me.dgAnaSayfa.ReadOnly = True
+        Me.dgAnaSayfa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgAnaSayfa.Size = New System.Drawing.Size(483, 433)
+        Me.dgAnaSayfa.TabIndex = 11
+        '
+        'Mail
+        '
+        Me.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Mail.FillWeight = 40.0!
+        Me.Mail.HeaderText = "Gönder"
+        Me.Mail.Name = "Mail"
+        Me.Mail.ReadOnly = True
+        Me.Mail.Text = "->"
+        Me.Mail.UseColumnTextForButtonValue = True
+        '
+        'Sil
+        '
+        Me.Sil.FillWeight = 20.0!
+        Me.Sil.HeaderText = "Sil"
+        Me.Sil.Name = "Sil"
+        Me.Sil.ReadOnly = True
+        Me.Sil.Text = "X"
+        '
         'AnaEkranForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -492,6 +518,7 @@ Partial Class AnaEkranForm
         Me.GbYeniSinavOlustur.PerformLayout()
         Me.GbOgrenciDosya.ResumeLayout(False)
         Me.GbOgrenciDosya.PerformLayout()
+        CType(Me.dgAnaSayfa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -524,7 +551,6 @@ Partial Class AnaEkranForm
     Friend WithEvents BtnAsistanDuzenleme As Button
     Friend WithEvents BtnDersDuzenleme As Button
     Friend WithEvents BtnDerslikDuzenleme As Button
-    Friend WithEvents TreeView1 As TreeView
     Friend WithEvents BtnSinavIptal As Button
     Friend WithEvents flAsistanlar As FlowLayoutPanel
     Friend WithEvents flSinifListele As FlowLayoutPanel
@@ -535,4 +561,7 @@ Partial Class AnaEkranForm
     Friend WithEvents Label10 As Label
     Friend WithEvents Lbkalanogrenci As Label
     Friend WithEvents lblOgrenciHata As Label
+    Friend WithEvents dgAnaSayfa As DataGridView
+    Friend WithEvents Mail As DataGridViewButtonColumn
+    Friend WithEvents Sil As DataGridViewButtonColumn
 End Class

@@ -19,15 +19,7 @@ Public Class AnaEkranForm
 
 
 
-    Public Sub TwVeriEkle()
-        Dim Tarih As List(Of Integer) = database.TarihGetir
-        Dim Donemler As List(Of String) = database.DonemGetir
-        Dim SinavID As List(Of Integer) = database.TumSinavIDGetir
-        TreeView1.Nodes.Add(Tarih(0))
-        'TreeView1.SelectedNode.Nodes.Add(Donemler(0))
 
-
-    End Sub
 
     Public Sub AsistanVeSinifGüncelle()
         Dim siniflar As List(Of String) = database.DerslikGetir()
@@ -279,6 +271,7 @@ Public Class AnaEkranForm
         Else
             MessageBox.Show("İşleminiz başarı ile gerçekleşti.")
         End If
+        dgAnaSayfa.DataSource = database.SinavGrid()
 
 
     End Sub
@@ -350,7 +343,7 @@ Public Class AnaEkranForm
 
 
     Private Sub AnaEkranForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TwVeriEkle()
+
         resimYukle()
         DateTimePicker1.MinDate = DateTime.Now
         Me.WindowState = FormWindowState.Maximized
@@ -358,7 +351,18 @@ Public Class AnaEkranForm
         GbAnaSayfa.Left = (Me.ClientSize.Width / 2) - (GbAnaSayfa.Width / 2)
         CbDersSecim.DataSource = database.DersAdiGetir()
         cbDonemSec.DataSource = database.DonemGetir()
+        dgAnaSayfa.DataSource = database.SinavGrid()
     End Sub
 
-
+    Private Sub dgAnaSayfa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgAnaSayfa.CellContentClick
+        Dim islemYapilacakIndex As Integer = e.RowIndex
+        If e.ColumnIndex = 0 Then
+            'Mail Gönderme işlemleri
+        ElseIf e.ColumnIndex = 1 Then
+            Dim silinecekDersKodu As String = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(3).Value.ToString()
+            Dim silinecekTarih As Date = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(5).Value
+            database.sinavSil(silinecekDersKodu, silinecekTarih)
+            dgAnaSayfa.DataSource = database.SinavGrid()
+        End If
+    End Sub
 End Class
