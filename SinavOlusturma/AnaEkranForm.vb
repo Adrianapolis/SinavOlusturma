@@ -181,8 +181,14 @@ Public Class AnaEkranForm
         Next
         For i As Integer = 0 To seciliSiniflar.Count - 1
             Dim asistanIndex As Integer = random.Next(seciliAsistanlar.Count)
-            listeler(i).PAsistanAdi = seciliAsistanlar(asistanIndex)
-            seciliAsistanlar.RemoveAt(asistanIndex)
+            Try
+                listeler(i).PAsistanAdi = seciliAsistanlar(asistanIndex)
+                seciliAsistanlar.RemoveAt(asistanIndex)
+            Catch
+                MessageBox.Show("Asistan Seçimi Hatalı")
+            End Try
+
+
         Next
 
         'Dim liste As New StringBuilder
@@ -216,8 +222,13 @@ Public Class AnaEkranForm
             dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler).ToString()
             database.ListeEkle(dbEklenecekListe)
         Next
+        If secilmesiGerekenAsistanSayi > 0 Then
+            MessageBox.Show("Asistan seçiminde hata oldu.")
+        Else
+            MessageBox.Show("İşleminiz başarı ile gerçekleşti.")
+        End If
 
-        MessageBox.Show("İşleminiz başarı ile gerçekleştirildi")
+
     End Sub
 
     Private Sub MevcudatDuzenle_Click(sender As Object, e As EventArgs) Handles BtnMevcudat.Click
