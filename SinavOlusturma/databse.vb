@@ -23,7 +23,9 @@ Public Class database
     Public Shared Function AsistanIDGetir(ByVal arananAsistanAdi As String)
         Return vt.Asistan.Where(Function(x) x.AsistanAdi = arananAsistanAdi).Select(Function(x) x.AsistanID).FirstOrDefault
     End Function
-
+    Public Shared Function AsistanMailGetir(ByVal arananAsistanAdi As String)
+        Return vt.Asistan.Where(Function(x) x.AsistanAdi = arananAsistanAdi).Select(Function(x) x.Mail).FirstOrDefault
+    End Function
 
     'Ders
     Public Shared Sub DersEkle(ByVal ders As Dersler)
@@ -45,6 +47,7 @@ Public Class database
     Public Shared Function DersKoduGetir(ByVal ArananDersAdi As String)
         Return vt.Dersler.Where(Function(x) x.DersAdi = ArananDersAdi).Select(Function(x) x.DersKodu).FirstOrDefault()
     End Function
+
 
     'Derslik
     Public Shared Sub DerslikEkle(ByVal derslik As Derslik)

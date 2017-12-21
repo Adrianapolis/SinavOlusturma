@@ -2,7 +2,9 @@
 Imports System.Text
 Imports System.Drawing.Text
 Imports System.Net
+Imports System.Net.Mail
 Public Class AnaEkranForm
+    Dim Mail As New MailMessage
     Dim ogrenciSayisi As Integer
     Dim yerlestirilenOgrenciSayisi As Integer = 0
     Dim kalanogrencisayisi As Integer = 0
@@ -222,12 +224,26 @@ Public Class AnaEkranForm
             dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler).ToString()
             database.ListeEkle(dbEklenecekListe)
         Next
+
         If secilmesiGerekenAsistanSayi > 0 Then
             MessageBox.Show("Asistan seçiminde hata oldu.")
         Else
             MessageBox.Show("İşleminiz başarı ile gerçekleşti.")
         End If
 
+        For listesayac As Integer = 0 To seciliSiniflar.Count - 1
+            Mail.Subject = CbDersSecim.SelectedItem.ToString() & " Dersi İçin Sınav Dağıtım"
+            Mail.To.Add(database.AsistanMailGetir(listeler(listesayac).PAsistanAdi))
+            Mail.From = New MailAddress(database.AsistanMailGetir(listeler(listesayac).PAsistanAdi))
+            Mail.Body = "Html Gelecek"
+        Next
+
+        'Mail Ayarları
+        Dim SMTP As New SmtpClient("smtp.gmail.com")
+        SMTP.EnableSsl = True
+        SMTP.Credentials = New System.Net.NetworkCredential("ogrencidagitimsistemi@gmail.com", "trakyauniversitesi")
+        SMTP.Port = "587"
+        SMTP.Send(Mail)
 
     End Sub
 
