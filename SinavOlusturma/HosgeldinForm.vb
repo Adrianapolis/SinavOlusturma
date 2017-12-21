@@ -6,12 +6,11 @@ Public Class HosgeldinForm
     Dim durumlar(2) As String
 
     Public Sub resimYukle()
+        BackColor = Color.FromArgb(249, 249, 249)
         PictureBox1.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "giris.png")
         PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
-        'Dim pfc As New PrivateFontCollection()
-        'pfc.AddFontFile(AppDomain.CurrentDomain.BaseDirectory & "Fontlar\\helvetica.ttf")
-        'Label1.Font = New Font(pfc.Families(0), (16), FontStyle.Regular)
-        'Button1.Font = New Font(pfc.Families(0), (16), FontStyle.Regular)
+        Button1.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8sagOk.png")
+        Button1.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click

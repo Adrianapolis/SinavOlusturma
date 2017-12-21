@@ -4,6 +4,25 @@ Public Class MevcutEklemeForm
     Dim durum As String = ""
     Dim durumlar(2) As String
 
+    Public Sub resimYukle()
+        BackColor = Color.FromArgb(249, 249, 249)
+
+        If (durumlar(0) = 0) Then
+            BtnDevam.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8sagOk.png")
+            BtnDevam.BackgroundImageLayout = ImageLayout.Stretch
+        Else
+            BtnDevam.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8tamam.png")
+            BtnDevam.BackgroundImageLayout = ImageLayout.Stretch
+        End If
+        BtnEkle.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle(6oran).png")
+        BtnEkle.BackgroundImageLayout = ImageLayout.Stretch
+        btnİptal.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "iptal.png")
+        btnİptal.BackgroundImageLayout = ImageLayout.Stretch
+        btnKaydet.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8tamam.png")
+        btnKaydet.BackgroundImageLayout = ImageLayout.Stretch
+        BtnGeri.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8solOk.png")
+        BtnGeri.BackgroundImageLayout = ImageLayout.Stretch
+    End Sub
 
     Private Sub TbKoduGiriniz_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TbKoduGiriniz.Validating
         Dim email As String = TbKoduGiriniz.Text
@@ -145,6 +164,7 @@ Public Class MevcutEklemeForm
     End Sub
 
     Private Sub MevcutEklemeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'resimYukle()
         Dim sr As New StreamReader("status")
         Dim i As Integer = 0
         Do Until sr.Peek = -1

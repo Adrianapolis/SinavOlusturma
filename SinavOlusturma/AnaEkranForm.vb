@@ -17,6 +17,8 @@ Public Class AnaEkranForm
     Dim listeler As New List(Of SinifListeleri)
 
 
+
+
     Public Sub TwVeriEkle()
         Dim Tarih As List(Of Integer) = database.TarihGetir
         Dim Donemler As List(Of String) = database.DonemGetir
@@ -51,18 +53,32 @@ Public Class AnaEkranForm
     End Sub
 
     Public Sub resimYukle()
+        BackColor = Color.FromArgb(249, 249, 249)
+        'mevcudat gb
         BtnDersDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
         BtnDersDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
         BtnAsistanDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "asistan.png")
         BtnAsistanDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-        BtnDerslikDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "derslik.png")
+        BtnDerslikDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "derslik.png")
         BtnDerslikDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
+        BtnMevcudatGeri.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8solOk.png")
+        BtnMevcudatGeri.BackgroundImageLayout = ImageLayout.Stretch
+
+
+        'anasayfa gb
         BtnYeniSinav.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
         BtnYeniSinav.BackgroundImageLayout = ImageLayout.Stretch
         BtnMevcudat.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "düzenle.png")
         BtnMevcudat.BackgroundImageLayout = ImageLayout.Stretch
         BtnMailGonder.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "mail.png")
         BtnMailGonder.BackgroundImageLayout = ImageLayout.Stretch
+
+        'yenisinav oluştur gb
+        BtnSinavOlustur.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
+        BtnSinavOlustur.BackgroundImageLayout = ImageLayout.Stretch
+        BtnSinavIptal.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "iptal.png")
+        BtnSinavIptal.BackgroundImageLayout = ImageLayout.Stretch
+
     End Sub
 
 
