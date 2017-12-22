@@ -28,6 +28,9 @@ Partial Class AnaEkranForm
         Me.BtnMailGonder = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GbAnaSayfa = New System.Windows.Forms.GroupBox()
+        Me.dgAnaSayfa = New System.Windows.Forms.DataGridView()
+        Me.Mail = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GbMevcudatDuzenle = New System.Windows.Forms.GroupBox()
         Me.BtnMevcudatGeri = New System.Windows.Forms.Button()
         Me.BtnAsistanDuzenleme = New System.Windows.Forms.Button()
@@ -59,14 +62,11 @@ Partial Class AnaEkranForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.dgAnaSayfa = New System.Windows.Forms.DataGridView()
-        Me.Mail = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GbAnaSayfa.SuspendLayout()
+        CType(Me.dgAnaSayfa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbMevcudatDuzenle.SuspendLayout()
         Me.GbYeniSinavOlustur.SuspendLayout()
         Me.GbOgrenciDosya.SuspendLayout()
-        CType(Me.dgAnaSayfa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnYeniSinav
@@ -139,6 +139,37 @@ Partial Class AnaEkranForm
         Me.GbAnaSayfa.TabIndex = 6
         Me.GbAnaSayfa.TabStop = False
         Me.GbAnaSayfa.Text = "Ana Sayfa"
+        '
+        'dgAnaSayfa
+        '
+        Me.dgAnaSayfa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgAnaSayfa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgAnaSayfa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Mail, Me.Sil})
+        Me.dgAnaSayfa.Location = New System.Drawing.Point(620, 86)
+        Me.dgAnaSayfa.MultiSelect = False
+        Me.dgAnaSayfa.Name = "dgAnaSayfa"
+        Me.dgAnaSayfa.ReadOnly = True
+        Me.dgAnaSayfa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgAnaSayfa.Size = New System.Drawing.Size(483, 433)
+        Me.dgAnaSayfa.TabIndex = 11
+        '
+        'Mail
+        '
+        Me.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Mail.FillWeight = 40.0!
+        Me.Mail.HeaderText = "Gönder"
+        Me.Mail.Name = "Mail"
+        Me.Mail.ReadOnly = True
+        Me.Mail.Text = "->"
+        Me.Mail.UseColumnTextForButtonValue = True
+        '
+        'Sil
+        '
+        Me.Sil.FillWeight = 20.0!
+        Me.Sil.HeaderText = "Sil"
+        Me.Sil.Name = "Sil"
+        Me.Sil.ReadOnly = True
+        Me.Sil.Text = "X"
         '
         'GbMevcudatDuzenle
         '
@@ -231,7 +262,7 @@ Partial Class AnaEkranForm
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label3)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label8)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label9)
-        Me.GbYeniSinavOlustur.Location = New System.Drawing.Point(12, 660)
+        Me.GbYeniSinavOlustur.Location = New System.Drawing.Point(30, 660)
         Me.GbYeniSinavOlustur.Name = "GbYeniSinavOlustur"
         Me.GbYeniSinavOlustur.Size = New System.Drawing.Size(1119, 681)
         Me.GbYeniSinavOlustur.TabIndex = 7
@@ -468,37 +499,6 @@ Partial Class AnaEkranForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'dgAnaSayfa
-        '
-        Me.dgAnaSayfa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgAnaSayfa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgAnaSayfa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Mail, Me.Sil})
-        Me.dgAnaSayfa.Location = New System.Drawing.Point(620, 86)
-        Me.dgAnaSayfa.MultiSelect = False
-        Me.dgAnaSayfa.Name = "dgAnaSayfa"
-        Me.dgAnaSayfa.ReadOnly = True
-        Me.dgAnaSayfa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgAnaSayfa.Size = New System.Drawing.Size(483, 433)
-        Me.dgAnaSayfa.TabIndex = 11
-        '
-        'Mail
-        '
-        Me.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Mail.FillWeight = 40.0!
-        Me.Mail.HeaderText = "Gönder"
-        Me.Mail.Name = "Mail"
-        Me.Mail.ReadOnly = True
-        Me.Mail.Text = "->"
-        Me.Mail.UseColumnTextForButtonValue = True
-        '
-        'Sil
-        '
-        Me.Sil.FillWeight = 20.0!
-        Me.Sil.HeaderText = "Sil"
-        Me.Sil.Name = "Sil"
-        Me.Sil.ReadOnly = True
-        Me.Sil.Text = "X"
-        '
         'AnaEkranForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -512,13 +512,13 @@ Partial Class AnaEkranForm
         Me.Text = "AnaEkranForm"
         Me.GbAnaSayfa.ResumeLayout(False)
         Me.GbAnaSayfa.PerformLayout()
+        CType(Me.dgAnaSayfa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbMevcudatDuzenle.ResumeLayout(False)
         Me.GbMevcudatDuzenle.PerformLayout()
         Me.GbYeniSinavOlustur.ResumeLayout(False)
         Me.GbYeniSinavOlustur.PerformLayout()
         Me.GbOgrenciDosya.ResumeLayout(False)
         Me.GbOgrenciDosya.PerformLayout()
-        CType(Me.dgAnaSayfa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

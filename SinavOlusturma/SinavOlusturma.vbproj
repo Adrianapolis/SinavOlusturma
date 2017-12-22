@@ -104,6 +104,7 @@
       <DependentUpon>HosgeldinForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="listeMailYolla.vb" />
     <Compile Include="MevcutEklemeForm.Designer.vb">
       <DependentUpon>MevcutEklemeForm.vb</DependentUpon>
     </Compile>
@@ -111,19 +112,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Asistan.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Dersler.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Derslik.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donem.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Liste.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\localveritabani.Context.vb">
       <AutoGen>True</AutoGen>
@@ -141,28 +142,13 @@
       <DependentUpon>localveritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sinav.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SONVEritabani.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SONVEritabani.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SONVEritabani.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SONVEritabani.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SONVEritabani.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>localveritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tarihler.vb">
-      <DependentUpon>SONVEritabani.tt</DependentUpon>
+      <DependentUpon>veritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\veritabani.Context.vb">
       <AutoGen>True</AutoGen>
@@ -229,13 +215,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>veritabani.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <EntityDeploy Include="Models\SONVEritabani.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SONVEritabani.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\SONVEritabani.edmx.diagram">
-      <DependentUpon>SONVEritabani.edmx</DependentUpon>
-    </None>
     <None Include="Models\veritabani.edmx.diagram">
       <DependentUpon>veritabani.edmx</DependentUpon>
     </None>
@@ -266,16 +245,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>localveritabani.edmx</DependentUpon>
       <LastGenOutput>localveritabani.vb</LastGenOutput>
-    </Content>
-    <Content Include="Models\SONVEritabani.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SONVEritabani.edmx</DependentUpon>
-      <LastGenOutput>SONVEritabani.Context.vb</LastGenOutput>
-    </Content>
-    <Content Include="Models\SONVEritabani.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SONVEritabani.edmx</DependentUpon>
-      <LastGenOutput>SONVEritabani.vb</LastGenOutput>
     </Content>
     <Content Include="Models\veritabani.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

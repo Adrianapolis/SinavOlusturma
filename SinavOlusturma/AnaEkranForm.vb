@@ -2,6 +2,8 @@
 Imports System.Text
 Imports System.Drawing.Text
 Imports System.Net
+Imports System.Net.Mail
+
 Public Class AnaEkranForm
     Dim ogrenciSayisi As Integer
     Dim yerlestirilenOgrenciSayisi As Integer = 0
@@ -21,7 +23,7 @@ Public Class AnaEkranForm
 
 
 
-    Public Sub AsistanVeSinifGüncelle()
+    Private Sub AsistanVeSinifGüncelle()
         Dim siniflar As List(Of String) = database.DerslikGetir()
         Dim asistanlar As List(Of String) = database.AsistanListesiAl()
         flAsistanlar.Controls.Clear()
@@ -43,7 +45,7 @@ Public Class AnaEkranForm
         Next
     End Sub
 
-    Public Sub resimYukle()
+    Private Sub resimYukle()
         BackColor = Color.FromArgb(249, 249, 249)
         'mevcudat gb
         BtnDersDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
@@ -365,9 +367,63 @@ Public Class AnaEkranForm
         dgAnaSayfa.DataSource = database.SinavGrid()
     End Sub
 
+    Private Sub fonk(ByVal veri As String, ByVal dersAdi As String, ByVal sinavTur As String, ByVal derslik As String, ByVal asistan As String, ByVal tarih As String, ByVal AsistanMail As String)
+        'Dim veri As String = "1151402562-Süleyman Yasin Akdeniz12;1151506396-Anıl Yılmaz5;115162503-Muhammed Fatih Candan7;1151506396-Anıl Yılmaz1;1151402562-Süleyman Yasin Akdeniz6;115162503-Muhammed Fatih Candan16;115162503-Muhammed Fatih Candan;115162503-Muhammed Fatih Candan5;1151508496-Uğur Kıymetli8;1151402562-Süleyman Yasin Akdeniz11;115150849-Uğur Kıymetli5;1151602805-Mehmet Erdin10;1151402562-Süleyman Yasin Akdeniz16;1151508496-Uğur Kıymetli16;1151506396-Anıl Yılmaz7;1151402562-Süleyman Yasin Akdeniz15;1151508496-Uğur Kıymetli10;115162503-Muhammed Fatih Candan4;1151402562-Süleyman Yasin Akdeniz8;1151506396-Anıl Yılmaz;"
+        Dim header As String = "<!DOCTYPE html><html lang=""en""> <head> <title></title> <meta charset=""UTF-8""> <meta name=""viewport"" content=""width=device-width, initial-scale=1""> </head> <body> <style type=""text/css""> .tg{border-collapse:collapse;border-spacing:0;}.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}.tg .tg-f64w{font-weight:bold;font-size:16px;font-family:""Times New Roman"", Times, serif !important;;background-color:#cfcfcf;text-align:center;vertical-align:top}.tg .tg-ydu8{font-size:16px;font-family:""Times New Roman"", Times, serif !important;;text-align:center}.tg .tg-plqh{font-size:16px;font-family:""Times New Roman"", Times, serif !important;;text-align:center;vertical-align:top}</style> <span style=""text-align: center;text-decoration: underline;""> <h4>@DersAdi</h4> <h5><span id=""sinavTuru"" style=""color:red"">@SinavTur</span> SINIF LİSTESİ <span id=""sinavSinif"">(@Derslik)</span></h5> </span> <span style=""font-weight: bold;""><span style=""text-decoration: underline;"">Gözetmen:</span> <span id=""gozetmenAdi"">@Asistan</span></span> <span style=""display:inline-block; width: 300;""></span> <span style=""font-weight: bold; margin-left:23em""></span> </br></br> <span style=""font-weight: bold;""><span style=""text-decoration: underline;"">Tarih:</span> <span id=""listeTarih"">@Tarih</span></span> </br></br> <table class=""tg"" style=""undefined;table-layout: fixed; width: 500px""> <colgroup> <col style=""width: 80px""> <col style=""width: 129px""> <col style=""width: 358px""> <col style=""width: 165px""> </colgroup> <tr> <th class=""tg-f64w"">SIRA</th> <th class=""tg-f64w"">NUMARA </th> <th class=""tg-f64w"">AD - SOYAD</th> <th class=""tg-f64w"">İMZA</th> </tr>"
+        Dim footer As String = "</table></body></html>"
+        Dim kisi As String = "<tr style=""width:100px""><th class=""tg-yw4l"">@Sıra</th><th class=""tg-yw4l"">@Numara</th><th class=""tg-yw4l"">@AdSoyad</th><th class=""tg-yw4l""></th></tr>"
+
+
+        header = header.Replace("@DersAdi", dersAdi).Replace("@SinavTur", sinavTur).Replace("@Derslik", derslik).Replace("@Asistan", asistan).Replace("@Tarih", tarih)
+        Dim olusturulan As String = header
+        Dim kisiler As String() = veri.Split(";")
+        Dim DosyaAdi As String = derslik + "-" + dersAdi + "-" + tarih
+        Dim i As Integer
+
+        For i = 0 To kisiler.Length - 2 Step 1
+            olusturulan += kisi.Replace("@Sıra", (i + 1).ToString()).Replace("@Numara", kisiler(i).Split("-")(0)).Replace("@AdSoyad", kisiler(i).Split("-")(1))
+        Next
+        olusturulan += footer
+        File.WriteAllText("Sinavlar\" + DosyaAdi + ".doc", olusturulan, Encoding.UTF8)
+        Dim Mail As New MailMessage
+        Dim attachment As System.Net.Mail.Attachment
+
+
+        Mail.Subject = derslik + "-" + dersAdi + "-" + sinavTur + "-" + asistan
+        Mail.To.Add(AsistanMail)
+        Mail.From = New MailAddress(AsistanMail)
+        Mail.Body = "Sınav Bilgileri Ektedir"
+        attachment = New System.Net.Mail.Attachment("Sinavlar\" + DosyaAdi + ".doc")
+        Mail.Attachments.Add(attachment)
+
+
+        'Mail Ayarları
+        Dim SMTP As New SmtpClient("smtp.gmail.com")
+        SMTP.EnableSsl = True
+        SMTP.Credentials = New System.Net.NetworkCredential("ogrencidagitimsistemi@gmail.com", "trakyauniversitesi")
+        SMTP.Port = "587"
+        SMTP.Send(Mail)
+
+
+    End Sub
+
     Private Sub dgAnaSayfa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgAnaSayfa.CellContentClick
         Dim islemYapilacakIndex As Integer = e.RowIndex
         If e.ColumnIndex = 0 Then
+            Dim derskodu As String = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(3).Value.ToString()
+            Dim sinavTuru As String = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(4).Value.ToString()
+            Dim dersAdi As String = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(2).Value.ToString()
+            Dim tarih As Date = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(5).Value
+            Dim sinavID As Integer = database.SinavIDGetir(derskodu, database.TarihIDGetir(tarih))
+            Dim listeler As List(Of Liste) = database.listeleriDondur(sinavID)
+            Dim listeSayisi As Integer = listeler.Count
+
+            For i As Integer = 0 To listeler.Count - 1
+                fonk(listeler(i).OgrString, dersAdi, sinavTuru, listeler(i).Derslik.DerslikAdi, listeler(i).Asistan.AsistanAdi, tarih, listeler(i).Asistan.Mail)
+            Next
+
+
+            MessageBox.Show("Mailler Asistanlara Gönderildi")
             'Mail Gönderme işlemleri
         ElseIf e.ColumnIndex = 1 Then
             Dim silinecekDersKodu As String = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(3).Value.ToString()

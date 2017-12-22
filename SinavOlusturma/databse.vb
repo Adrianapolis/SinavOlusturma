@@ -2,7 +2,7 @@
 Imports System.Data.Entity.Validation
 
 Public Class database
-    Shared vt As New denemeDBEntities
+    Shared vt As New GorselDBEntities1
     'Asistan
     Public Shared Sub AsistanEkle(ByVal asistan As Asistan)
         vt.Asistan.Add(asistan)
@@ -106,16 +106,26 @@ Public Class database
     End Function
     Public Shared Function TarihIDGetir(ByVal ArananTarih As Date)
         Dim tarih As New Tarihler
-        tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
-
+        tarih.TarihID = (From x In vt.Tarihler Where x.Tarih = ArananTarih Select x.TarihID).FirstOrDefault
         If tarih.TarihID = Nothing Then
             Dim yeniTarih As New Tarihler
             yeniTarih.Tarih = ArananTarih
             vt.Tarihler.Add(yeniTarih)
             vt.SaveChanges()
-            tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+            tarih.TarihID = (From x In vt.Tarihler Where x.Tarih = ArananTarih Select x.TarihID).FirstOrDefault
         End If
         Return tarih.TarihID
+        'Dim tarih As New Tarihler
+        'tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+
+        'If tarih.TarihID = Nothing Then
+        '    Dim yeniTarih As New Tarihler
+        '    yeniTarih.Tarih = ArananTarih
+        '    vt.Tarihler.Add(yeniTarih)
+        '    vt.SaveChanges()
+        '    tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+        'End If
+        'Return tarih.TarihID
     End Function
 
     'sınav
@@ -134,7 +144,7 @@ Public Class database
     End Function
     Public Shared Function SinavGrid()
         Return (From x In vt.Sinav
-                Select New With {x.Dersler.DersAdi, x.DersKodu, x.SinavTuru, x.Tarihler.Tarih}).OrderBy(Function(x) x.DersAdi).ToList()
+                Select New With {x.Dersler.DersAdi, x.DersKodu, x.SinavTuru, x.Tarihler.Tarih}).OrderBy(Function(x) x.DersAdi).OrderBy(Function(x) x.Tarih).ToList()
     End Function
     Public Shared Sub sinavSil(ByVal Dersk As String, ByVal t As Date)
         Dim tID = database.TarihIDGetir(t)
@@ -147,6 +157,9 @@ Public Class database
         vt.Liste.Add(EklenecekListe)
         vt.SaveChanges()
     End Sub
+    Public Shared Function listeleriDondur(ByVal sID As Integer)
+        Return vt.Liste.Where(Function(x) x.SinavID = sID).ToList()
+    End Function
 
 
 End Class

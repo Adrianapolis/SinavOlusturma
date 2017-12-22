@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="df0075f79f6d47e98c833e23bd8503b1" Name="Diagram1">
+      <Diagram DiagramId="b858b924aca64c5babfeb80012a98aac" Name="Diagram1">
         <EntityTypeShape EntityType="GorselDBModel.Asistan" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="GorselDBModel.Dersler" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="GorselDBModel.Derslik" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
