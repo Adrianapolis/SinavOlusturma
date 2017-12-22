@@ -148,7 +148,8 @@ Public Class database
     End Function
     Public Shared Sub sinavSil(ByVal Dersk As String, ByVal t As Date)
         Dim tID = database.TarihIDGetir(t)
-        Dim silinecek As Sinav = vt.Sinav.Where(Function(x) x.DersKodu = Dersk).FirstOrDefault()
+        Dim sID = database.SinavIDGetir(Dersk, tID)
+        Dim silinecek As Sinav = vt.Sinav.Where(Function(x) x.SinavID).FirstOrDefault()
         vt.Sinav.Remove(silinecek)
         vt.SaveChanges()
     End Sub

@@ -201,7 +201,7 @@ Public Class AnaEkranForm
             gecici.PSinifKapasite = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
             gecici.PbosSira = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
             gecici.PSinavTur = CbTurSecim.SelectedItem.ToString()
-            gecici.PTarih = DateTimePicker1.Value
+            gecici.PTarih = DateTimePicker1.Value.Date
             gecici.PDonem = cbDonemSec.SelectedItem.ToString()
             listeler.Add(gecici)
 

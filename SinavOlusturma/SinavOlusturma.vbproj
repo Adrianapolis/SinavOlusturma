@@ -104,7 +104,6 @@
       <DependentUpon>HosgeldinForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listeMailYolla.vb" />
     <Compile Include="MevcutEklemeForm.Designer.vb">
       <DependentUpon>MevcutEklemeForm.vb</DependentUpon>
     </Compile>
