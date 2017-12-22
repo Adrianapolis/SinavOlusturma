@@ -33,14 +33,16 @@ Partial Class HosgeldinForm
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(175, 176)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(108, 13)
+        Me.Label1.Size = New System.Drawing.Size(125, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Kuruluma Hoşgeldiniz"
         '
         'Button1
         '
+        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button1.Location = New System.Drawing.Point(129, 205)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(209, 78)

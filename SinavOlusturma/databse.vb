@@ -11,6 +11,12 @@ Public Class database
     Public Shared Function AsistanListesiAl()
         Return vt.Asistan.OrderBy(Function(x) x.AsistanAdi).Select(Function(x) x.AsistanAdi).ToList()
     End Function
+    Public Shared Function AsitanAdiGetir(ByVal aID As Integer)
+        Return vt.Asistan.Where(Function(x) x.AsistanID = aID).Select(Function(x) x.AsistanAdi).FirstOrDefault()
+    End Function
+    Public Shared Function AsistanMailGetir(ByVal aID As Integer)
+        Return vt.Asistan.Where(Function(x) x.AsistanID = aID).Select(Function(x) x.Mail).FirstOrDefault()
+    End Function
     Public Shared Function AsistanGrid()
         Return (From x In vt.Asistan
                 Select New With {x.AsistanAdi, x.Mail}).OrderBy(Function(x) x.AsistanAdi).ToList()
@@ -63,9 +69,14 @@ Public Class database
         vt.Derslik.Add(derslik)
         vt.SaveChanges()
     End Sub
+
     Public Shared Function DerslikKapasiteGetir(ByVal ArananDerslik As String)
         Return vt.Derslik.Where(Function(x) x.DerslikAdi = ArananDerslik).Select(Function(y) y.Kapasite).FirstOrDefault()
     End Function
+    Public Shared Function DerslikAdiGetir(ByVal dID As Integer)
+        Return vt.Derslik.Where(Function(x) x.DerslikID = dID).Select(Function(x) x.DerslikAdi).FirstOrDefault()
+    End Function
+
     Public Shared Function DerslikGetir()
         Return vt.Derslik.OrderBy(Function(x) x.DerslikAdi).Select(Function(x) x.DerslikAdi).ToList()
     End Function

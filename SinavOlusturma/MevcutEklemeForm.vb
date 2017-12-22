@@ -6,21 +6,22 @@ Public Class MevcutEklemeForm
 
     Public Sub resimYukle()
         BackColor = Color.FromArgb(249, 249, 249)
-
+        dgMevcutEkleme.BackgroundColor = Color.FromArgb(249, 249, 249)
+        'dgMevcutEkleme.RowHeadersDefaultCellStyle = DataGridViewCellStyle { BackColor=Color [Control], ForeColor=Color [WindowText], SelectionBackColor=Color [Highlight], SelectionForeColor=Color [HighlightText], Font=[Font: Name = Arial Narrow, Size=8,25, Units=3, GdiCharSet=162, GdiVerticalFont=False], WrapMode=True, Alignment=MiddleLeft }
         If (durumlar(0) = 0) Then
-            BtnDevam.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8sagOk.png")
+            BtnDevam.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "sagOk.png")
             BtnDevam.BackgroundImageLayout = ImageLayout.Stretch
-        Else
-            BtnDevam.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8tamam.png")
+        ElseIf durumlar(0) = 1 Or durumlar(1) = 0 Then
+            BtnDevam.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "tamam.png")
             BtnDevam.BackgroundImageLayout = ImageLayout.Stretch
         End If
         BtnEkle.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle(6oran).png")
         BtnEkle.BackgroundImageLayout = ImageLayout.Stretch
         btnİptal.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "çarpı.png")
         btnİptal.BackgroundImageLayout = ImageLayout.Stretch
-        btnKaydet.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8tamam.png")
+        btnKaydet.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "tamam.png")
         btnKaydet.BackgroundImageLayout = ImageLayout.Stretch
-        BtnGeri.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8solOk.png")
+        BtnGeri.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "solOk.png")
         BtnGeri.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
@@ -67,8 +68,8 @@ Public Class MevcutEklemeForm
                 If (durumlar(1) = 0) Then
                     dgMevcutEkleme.DataSource = database.DersGrid()
                     LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
-                    LblAdiGiriniz.Text = "Ders Adı Giriniz:"
-                    LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
+                    LblAdiGiriniz.Text = "Ders Adı Giriniz :"
+                    LblKoduGiriniz.Text = "Ders Kodu Giriniz :"
                     BtnGeri.Visible = False
                     BtnDevam.Text = "Devam"
 
@@ -76,16 +77,16 @@ Public Class MevcutEklemeForm
                 ElseIf (durumlar(1) = 1) Then
                     dgMevcutEkleme.DataSource = database.DerslikGrid()
                     LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
-                    LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
-                    LblKoduGiriniz.Text = "Kapasite Giriniz:"
+                    LblAdiGiriniz.Text = "Derslik Adı Giriniz :"
+                    LblKoduGiriniz.Text = "Kapasite Giriniz :"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Devam"
 
                 ElseIf (durumlar(1) = 2) Then
                     dgMevcutEkleme.DataSource = database.AsistanGrid()
                     LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
-                    LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
-                    LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
+                    LblAdiGiriniz.Text = "Asistan Adı Giriniz :"
+                    LblKoduGiriniz.Text = "Asistan Mail Giriniz :"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Bitir"
 
@@ -125,8 +126,8 @@ Public Class MevcutEklemeForm
                 If (durumlar(1) = 0) Then
                     dgMevcutEkleme.DataSource = database.DersGrid()
                     LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
-                    LblAdiGiriniz.Text = "Ders Adı Giriniz:"
-                    LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
+                    LblAdiGiriniz.Text = "Ders Adı Giriniz :"
+                    LblKoduGiriniz.Text = "Ders Kodu Giriniz :"
                     BtnGeri.Visible = False
                     BtnDevam.Text = "Devam"
 
@@ -134,8 +135,8 @@ Public Class MevcutEklemeForm
                 ElseIf (durumlar(1) = 1) Then
                     dgMevcutEkleme.DataSource = database.DerslikGrid
                     LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
-                    LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
-                    LblKoduGiriniz.Text = "Kapasite Giriniz:"
+                    LblAdiGiriniz.Text = "Derslik Adı Giriniz :"
+                    LblKoduGiriniz.Text = "Kapasite Giriniz :"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Devam"
 
@@ -143,8 +144,8 @@ Public Class MevcutEklemeForm
                 ElseIf (durumlar(1) = 2) Then
                     dgMevcutEkleme.DataSource = database.AsistanGrid()
                     LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
-                    LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
-                    LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
+                    LblAdiGiriniz.Text = "Asistan Adı Giriniz :"
+                    LblKoduGiriniz.Text = "Asistan Mail Giriniz :"
                     BtnGeri.Visible = True
                     BtnDevam.Text = "Bitir"
 
@@ -152,8 +153,8 @@ Public Class MevcutEklemeForm
             Else 'İlk sayfadaysa  /BU KOD SİLİNEBİLİR
                 dgMevcutEkleme.DataSource = database.DersGrid()
                 LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
-                LblAdiGiriniz.Text = "Ders Adı Giriniz:"
-                LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
+                LblAdiGiriniz.Text = "Ders Adı Giriniz :"
+                LblKoduGiriniz.Text = "Ders Kodu Giriniz :"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Devam"
             End If
@@ -178,8 +179,8 @@ Public Class MevcutEklemeForm
             If (durumlar(1) = 0) Then
                 dgMevcutEkleme.DataSource = database.DersGrid()
                 LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
-                LblAdiGiriniz.Text = "Ders Adı Giriniz:"
-                LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
+                LblAdiGiriniz.Text = "Ders Adı Giriniz :"
+                LblKoduGiriniz.Text = "Ders Kodu Giriniz :"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Devam"
 
@@ -187,8 +188,8 @@ Public Class MevcutEklemeForm
             ElseIf (durumlar(1) = 1) Then
                 dgMevcutEkleme.DataSource = database.DerslikGrid()
                 LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
-                LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
-                LblKoduGiriniz.Text = "Kapasite Giriniz:"
+                LblAdiGiriniz.Text = "Derslik Adı Giriniz :"
+                LblKoduGiriniz.Text = "Kapasite Giriniz :"
                 BtnGeri.Visible = True
                 BtnDevam.Text = "Devam"
 
@@ -196,8 +197,8 @@ Public Class MevcutEklemeForm
             ElseIf (durumlar(1) = 2) Then
                 dgMevcutEkleme.DataSource = database.AsistanGrid()
                 LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
-                LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
-                LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
+                LblAdiGiriniz.Text = "Asistan Adı Giriniz :"
+                LblKoduGiriniz.Text = "Asistan Mail Giriniz :"
                 BtnGeri.Visible = True
                 BtnDevam.Text = "Bitir"
 
@@ -208,8 +209,8 @@ Public Class MevcutEklemeForm
             If (durumlar(1) = 0) Then
                 dgMevcutEkleme.DataSource = database.DersGrid()
                 LblEkleyiniz.Text = "Mevcut Dersleri Giriniz"
-                LblAdiGiriniz.Text = "Ders Adı Giriniz:"
-                LblKoduGiriniz.Text = "Ders Kodu Giriniz:"
+                LblAdiGiriniz.Text = "Ders Adı Giriniz :"
+                LblKoduGiriniz.Text = "Ders Kodu Giriniz :"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
 
@@ -217,8 +218,8 @@ Public Class MevcutEklemeForm
             ElseIf (durumlar(1) = 1) Then
                 dgMevcutEkleme.DataSource = database.DerslikGrid()
                 LblEkleyiniz.Text = "Mevcut Derslikleri Giriniz"
-                LblAdiGiriniz.Text = "Derslik Adı Giriniz:"
-                LblKoduGiriniz.Text = "Kapasite Giriniz:"
+                LblAdiGiriniz.Text = "Derslik Adı Giriniz :"
+                LblKoduGiriniz.Text = "Kapasite Giriniz :"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
 
@@ -226,8 +227,8 @@ Public Class MevcutEklemeForm
             ElseIf (durumlar(1) = 2) Then
                 dgMevcutEkleme.DataSource = database.AsistanGrid()
                 LblEkleyiniz.Text = "Mevcut Asistanları Giriniz"
-                LblAdiGiriniz.Text = "Asistan Adı Giriniz:"
-                LblKoduGiriniz.Text = "Asistan Mail Giriniz:"
+                LblAdiGiriniz.Text = "Asistan Adı Giriniz :"
+                LblKoduGiriniz.Text = "Asistan Mail Giriniz :"
                 BtnGeri.Visible = False
                 BtnDevam.Text = "Tamam"
 

@@ -9,7 +9,7 @@ Public Class HosgeldinForm
         BackColor = Color.FromArgb(249, 249, 249)
         PictureBox1.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "giris.png")
         PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
-        Button1.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8sagOk.png")
+        Button1.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "sagOk.png")
         Button1.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 

@@ -25,7 +25,6 @@ Partial Class AnaEkranForm
         Me.BtnYeniSinav = New System.Windows.Forms.Button()
         Me.BtnMevcudat = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtnMailGonder = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GbAnaSayfa = New System.Windows.Forms.GroupBox()
         Me.dgAnaSayfa = New System.Windows.Forms.DataGridView()
@@ -72,7 +71,8 @@ Partial Class AnaEkranForm
         'BtnYeniSinav
         '
         Me.BtnYeniSinav.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnYeniSinav.Location = New System.Drawing.Point(18, 273)
+        Me.BtnYeniSinav.Font = New System.Drawing.Font("Arial Narrow", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnYeniSinav.Location = New System.Drawing.Point(18, 242)
         Me.BtnYeniSinav.Name = "BtnYeniSinav"
         Me.BtnYeniSinav.Size = New System.Drawing.Size(250, 85)
         Me.BtnYeniSinav.TabIndex = 0
@@ -83,7 +83,8 @@ Partial Class AnaEkranForm
         'BtnMevcudat
         '
         Me.BtnMevcudat.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnMevcudat.Location = New System.Drawing.Point(18, 407)
+        Me.BtnMevcudat.Font = New System.Drawing.Font("Arial Narrow", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnMevcudat.Location = New System.Drawing.Point(18, 376)
         Me.BtnMevcudat.Name = "BtnMevcudat"
         Me.BtnMevcudat.Size = New System.Drawing.Size(250, 85)
         Me.BtnMevcudat.TabIndex = 1
@@ -95,29 +96,21 @@ Partial Class AnaEkranForm
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(806, 60)
+        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(750, 95)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 13)
+        Me.Label1.Size = New System.Drawing.Size(130, 17)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Oluşturulmuş Sınavlar:"
-        '
-        'BtnMailGonder
-        '
-        Me.BtnMailGonder.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnMailGonder.Location = New System.Drawing.Point(782, 557)
-        Me.BtnMailGonder.Name = "BtnMailGonder"
-        Me.BtnMailGonder.Size = New System.Drawing.Size(250, 85)
-        Me.BtnMailGonder.TabIndex = 4
-        Me.BtnMailGonder.Text = "Mail Gönder"
-        Me.BtnMailGonder.UseVisualStyleBackColor = True
         '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(479, 130)
+        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(474, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.Size = New System.Drawing.Size(101, 26)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Ana Ekran"
         '
@@ -131,32 +124,33 @@ Partial Class AnaEkranForm
         Me.GbAnaSayfa.Controls.Add(Me.BtnYeniSinav)
         Me.GbAnaSayfa.Controls.Add(Me.Label2)
         Me.GbAnaSayfa.Controls.Add(Me.BtnMevcudat)
-        Me.GbAnaSayfa.Controls.Add(Me.BtnMailGonder)
         Me.GbAnaSayfa.Controls.Add(Me.Label1)
+        Me.GbAnaSayfa.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
         Me.GbAnaSayfa.Location = New System.Drawing.Point(75, 12)
         Me.GbAnaSayfa.Name = "GbAnaSayfa"
         Me.GbAnaSayfa.Size = New System.Drawing.Size(1119, 727)
         Me.GbAnaSayfa.TabIndex = 6
         Me.GbAnaSayfa.TabStop = False
-        Me.GbAnaSayfa.Text = "Ana Sayfa"
         '
         'dgAnaSayfa
         '
+        Me.dgAnaSayfa.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.dgAnaSayfa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgAnaSayfa.BackgroundColor = System.Drawing.Color.White
         Me.dgAnaSayfa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgAnaSayfa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Mail, Me.Sil})
-        Me.dgAnaSayfa.Location = New System.Drawing.Point(620, 86)
+        Me.dgAnaSayfa.Location = New System.Drawing.Point(557, 145)
         Me.dgAnaSayfa.MultiSelect = False
         Me.dgAnaSayfa.Name = "dgAnaSayfa"
         Me.dgAnaSayfa.ReadOnly = True
         Me.dgAnaSayfa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgAnaSayfa.Size = New System.Drawing.Size(483, 433)
+        Me.dgAnaSayfa.Size = New System.Drawing.Size(562, 479)
         Me.dgAnaSayfa.TabIndex = 11
         '
         'Mail
         '
         Me.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Mail.FillWeight = 40.0!
+        Me.Mail.FillWeight = 50.0!
         Me.Mail.HeaderText = "Gönder"
         Me.Mail.Name = "Mail"
         Me.Mail.ReadOnly = True
@@ -165,11 +159,12 @@ Partial Class AnaEkranForm
         '
         'Sil
         '
-        Me.Sil.FillWeight = 20.0!
+        Me.Sil.FillWeight = 30.0!
         Me.Sil.HeaderText = "Sil"
         Me.Sil.Name = "Sil"
         Me.Sil.ReadOnly = True
         Me.Sil.Text = "X"
+        Me.Sil.UseColumnTextForButtonValue = True
         '
         'GbMevcudatDuzenle
         '
@@ -181,6 +176,7 @@ Partial Class AnaEkranForm
         Me.GbMevcudatDuzenle.Controls.Add(Me.BtnAsistanDuzenleme)
         Me.GbMevcudatDuzenle.Controls.Add(Me.BtnDerslikDuzenleme)
         Me.GbMevcudatDuzenle.Controls.Add(Me.BtnDersDuzenleme)
+        Me.GbMevcudatDuzenle.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
         Me.GbMevcudatDuzenle.Location = New System.Drawing.Point(1184, 161)
         Me.GbMevcudatDuzenle.Name = "GbMevcudatDuzenle"
         Me.GbMevcudatDuzenle.Size = New System.Drawing.Size(1043, 550)
@@ -194,6 +190,7 @@ Partial Class AnaEkranForm
         Me.BtnMevcudatGeri.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnMevcudatGeri.AutoSize = True
         Me.BtnMevcudatGeri.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMevcudatGeri.Font = New System.Drawing.Font("Arial Narrow", 10.0!, System.Drawing.FontStyle.Bold)
         Me.BtnMevcudatGeri.Location = New System.Drawing.Point(54, 392)
         Me.BtnMevcudatGeri.Name = "BtnMevcudatGeri"
         Me.BtnMevcudatGeri.Size = New System.Drawing.Size(141, 61)
@@ -206,6 +203,7 @@ Partial Class AnaEkranForm
         Me.BtnAsistanDuzenleme.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnAsistanDuzenleme.AutoSize = True
         Me.BtnAsistanDuzenleme.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAsistanDuzenleme.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnAsistanDuzenleme.Location = New System.Drawing.Point(739, 112)
         Me.BtnAsistanDuzenleme.Name = "BtnAsistanDuzenleme"
         Me.BtnAsistanDuzenleme.Size = New System.Drawing.Size(250, 85)
@@ -218,6 +216,7 @@ Partial Class AnaEkranForm
         Me.BtnDerslikDuzenleme.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnDerslikDuzenleme.AutoSize = True
         Me.BtnDerslikDuzenleme.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnDerslikDuzenleme.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnDerslikDuzenleme.Location = New System.Drawing.Point(398, 112)
         Me.BtnDerslikDuzenleme.Name = "BtnDerslikDuzenleme"
         Me.BtnDerslikDuzenleme.Size = New System.Drawing.Size(250, 85)
@@ -230,6 +229,7 @@ Partial Class AnaEkranForm
         Me.BtnDersDuzenleme.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnDersDuzenleme.AutoSize = True
         Me.BtnDersDuzenleme.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnDersDuzenleme.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnDersDuzenleme.Location = New System.Drawing.Point(54, 112)
         Me.BtnDersDuzenleme.Name = "BtnDersDuzenleme"
         Me.BtnDersDuzenleme.Size = New System.Drawing.Size(250, 85)
@@ -262,7 +262,8 @@ Partial Class AnaEkranForm
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label3)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label8)
         Me.GbYeniSinavOlustur.Controls.Add(Me.Label9)
-        Me.GbYeniSinavOlustur.Location = New System.Drawing.Point(30, 660)
+        Me.GbYeniSinavOlustur.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.GbYeniSinavOlustur.Location = New System.Drawing.Point(12, 599)
         Me.GbYeniSinavOlustur.Name = "GbYeniSinavOlustur"
         Me.GbYeniSinavOlustur.Size = New System.Drawing.Size(1119, 681)
         Me.GbYeniSinavOlustur.TabIndex = 7
@@ -276,7 +277,7 @@ Partial Class AnaEkranForm
         Me.lblOgrenciHata.Location = New System.Drawing.Point(754, 298)
         Me.lblOgrenciHata.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOgrenciHata.Name = "lblOgrenciHata"
-        Me.lblOgrenciHata.Size = New System.Drawing.Size(0, 13)
+        Me.lblOgrenciHata.Size = New System.Drawing.Size(0, 15)
         Me.lblOgrenciHata.TabIndex = 22
         '
         'Label10
@@ -285,7 +286,7 @@ Partial Class AnaEkranForm
         Me.Label10.Location = New System.Drawing.Point(754, 80)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(152, 13)
+        Me.Label10.Size = New System.Drawing.Size(153, 15)
         Me.Label10.TabIndex = 21
         Me.Label10.Text = "Yerleştirilmeyen Öğrenci Sayısı:"
         '
@@ -295,7 +296,7 @@ Partial Class AnaEkranForm
         Me.Lbkalanogrenci.Location = New System.Drawing.Point(914, 80)
         Me.Lbkalanogrenci.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Lbkalanogrenci.Name = "Lbkalanogrenci"
-        Me.Lbkalanogrenci.Size = New System.Drawing.Size(0, 13)
+        Me.Lbkalanogrenci.Size = New System.Drawing.Size(0, 15)
         Me.Lbkalanogrenci.TabIndex = 20
         '
         'btnListeEkle
@@ -312,7 +313,7 @@ Partial Class AnaEkranForm
         Me.LbOgrenciYerlestirilecekSayi.AutoSize = True
         Me.LbOgrenciYerlestirilecekSayi.Location = New System.Drawing.Point(903, 112)
         Me.LbOgrenciYerlestirilecekSayi.Name = "LbOgrenciYerlestirilecekSayi"
-        Me.LbOgrenciYerlestirilecekSayi.Size = New System.Drawing.Size(0, 13)
+        Me.LbOgrenciYerlestirilecekSayi.Size = New System.Drawing.Size(0, 15)
         Me.LbOgrenciYerlestirilecekSayi.TabIndex = 7
         '
         'Label5
@@ -320,7 +321,7 @@ Partial Class AnaEkranForm
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(752, 112)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(145, 13)
+        Me.Label5.Size = New System.Drawing.Size(142, 15)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Yerleştirilecek Kalan Öğrenci:"
         '
@@ -345,7 +346,7 @@ Partial Class AnaEkranForm
         Me.LbAsistanSecilecekSayi.AutoSize = True
         Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(913, 325)
         Me.LbAsistanSecilecekSayi.Name = "LbAsistanSecilecekSayi"
-        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(0, 13)
+        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(0, 15)
         Me.LbAsistanSecilecekSayi.TabIndex = 9
         '
         'Label7
@@ -353,7 +354,7 @@ Partial Class AnaEkranForm
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(746, 322)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(168, 13)
+        Me.Label7.Size = New System.Drawing.Size(164, 15)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Seçilmesi Gereken Asistan Sayısı: "
         '
@@ -372,7 +373,7 @@ Partial Class AnaEkranForm
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(512, 52)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 13)
+        Me.Label6.Size = New System.Drawing.Size(106, 15)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Yeni Sınav Oluşturma"
         '
@@ -392,7 +393,7 @@ Partial Class AnaEkranForm
         Me.LbOgrenciSayiGoster.AutoSize = True
         Me.LbOgrenciSayiGoster.Location = New System.Drawing.Point(128, 16)
         Me.LbOgrenciSayiGoster.Name = "LbOgrenciSayiGoster"
-        Me.LbOgrenciSayiGoster.Size = New System.Drawing.Size(0, 13)
+        Me.LbOgrenciSayiGoster.Size = New System.Drawing.Size(0, 15)
         Me.LbOgrenciSayiGoster.TabIndex = 1
         '
         'LbOgrenciSayiBilgi
@@ -400,7 +401,7 @@ Partial Class AnaEkranForm
         Me.LbOgrenciSayiBilgi.AutoSize = True
         Me.LbOgrenciSayiBilgi.Location = New System.Drawing.Point(6, 16)
         Me.LbOgrenciSayiBilgi.Name = "LbOgrenciSayiBilgi"
-        Me.LbOgrenciSayiBilgi.Size = New System.Drawing.Size(115, 13)
+        Me.LbOgrenciSayiBilgi.Size = New System.Drawing.Size(113, 15)
         Me.LbOgrenciSayiBilgi.TabIndex = 0
         Me.LbOgrenciSayiBilgi.Text = "Toplam Öğrenci Sayısı:"
         '
@@ -419,9 +420,9 @@ Partial Class AnaEkranForm
         Me.cbDonemSec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbDonemSec.FormattingEnabled = True
         Me.cbDonemSec.Items.AddRange(New Object() {"Vize", "Final", "Bütünleme"})
-        Me.cbDonemSec.Location = New System.Drawing.Point(400, 277)
+        Me.cbDonemSec.Location = New System.Drawing.Point(249, 272)
         Me.cbDonemSec.Name = "cbDonemSec"
-        Me.cbDonemSec.Size = New System.Drawing.Size(187, 21)
+        Me.cbDonemSec.Size = New System.Drawing.Size(84, 23)
         Me.cbDonemSec.TabIndex = 9
         '
         'CbTurSecim
@@ -430,9 +431,9 @@ Partial Class AnaEkranForm
         Me.CbTurSecim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbTurSecim.FormattingEnabled = True
         Me.CbTurSecim.Items.AddRange(New Object() {"Vize", "Final", "Bütünleme"})
-        Me.CbTurSecim.Location = New System.Drawing.Point(146, 277)
+        Me.CbTurSecim.Location = New System.Drawing.Point(146, 272)
         Me.CbTurSecim.Name = "CbTurSecim"
-        Me.CbTurSecim.Size = New System.Drawing.Size(187, 21)
+        Me.CbTurSecim.Size = New System.Drawing.Size(82, 23)
         Me.CbTurSecim.TabIndex = 9
         '
         'CbDersSecim
@@ -442,7 +443,7 @@ Partial Class AnaEkranForm
         Me.CbDersSecim.FormattingEnabled = True
         Me.CbDersSecim.Location = New System.Drawing.Point(146, 166)
         Me.CbDersSecim.Name = "CbDersSecim"
-        Me.CbDersSecim.Size = New System.Drawing.Size(187, 21)
+        Me.CbDersSecim.Size = New System.Drawing.Size(187, 23)
         Me.CbDersSecim.TabIndex = 8
         '
         'BtnSinavOlustur
@@ -461,7 +462,7 @@ Partial Class AnaEkranForm
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(143, 422)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(221, 13)
+        Me.Label4.Size = New System.Drawing.Size(218, 15)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "4-) Öğrenci Listesini Text Dosyasını Yükleyiniz"
         '
@@ -471,7 +472,7 @@ Partial Class AnaEkranForm
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(143, 331)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 13)
+        Me.Label3.Size = New System.Drawing.Size(83, 15)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "3-) Tarihi Seçiniz"
         '
@@ -481,9 +482,9 @@ Partial Class AnaEkranForm
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(143, 243)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(134, 13)
+        Me.Label8.Size = New System.Drawing.Size(191, 15)
         Me.Label8.TabIndex = 1
-        Me.Label8.Text = "2-)  Sınavın Türünü Seçiniz"
+        Me.Label8.Text = "2-)  Sınavın Türünü ve Dönemini Seçiniz"
         '
         'Label9
         '
@@ -491,7 +492,7 @@ Partial Class AnaEkranForm
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(143, 128)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(190, 13)
+        Me.Label9.Size = New System.Drawing.Size(192, 15)
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "1-)  Oluşturmak İstediğiniz dersi seçiniz."
         '
@@ -526,7 +527,6 @@ Partial Class AnaEkranForm
     Friend WithEvents BtnYeniSinav As Button
     Friend WithEvents BtnMevcudat As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents BtnMailGonder As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents GbAnaSayfa As GroupBox
     Friend WithEvents GbYeniSinavOlustur As GroupBox

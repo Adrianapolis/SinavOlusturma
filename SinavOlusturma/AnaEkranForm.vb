@@ -18,11 +18,6 @@ Public Class AnaEkranForm
     Shared random As New Random()
     Dim listeler As New List(Of SinifListeleri)
 
-
-
-
-
-
     Private Sub AsistanVeSinifGüncelle()
         Dim siniflar As List(Of String) = database.DerslikGetir()
         Dim asistanlar As List(Of String) = database.AsistanListesiAl()
@@ -47,6 +42,7 @@ Public Class AnaEkranForm
 
     Private Sub resimYukle()
         BackColor = Color.FromArgb(249, 249, 249)
+        dgAnaSayfa.BackgroundColor = Color.FromArgb(249, 249, 249)
         'mevcudat gb
         BtnDersDuzenleme.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ders.png")
         BtnDersDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
@@ -54,17 +50,16 @@ Public Class AnaEkranForm
         BtnAsistanDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
         BtnDerslikDuzenleme.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "derslik.png")
         BtnDerslikDuzenleme.BackgroundImageLayout = ImageLayout.Stretch
-        BtnMevcudatGeri.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "8solOk.png")
+        BtnMevcudatGeri.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "solOk.png")
         BtnMevcudatGeri.BackgroundImageLayout = ImageLayout.Stretch
-
 
         'anasayfa gb
         BtnYeniSinav.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
         BtnYeniSinav.BackgroundImageLayout = ImageLayout.Stretch
         BtnMevcudat.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "düzenle.png")
         BtnMevcudat.BackgroundImageLayout = ImageLayout.Stretch
-        BtnMailGonder.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "mail.png")
-        BtnMailGonder.BackgroundImageLayout = ImageLayout.Stretch
+        'BtnMailGonder.BackgroundImage = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "mail.png")
+        'BtnMailGonder.BackgroundImageLayout = ImageLayout.Stretch
 
         'yenisinav oluştur gb
         BtnSinavOlustur.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory & "Resimler\" & "ekle.png")
@@ -95,6 +90,7 @@ Public Class AnaEkranForm
         LbOgrenciYerlestirilecekSayi.Text = ogrenciSayisi
         LbOgrenciSayiGoster.Text = ogrenciSayisi
         dosyaacici.Reset()
+        Dim secim = 1
     End Sub
 
     Private Sub cbAsistan_click(sender As Object, e As EventArgs)
@@ -191,101 +187,101 @@ Public Class AnaEkranForm
     Private Sub BtnSinavOlustur_Click(sender As Object, e As EventArgs) Handles BtnSinavOlustur.Click
         GbAnaSayfa.Visible = True
         GbYeniSinavOlustur.Visible = False
+        Try
 
-        'gereği kadar Liste objesi yaratılıyor
-        For i As Integer = 0 To seciliSiniflar.Count - 1
-            Dim gecici As New SinifListeleri
-            Dim ogrenciSayisi As Integer = Ogrenciler.Count - 1
-            gecici.PSinifAdi = seciliSiniflar(i)
-            gecici.PDersAdi = CbDersSecim.SelectedItem.ToString()
-            gecici.PSinifKapasite = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
-            gecici.PbosSira = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
-            gecici.PSinavTur = CbTurSecim.SelectedItem.ToString()
-            gecici.PTarih = DateTimePicker1.Value.Date
-            gecici.PDonem = cbDonemSec.SelectedItem.ToString()
-            listeler.Add(gecici)
+            'gereği kadar Liste objesi yaratılıyor
+            For i As Integer = 0 To seciliSiniflar.Count - 1
+                Dim gecici As New SinifListeleri
+                Dim ogrenciSayisi As Integer = Ogrenciler.Count - 1
+                gecici.PSinifAdi = seciliSiniflar(i)
+                gecici.PDersAdi = CbDersSecim.SelectedItem.ToString()
+                gecici.PSinifKapasite = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
+                gecici.PbosSira = database.DerslikKapasiteGetir(seciliSiniflar(i).ToString())
+                gecici.PSinavTur = CbTurSecim.SelectedItem.ToString()
+                gecici.PTarih = DateTimePicker1.Value.Date
+                gecici.PDonem = cbDonemSec.SelectedItem.ToString()
+                listeler.Add(gecici)
 
-        Next
+            Next
 
-        'Dim eklenecek As New Tarihler
-        'eklenecek.Tarih = listeler(0).PTarih
-        'database.TarihEkle(eklenecek)
-        'yaratılan liste objelerine öğrenciler atanıyor
-        For i As Integer = 0 To ogrenciSayisi
-            For j As Integer = 0 To seciliSiniflar.Count - 1
-                If listeler(j).PbosSira > 0 Then
-                    Dim OgrenciIndex As Integer = random.Next(Ogrenciler.Count)
-                    If Ogrenciler.Count > 0 Then
-                        If listeler(j).PbosSira > 0 Then
-                            listeler(j).POgrenciler.Add(Ogrenciler(OgrenciIndex))
-                            If listeler(j).POgrenciler.Contains(Nothing) Then
-                                Dim a As Integer = 10
+            'Dim eklenecek As New Tarihler
+            'eklenecek.Tarih = listeler(0).PTarih
+            'database.TarihEkle(eklenecek)
+            'yaratılan liste objelerine öğrenciler atanıyor
+            For i As Integer = 0 To ogrenciSayisi
+                For j As Integer = 0 To seciliSiniflar.Count - 1
+                    If listeler(j).PbosSira > 0 Then
+                        Dim OgrenciIndex As Integer = random.Next(Ogrenciler.Count)
+                        If Ogrenciler.Count > 0 Then
+                            If listeler(j).PbosSira > 0 Then
+                                listeler(j).POgrenciler.Add(Ogrenciler(OgrenciIndex))
+                                If listeler(j).POgrenciler.Contains(Nothing) Then
+                                    Dim a As Integer = 10
+                                End If
+                                listeler(j).PbosSira -= 1
+                                Ogrenciler.RemoveAt(OgrenciIndex)
                             End If
-                            listeler(j).PbosSira -= 1
-                            Ogrenciler.RemoveAt(OgrenciIndex)
                         End If
                     End If
-                End If
+                Next
             Next
-        Next
-        For i As Integer = 0 To seciliSiniflar.Count - 1
-            Dim asistanIndex As Integer = random.Next(seciliAsistanlar.Count)
-            Try
-                listeler(i).PAsistanAdi = seciliAsistanlar(asistanIndex)
-                seciliAsistanlar.RemoveAt(asistanIndex)
-            Catch
-                MessageBox.Show("Asistan Seçimi Hatalı")
-            End Try
+            For i As Integer = 0 To seciliSiniflar.Count - 1
+                Dim asistanIndex As Integer = random.Next(seciliAsistanlar.Count)
+                Try
+                    listeler(i).PAsistanAdi = seciliAsistanlar(asistanIndex)
+                    seciliAsistanlar.RemoveAt(asistanIndex)
+                Catch
+                    MessageBox.Show("Asistan Seçimi Hatalı")
+                End Try
+
+            Next
+
+            'Dim liste As New StringBuilder
+            'For i As Integer = 0 To Ogrenciler.Count - 1
+            '    liste.Append(Ogrenciler(i) & ";")
+            'Next
+            'Dim listeStr = liste.ToString()
+            'Dim x(1) As Char
+            'x(0) = ";"
+            'Dim y As List(Of String) = listeStr.Split(x).ToList()
 
 
-        Next
+            Dim OlusturulanSinav As New Sinav
+            OlusturulanSinav.DersKodu = database.DersKoduGetir(listeler(0).PDersAdi)
+            OlusturulanSinav.DonemID = database.DonemIDGetir(listeler(0).PDonem)
+            OlusturulanSinav.SinavTuru = listeler(0).PSinavTur
+            OlusturulanSinav.TarihID = database.TarihIDGetir(listeler(0).PTarih)
+            database.SinavEkle(OlusturulanSinav)
 
-        'Dim liste As New StringBuilder
-        'For i As Integer = 0 To Ogrenciler.Count - 1
-        '    liste.Append(Ogrenciler(i) & ";")
-        'Next
-        'Dim listeStr = liste.ToString()
-        'Dim x(1) As Char
-        'x(0) = ";"
-        'Dim y As List(Of String) = listeStr.Split(x).ToList()
+            Dim SinavID = database.SinavIDGetir(OlusturulanSinav.DersKodu, OlusturulanSinav.TarihID)
 
 
-        Dim OlusturulanSinav As New Sinav
-        OlusturulanSinav.DersKodu = database.DersKoduGetir(listeler(0).PDersAdi)
-        OlusturulanSinav.DonemID = database.DonemIDGetir(listeler(0).PDonem)
-        OlusturulanSinav.SinavTuru = listeler(0).PSinavTur
-        OlusturulanSinav.TarihID = database.TarihIDGetir(listeler(0).PTarih)
-        database.SinavEkle(OlusturulanSinav)
-
-        Dim SinavID = database.SinavIDGetir(OlusturulanSinav.DersKodu, OlusturulanSinav.TarihID)
-        'LİSTE 0 IN SINAV İLE İLGİLİ OLAN KISIMLARINI AT
-        'EKLENEN SINAVIN IDSİNİ ELDE ET
-
-
-
-        For i As Integer = 0 To seciliSiniflar.Count - 1
-            Dim dbEklenecekListe As New Liste
-            dbEklenecekListe.SinavID = SinavID
-            dbEklenecekListe.DerslikID = database.derslikIDGetir(listeler(i).PSinifAdi)
-            dbEklenecekListe.AsistanID = database.AsistanIDGetir(listeler(i).PAsistanAdi)
-            dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler).ToString()
-            database.ListeEkle(dbEklenecekListe)
-        Next
-        If secilmesiGerekenAsistanSayi > 0 Then
-            MessageBox.Show("Asistan seçiminde hata oldu.")
-        Else
-            MessageBox.Show("İşleminiz başarı ile gerçekleşti.")
-        End If
-        dgAnaSayfa.DataSource = database.SinavGrid()
-        yerlestirilenOgrenciSayisi = 0
-        secilenSinifsayi = 0
-        secilenAsistanSayi = 0
-        seciliSiniflar.RemoveAll(AddressOf seciliSiniflar.Contains)
-        listeler.RemoveAll(AddressOf listeler.Contains)
-        LbOgrenciSayiGoster.Text = ""
-        Lbkalanogrenci.Text = ""
-        LbOgrenciYerlestirilecekSayi.Text = ""
-        LbAsistanSecilecekSayi.Text = ""
+            For i As Integer = 0 To seciliSiniflar.Count - 1
+                Dim dbEklenecekListe As New Liste
+                dbEklenecekListe.SinavID = SinavID
+                dbEklenecekListe.DerslikID = database.derslikIDGetir(listeler(i).PSinifAdi)
+                dbEklenecekListe.AsistanID = database.AsistanIDGetir(listeler(i).PAsistanAdi)
+                dbEklenecekListe.OgrString = ogrenciListesiOlustur(listeler(i).POgrenciler).ToString()
+                database.ListeEkle(dbEklenecekListe)
+            Next
+            If secilmesiGerekenAsistanSayi > 0 Then
+                MessageBox.Show("Asistan seçiminde hata oldu.")
+            Else
+                MessageBox.Show("İşleminiz başarı ile gerçekleşti.")
+            End If
+            dgAnaSayfa.DataSource = database.SinavGrid()
+            yerlestirilenOgrenciSayisi = 0
+            secilenSinifsayi = 0
+            secilenAsistanSayi = 0
+            seciliSiniflar.RemoveAll(AddressOf seciliSiniflar.Contains)
+            listeler.RemoveAll(AddressOf listeler.Contains)
+            LbOgrenciSayiGoster.Text = ""
+            Lbkalanogrenci.Text = ""
+            LbOgrenciYerlestirilecekSayi.Text = ""
+            LbAsistanSecilecekSayi.Text = ""
+        Catch ex As Exception
+            MessageBox.Show("Eksik veri seçimi.")
+        End Try
 
     End Sub
 
@@ -384,7 +380,11 @@ Public Class AnaEkranForm
             olusturulan += kisi.Replace("@Sıra", (i + 1).ToString()).Replace("@Numara", kisiler(i).Split("-")(0)).Replace("@AdSoyad", kisiler(i).Split("-")(1))
         Next
         olusturulan += footer
-        File.WriteAllText("Sinavlar\" + DosyaAdi + ".doc", olusturulan, Encoding.UTF8)
+        Try
+            File.WriteAllText("Sinavlar\" + DosyaAdi + ".doc", olusturulan, Encoding.UTF8)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
         Dim Mail As New MailMessage
         Dim attachment As System.Net.Mail.Attachment
 
@@ -414,15 +414,17 @@ Public Class AnaEkranForm
             Dim sinavTuru As String = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(4).Value.ToString()
             Dim dersAdi As String = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(2).Value.ToString()
             Dim tarih As Date = dgAnaSayfa.Rows(islemYapilacakIndex).Cells(5).Value
+
             Dim sinavID As Integer = database.SinavIDGetir(derskodu, database.TarihIDGetir(tarih))
             Dim listeler As List(Of Liste) = database.listeleriDondur(sinavID)
             Dim listeSayisi As Integer = listeler.Count
 
             For i As Integer = 0 To listeler.Count - 1
-                fonk(listeler(i).OgrString, dersAdi, sinavTuru, listeler(i).Derslik.DerslikAdi, listeler(i).Asistan.AsistanAdi, tarih, listeler(i).Asistan.Mail)
+                Dim derslikAdi As String = database.DerslikAdiGetir(listeler(i).DerslikID)
+                Dim asistanAdi As String = database.AsitanAdiGetir(listeler(i).AsistanID)
+                Dim Mail As String = database.AsistanMailGetir(listeler(i).AsistanID)
+                fonk(listeler(i).OgrString, dersAdi, sinavTuru, derslikAdi, asistanAdi, tarih, Mail)
             Next
-
-
             MessageBox.Show("Mailler Asistanlara Gönderildi")
             'Mail Gönderme işlemleri
         ElseIf e.ColumnIndex = 1 Then
@@ -431,5 +433,11 @@ Public Class AnaEkranForm
             database.sinavSil(silinecekDersKodu, silinecekTarih)
             dgAnaSayfa.DataSource = database.SinavGrid()
         End If
+    End Sub
+
+    Private Sub AnaEkranForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+
+        MessageBox.Show("VB.NET's Fathers Are Watching You!!", "Watch Out!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Application.Exit()
     End Sub
 End Class
