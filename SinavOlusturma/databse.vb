@@ -2,7 +2,7 @@
 Imports System.Data.Entity.Validation
 
 Public Class database
-    Shared vt As New GorselDBEntities1
+    Shared vt As New denemeDBEntities
     'Asistan
     Public Shared Sub AsistanEkle(ByVal asistan As Asistan)
         vt.Asistan.Add(asistan)
@@ -23,6 +23,12 @@ Public Class database
     Public Shared Function AsistanIDGetir(ByVal arananAsistanAdi As String)
         Return vt.Asistan.Where(Function(x) x.AsistanAdi = arananAsistanAdi).Select(Function(x) x.AsistanID).FirstOrDefault
     End Function
+    Public Shared Sub AsistanGuncelle(ByVal VarOlanAd As String, ByVal yeniAd As String, ByVal yeniMail As String)
+        Dim Guncel As Asistan = vt.Asistan.Where(Function(x) x.AsistanAdi = VarOlanAd).FirstOrDefault
+        Guncel.AsistanAdi = yeniAd
+        Guncel.Mail = yeniMail
+        vt.SaveChanges()
+    End Sub
 
 
     'Ders
@@ -46,6 +52,11 @@ Public Class database
     Public Shared Function DersKoduGetir(ByVal ArananDersAdi As String)
         Return vt.Dersler.Where(Function(x) x.DersAdi = ArananDersAdi).Select(Function(x) x.DersKodu).FirstOrDefault()
     End Function
+    Public Shared Sub DersGuncelle(ByVal VarOlanKod As String, ByVal yeniAd As String)
+        Dim Guncel As Dersler = vt.Dersler.Where(Function(x) x.DersKodu = VarOlanKod).FirstOrDefault
+        Guncel.DersAdi = yeniAd
+        vt.SaveChanges()
+    End Sub
 
     'Derslik
     Public Shared Sub DerslikEkle(ByVal derslik As Derslik)
@@ -70,6 +81,12 @@ Public Class database
     Public Shared Function derslikIDGetir(ByVal arananDerslikAdi As String)
         Return vt.Derslik.Where(Function(x) x.DerslikAdi = arananDerslikAdi).Select(Function(x) x.DerslikID).FirstOrDefault
     End Function
+    Public Shared Sub derslikGuncelle(ByVal varOlanAd As String, ByVal YeniAd As String, ByVal yeniKapasite As Integer)
+        Dim guncel As Derslik = vt.Derslik.Where(Function(x) x.DerslikAdi = varOlanAd).FirstOrDefault
+        guncel.DerslikAdi = YeniAd
+        guncel.Kapasite = yeniKapasite
+        vt.SaveChanges()
+    End Sub
 
 
     'donem
@@ -87,20 +104,22 @@ Public Class database
     Public Shared Function TarihGetir()
         Return vt.Tarihler.OrderBy(Function(x) x.Tarih).Select(Function(x) x.Tarih.Year).ToList()
     End Function
+    'Public Shared Function TarihIDGetir(ByVal ArananTarih As Date)
+    '    Dim tarih As New Tarihler
+    '    tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+
+    '    If tarih.TarihID = Nothing Then
+    '        Dim yeniTarih As New Tarihler
+    '        yeniTarih.Tarih = ArananTarih
+    '        vt.Tarihler.Add(yeniTarih)
+    '        vt.SaveChanges()
+    '        tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+    '    End If
+    '    Return tarih.TarihID
+    'End Function
     Public Shared Function TarihIDGetir(ByVal ArananTarih As Date)
-        Dim tarih As New Tarihler
-        tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
-
-        If tarih.TarihID = Nothing Then
-            Dim yeniTarih As New Tarihler
-            yeniTarih.Tarih = ArananTarih
-            vt.Tarihler.Add(yeniTarih)
-            vt.SaveChanges()
-            tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
-        End If
-        Return tarih.TarihID
+        Return vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
     End Function
-
     'sınav
     Public Shared Sub SinavEkle(ByVal EklenecekSinav As Sinav)
         If vt.Sinav.Where(Function(x) x.TarihID = EklenecekSinav.TarihID And x.DersKodu = EklenecekSinav.DersKodu).Count = 0 Then

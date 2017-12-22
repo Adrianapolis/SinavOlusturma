@@ -38,7 +38,6 @@ Public Class AnaEkranForm
             Dim cbAsistan As New CheckBox
             'cbAsistan.Width = 80
             cbAsistan.Text = asistanlar(i).ToString()
-            cbAsistan.Name = siniflar(i).ToString()
             AddHandler cbAsistan.Click, AddressOf cbAsistan_click
             flAsistanlar.Controls.Add(cbAsistan)
         Next
@@ -93,7 +92,7 @@ Public Class AnaEkranForm
         'flSinifListele.l
         LbOgrenciYerlestirilecekSayi.Text = ogrenciSayisi
         LbOgrenciSayiGoster.Text = ogrenciSayisi
-
+        dosyaacici.Reset()
     End Sub
 
     Private Sub cbAsistan_click(sender As Object, e As EventArgs)
@@ -205,6 +204,10 @@ Public Class AnaEkranForm
             listeler.Add(gecici)
 
         Next
+
+        Dim eklenecek As New Tarihler
+        eklenecek.Tarih = listeler(0).PTarih
+        database.TarihEkle(eklenecek)
         'yaratılan liste objelerine öğrenciler atanıyor
         For i As Integer = 0 To ogrenciSayisi
             For j As Integer = 0 To seciliSiniflar.Count - 1
@@ -272,7 +275,15 @@ Public Class AnaEkranForm
             MessageBox.Show("İşleminiz başarı ile gerçekleşti.")
         End If
         dgAnaSayfa.DataSource = database.SinavGrid()
-
+        yerlestirilenOgrenciSayisi = 0
+        secilenSinifsayi = 0
+        secilenAsistanSayi = 0
+        seciliSiniflar.RemoveAll(AddressOf seciliSiniflar.Contains)
+        listeler.RemoveAll(AddressOf listeler.Contains)
+        LbOgrenciSayiGoster.Text = ""
+        Lbkalanogrenci.Text = ""
+        LbOgrenciYerlestirilecekSayi.Text = ""
+        LbAsistanSecilecekSayi.Text = ""
 
     End Sub
 

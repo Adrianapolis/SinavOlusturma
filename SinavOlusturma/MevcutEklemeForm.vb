@@ -291,17 +291,55 @@ Public Class MevcutEklemeForm
             End If
         End If
     End Sub
-
+    Dim duzenlenecekIndex As Integer
     Private Sub DataGridView2_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgMevcutEkleme.CellContentDoubleClick
-        MessageBox.Show("ÇİFT  TIKLADIN REİS")
 
-        Dim duzenlenecekIndex As Integer = e.RowIndex
+        duzenlenecekIndex = e.RowIndex
         btnKaydet.Visible = True
         btnİptal.Visible = True
         BtnEkle.Visible = False
-        TbAdiGiriniz.Text = "Hİ" 'DataGridView2.Rows(duzenlenecekIndex).Cells(1).Value.ToString()
+        TbAdiGiriniz.Text = dgMevcutEkleme.Rows(duzenlenecekIndex).Cells(1).Value.ToString()
         TbKoduGiriniz.Text = dgMevcutEkleme.Rows(duzenlenecekIndex).Cells(2).Value.ToString()
+        If durumlar(1) = 0 Then
+            TbKoduGiriniz.ReadOnly = True
+        End If
+
     End Sub
 
+    Private Sub btnKaydet_Click(sender As Object, e As EventArgs) Handles btnKaydet.Click
+        If TbKoduGiriniz.Text = "" Or TbAdiGiriniz.Text = "" Then
+            MessageBox.Show("Alanlar boş bırakılamaz.")
+            TbAdiGiriniz.Clear()
+            TbKoduGiriniz.Clear()
+        ElseIf durumlar(1) = 0 Then 'ders
+            Dim degisecekDersKodu As String = dgMevcutEkleme.Rows(duzenlenecekIndex).Cells(2).Value.ToString()
+            database.DersGuncelle(degisecekDersKodu, TbAdiGiriniz.Text)
+            TbKoduGiriniz.ReadOnly = False
+            dgMevcutEkleme.DataSource = database.DersGrid
+        ElseIf durumlar(1) = 1 Then 'derslik
+            Dim degisecekDerslikAdi As String = dgMevcutEkleme.Rows(duzenlenecekIndex).Cells(1).Value.ToString()
+            database.derslikGuncelle(degisecekDerslikAdi, TbAdiGiriniz.Text, Convert.ToInt32(TbKoduGiriniz.Text))
+            dgMevcutEkleme.DataSource = database.DerslikGrid
+        ElseIf durumlar(1) = 2 Then 'asistan
+            Dim degisecekAsistanAdi As String = dgMevcutEkleme.Rows(duzenlenecekIndex).Cells(1).Value.ToString()
+            database.AsistanGuncelle(degisecekAsistanAdi, TbAdiGiriniz.Text, TbKoduGiriniz.Text)
+            dgMevcutEkleme.DataSource = database.AsistanGrid
+        End If
+        btnKaydet.Visible = False
+        btnİptal.Visible = False
+        BtnEkle.Visible = True
+        TbAdiGiriniz.Text = ""
+        TbKoduGiriniz.Text = ""
+    End Sub
 
+    Private Sub btnİptal_Click(sender As Object, e As EventArgs) Handles btnİptal.Click
+        If durumlar(1) = 0 Then
+            TbKoduGiriniz.ReadOnly = False
+        End If
+        btnKaydet.Visible = False
+        btnİptal.Visible = False
+        BtnEkle.Visible = True
+        TbAdiGiriniz.Text = ""
+        TbKoduGiriniz.Text = ""
+    End Sub
 End Class

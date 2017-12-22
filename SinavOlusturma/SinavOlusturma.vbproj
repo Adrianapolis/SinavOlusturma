@@ -111,43 +111,58 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Asistan.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Dersler.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Derslik.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donem.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Liste.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LocalVeriTabani.Context.vb">
+    <Compile Include="Models\localveritabani.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocalVeriTabani.Context.tt</DependentUpon>
+      <DependentUpon>localveritabani.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LocalVeriTabani.Designer.vb">
+    <Compile Include="Models\localveritabani.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
+      <DependentUpon>localveritabani.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\LocalVeriTabani.vb">
+    <Compile Include="Models\localveritabani.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>localveritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sinav.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SONVEritabani.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SONVEritabani.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SONVEritabani.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SONVEritabani.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SONVEritabani.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.vb">
-      <DependentUpon>LocalVeriTabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tarihler.vb">
-      <DependentUpon>veritabani.tt</DependentUpon>
+      <DependentUpon>SONVEritabani.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\veritabani.Context.vb">
       <AutoGen>True</AutoGen>
@@ -203,17 +218,24 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\LocalVeriTabani.edmx">
+    <EntityDeploy Include="Models\localveritabani.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LocalVeriTabani.Designer.vb</LastGenOutput>
+      <LastGenOutput>localveritabani.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\LocalVeriTabani.edmx.diagram">
-      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
+    <None Include="Models\localveritabani.edmx.diagram">
+      <DependentUpon>localveritabani.edmx</DependentUpon>
     </None>
     <EntityDeploy Include="Models\veritabani.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>veritabani.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Models\SONVEritabani.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SONVEritabani.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\SONVEritabani.edmx.diagram">
+      <DependentUpon>SONVEritabani.edmx</DependentUpon>
+    </None>
     <None Include="Models\veritabani.edmx.diagram">
       <DependentUpon>veritabani.edmx</DependentUpon>
     </None>
@@ -232,15 +254,28 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\LocalVeriTabani.Context.tt">
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\localveritabani.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
-      <LastGenOutput>LocalVeriTabani.Context.vb</LastGenOutput>
+      <DependentUpon>localveritabani.edmx</DependentUpon>
+      <LastGenOutput>localveritabani.Context.vb</LastGenOutput>
     </Content>
-    <Content Include="Models\LocalVeriTabani.tt">
+    <Content Include="Models\localveritabani.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LocalVeriTabani.edmx</DependentUpon>
-      <LastGenOutput>LocalVeriTabani.vb</LastGenOutput>
+      <DependentUpon>localveritabani.edmx</DependentUpon>
+      <LastGenOutput>localveritabani.vb</LastGenOutput>
+    </Content>
+    <Content Include="Models\SONVEritabani.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SONVEritabani.edmx</DependentUpon>
+      <LastGenOutput>SONVEritabani.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Models\SONVEritabani.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SONVEritabani.edmx</DependentUpon>
+      <LastGenOutput>SONVEritabani.vb</LastGenOutput>
     </Content>
     <Content Include="Models\veritabani.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -252,9 +287,6 @@
       <DependentUpon>veritabani.edmx</DependentUpon>
       <LastGenOutput>veritabani.vb</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
