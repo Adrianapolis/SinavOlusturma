@@ -104,22 +104,20 @@ Public Class database
     Public Shared Function TarihGetir()
         Return vt.Tarihler.OrderBy(Function(x) x.Tarih).Select(Function(x) x.Tarih.Year).ToList()
     End Function
-    'Public Shared Function TarihIDGetir(ByVal ArananTarih As Date)
-    '    Dim tarih As New Tarihler
-    '    tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
-
-    '    If tarih.TarihID = Nothing Then
-    '        Dim yeniTarih As New Tarihler
-    '        yeniTarih.Tarih = ArananTarih
-    '        vt.Tarihler.Add(yeniTarih)
-    '        vt.SaveChanges()
-    '        tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
-    '    End If
-    '    Return tarih.TarihID
-    'End Function
     Public Shared Function TarihIDGetir(ByVal ArananTarih As Date)
-        Return vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+        Dim tarih As New Tarihler
+        tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+
+        If tarih.TarihID = Nothing Then
+            Dim yeniTarih As New Tarihler
+            yeniTarih.Tarih = ArananTarih
+            vt.Tarihler.Add(yeniTarih)
+            vt.SaveChanges()
+            tarih.TarihID = vt.Tarihler.Where(Function(x) x.Tarih = ArananTarih).Select(Function(x) x.TarihID).FirstOrDefault
+        End If
+        Return tarih.TarihID
     End Function
+
     'sınav
     Public Shared Sub SinavEkle(ByVal EklenecekSinav As Sinav)
         If vt.Sinav.Where(Function(x) x.TarihID = EklenecekSinav.TarihID And x.DersKodu = EklenecekSinav.DersKodu).Count = 0 Then

@@ -205,9 +205,9 @@ Public Class AnaEkranForm
 
         Next
 
-        Dim eklenecek As New Tarihler
-        eklenecek.Tarih = listeler(0).PTarih
-        database.TarihEkle(eklenecek)
+        'Dim eklenecek As New Tarihler
+        'eklenecek.Tarih = listeler(0).PTarih
+        'database.TarihEkle(eklenecek)
         'yaratılan liste objelerine öğrenciler atanıyor
         For i As Integer = 0 To ogrenciSayisi
             For j As Integer = 0 To seciliSiniflar.Count - 1
