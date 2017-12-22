@@ -5,7 +5,7 @@ Public Class MevcutEklemeForm
     Dim durumlar(2) As String
 
     Public Sub resimYukle()
-        BackColor = Color.FromArgb(249, 249, 249)
+        BackColor = Color.FromArgb(252, 252, 252)
         dgMevcutEkleme.BackgroundColor = Color.FromArgb(249, 249, 249)
         'dgMevcutEkleme.RowHeadersDefaultCellStyle = DataGridViewCellStyle { BackColor=Color [Control], ForeColor=Color [WindowText], SelectionBackColor=Color [Highlight], SelectionForeColor=Color [HighlightText], Font=[Font: Name = Arial Narrow, Size=8,25, Units=3, GdiCharSet=162, GdiVerticalFont=False], WrapMode=True, Alignment=MiddleLeft }
         If (durumlar(0) = 0) Then
@@ -256,7 +256,7 @@ Public Class MevcutEklemeForm
             dgMevcutEkleme.DataSource = database.DersGrid
         ElseIf durumlar(1) = 1 Then 'derslik
             Dim eklenecekDerslik As New Derslik
-            eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text
+            eklenecekDerslik.DerslikAdi = TbAdiGiriniz.Text.ToUpper() 'derslik harfi büyükharf
             eklenecekDerslik.Kapasite = TbKoduGiriniz.Text
             database.DerslikEkle(eklenecekDerslik)
             TbAdiGiriniz.Clear()

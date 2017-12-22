@@ -87,6 +87,7 @@ Public Class AnaEkranForm
             ogrenciSayisi = Ogrenciler.Count
         End If
         'flSinifListele.l
+        LbAcilanDosya.Text = " Açılan liste dosyası : " + System.IO.Path.GetFileName(dosyaacici.FileName)
         LbOgrenciYerlestirilecekSayi.Text = ogrenciSayisi
         LbOgrenciSayiGoster.Text = ogrenciSayisi
         dosyaacici.Reset()
@@ -279,8 +280,11 @@ Public Class AnaEkranForm
             Lbkalanogrenci.Text = ""
             LbOgrenciYerlestirilecekSayi.Text = ""
             LbAsistanSecilecekSayi.Text = ""
+
         Catch ex As Exception
             MessageBox.Show("Eksik veri seçimi.")
+            LbAcilanDosya.Text = ""
+
         End Try
 
     End Sub
@@ -343,6 +347,7 @@ Public Class AnaEkranForm
             GbAnaSayfa.Visible = True
             GbYeniSinavOlustur.Visible = False
         End If
+        LbAcilanDosya.Text = ""
     End Sub
 
     Private Sub btnListeEkle_Click(sender As Object, e As EventArgs) Handles btnListeEkle.Click

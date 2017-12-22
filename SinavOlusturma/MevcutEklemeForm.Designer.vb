@@ -22,7 +22,10 @@ Partial Class MevcutEklemeForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MevcutEklemeForm))
         Me.LblEkleyiniz = New System.Windows.Forms.Label()
         Me.LblAdiGiriniz = New System.Windows.Forms.Label()
         Me.LblKoduGiriniz = New System.Windows.Forms.Label()
@@ -32,62 +35,62 @@ Partial Class MevcutEklemeForm
         Me.BtnDevam = New System.Windows.Forms.Button()
         Me.BtnGeri = New System.Windows.Forms.Button()
         Me.dgMevcutEkleme = New System.Windows.Forms.DataGridView()
-        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnKaydet = New System.Windows.Forms.Button()
         Me.btnİptal = New System.Windows.Forms.Button()
+        Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.dgMevcutEkleme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LblEkleyiniz
         '
         Me.LblEkleyiniz.AutoSize = True
-        Me.LblEkleyiniz.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.LblEkleyiniz.Font = New System.Drawing.Font("Arial Narrow", 18.0!, System.Drawing.FontStyle.Bold)
         Me.LblEkleyiniz.Location = New System.Drawing.Point(377, 40)
         Me.LblEkleyiniz.Name = "LblEkleyiniz"
-        Me.LblEkleyiniz.Size = New System.Drawing.Size(138, 16)
+        Me.LblEkleyiniz.Size = New System.Drawing.Size(247, 29)
         Me.LblEkleyiniz.TabIndex = 0
         Me.LblEkleyiniz.Text = "Mevcut Dersleri Ekleyiniz"
         '
         'LblAdiGiriniz
         '
         Me.LblAdiGiriniz.AutoSize = True
-        Me.LblAdiGiriniz.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.LblAdiGiriniz.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
         Me.LblAdiGiriniz.Location = New System.Drawing.Point(181, 181)
         Me.LblAdiGiriniz.Name = "LblAdiGiriniz"
-        Me.LblAdiGiriniz.Size = New System.Drawing.Size(95, 16)
+        Me.LblAdiGiriniz.Size = New System.Drawing.Size(115, 20)
         Me.LblAdiGiriniz.TabIndex = 1
         Me.LblAdiGiriniz.Text = "Ders Adı Giriniz :"
         '
         'LblKoduGiriniz
         '
         Me.LblKoduGiriniz.AutoSize = True
-        Me.LblKoduGiriniz.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.LblKoduGiriniz.Location = New System.Drawing.Point(181, 235)
+        Me.LblKoduGiriniz.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.LblKoduGiriniz.Location = New System.Drawing.Point(180, 241)
         Me.LblKoduGiriniz.Name = "LblKoduGiriniz"
-        Me.LblKoduGiriniz.Size = New System.Drawing.Size(68, 16)
+        Me.LblKoduGiriniz.Size = New System.Drawing.Size(78, 20)
         Me.LblKoduGiriniz.TabIndex = 2
         Me.LblKoduGiriniz.Text = "Ders Kodu:"
         '
         'TbAdiGiriniz
         '
-        Me.TbAdiGiriniz.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.TbAdiGiriniz.Location = New System.Drawing.Point(184, 198)
+        Me.TbAdiGiriniz.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.TbAdiGiriniz.Location = New System.Drawing.Point(184, 204)
         Me.TbAdiGiriniz.Name = "TbAdiGiriniz"
-        Me.TbAdiGiriniz.Size = New System.Drawing.Size(163, 22)
+        Me.TbAdiGiriniz.Size = New System.Drawing.Size(163, 26)
         Me.TbAdiGiriniz.TabIndex = 3
         '
         'TbKoduGiriniz
         '
-        Me.TbKoduGiriniz.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.TbKoduGiriniz.Location = New System.Drawing.Point(184, 251)
+        Me.TbKoduGiriniz.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.TbKoduGiriniz.Location = New System.Drawing.Point(184, 264)
         Me.TbKoduGiriniz.Name = "TbKoduGiriniz"
-        Me.TbKoduGiriniz.Size = New System.Drawing.Size(163, 22)
+        Me.TbKoduGiriniz.Size = New System.Drawing.Size(163, 26)
         Me.TbKoduGiriniz.TabIndex = 4
         '
         'BtnEkle
         '
-        Me.BtnEkle.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.BtnEkle.Location = New System.Drawing.Point(184, 286)
+        Me.BtnEkle.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnEkle.Location = New System.Drawing.Point(184, 307)
         Me.BtnEkle.Name = "BtnEkle"
         Me.BtnEkle.Size = New System.Drawing.Size(163, 34)
         Me.BtnEkle.TabIndex = 5
@@ -96,7 +99,7 @@ Partial Class MevcutEklemeForm
         '
         'BtnDevam
         '
-        Me.BtnDevam.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.BtnDevam.Font = New System.Drawing.Font("Arial Narrow", 16.0!, System.Drawing.FontStyle.Bold)
         Me.BtnDevam.Location = New System.Drawing.Point(380, 483)
         Me.BtnDevam.Name = "BtnDevam"
         Me.BtnDevam.Size = New System.Drawing.Size(167, 64)
@@ -106,10 +109,10 @@ Partial Class MevcutEklemeForm
         '
         'BtnGeri
         '
-        Me.BtnGeri.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.BtnGeri.Location = New System.Drawing.Point(106, 524)
+        Me.BtnGeri.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnGeri.Location = New System.Drawing.Point(106, 508)
         Me.BtnGeri.Name = "BtnGeri"
-        Me.BtnGeri.Size = New System.Drawing.Size(75, 23)
+        Me.BtnGeri.Size = New System.Drawing.Size(98, 39)
         Me.BtnGeri.TabIndex = 9
         Me.BtnGeri.Text = "Geri"
         Me.BtnGeri.UseVisualStyleBackColor = True
@@ -118,23 +121,61 @@ Partial Class MevcutEklemeForm
         'dgMevcutEkleme
         '
         Me.dgMevcutEkleme.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgMevcutEkleme.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.dgMevcutEkleme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgMevcutEkleme.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Sil})
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgMevcutEkleme.DefaultCellStyle = DataGridViewCellStyle14
         Me.dgMevcutEkleme.Location = New System.Drawing.Point(483, 99)
         Me.dgMevcutEkleme.MultiSelect = False
         Me.dgMevcutEkleme.Name = "dgMevcutEkleme"
         Me.dgMevcutEkleme.ReadOnly = True
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgMevcutEkleme.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgMevcutEkleme.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.dgMevcutEkleme.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgMevcutEkleme.Size = New System.Drawing.Size(483, 323)
         Me.dgMevcutEkleme.TabIndex = 10
+        '
+        'btnKaydet
+        '
+        Me.btnKaydet.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnKaydet.Location = New System.Drawing.Point(269, 347)
+        Me.btnKaydet.Name = "btnKaydet"
+        Me.btnKaydet.Size = New System.Drawing.Size(78, 34)
+        Me.btnKaydet.TabIndex = 11
+        Me.btnKaydet.Text = "  Kaydet"
+        Me.btnKaydet.UseVisualStyleBackColor = True
+        Me.btnKaydet.Visible = False
+        '
+        'btnİptal
+        '
+        Me.btnİptal.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnİptal.Location = New System.Drawing.Point(185, 347)
+        Me.btnİptal.Name = "btnİptal"
+        Me.btnİptal.Size = New System.Drawing.Size(78, 34)
+        Me.btnİptal.TabIndex = 12
+        Me.btnİptal.Text = "  İptal"
+        Me.btnİptal.UseVisualStyleBackColor = True
+        Me.btnİptal.Visible = False
         '
         'Sil
         '
@@ -145,28 +186,6 @@ Partial Class MevcutEklemeForm
         Me.Sil.ReadOnly = True
         Me.Sil.Text = "X"
         Me.Sil.UseColumnTextForButtonValue = True
-        '
-        'btnKaydet
-        '
-        Me.btnKaydet.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.btnKaydet.Location = New System.Drawing.Point(266, 328)
-        Me.btnKaydet.Name = "btnKaydet"
-        Me.btnKaydet.Size = New System.Drawing.Size(81, 27)
-        Me.btnKaydet.TabIndex = 11
-        Me.btnKaydet.Text = "  Kaydet"
-        Me.btnKaydet.UseVisualStyleBackColor = True
-        Me.btnKaydet.Visible = False
-        '
-        'btnİptal
-        '
-        Me.btnİptal.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.btnİptal.Location = New System.Drawing.Point(184, 328)
-        Me.btnİptal.Name = "btnİptal"
-        Me.btnİptal.Size = New System.Drawing.Size(81, 27)
-        Me.btnİptal.TabIndex = 12
-        Me.btnİptal.Text = "  İptal"
-        Me.btnİptal.UseVisualStyleBackColor = True
-        Me.btnİptal.Visible = False
         '
         'MevcutEklemeForm
         '
@@ -184,9 +203,10 @@ Partial Class MevcutEklemeForm
         Me.Controls.Add(Me.LblKoduGiriniz)
         Me.Controls.Add(Me.LblAdiGiriniz)
         Me.Controls.Add(Me.LblEkleyiniz)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MevcutEklemeForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MevcutEklemeForm"
+        Me.Text = "Sınav Oluşturma Programı - Ekleme / Düzenle"
         CType(Me.dgMevcutEkleme, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
