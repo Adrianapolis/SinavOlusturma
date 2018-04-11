@@ -22,9 +22,7 @@ Partial Class AnaEkranForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AnaEkranForm))
         Me.BtnYeniSinav = New System.Windows.Forms.Button()
         Me.BtnMevcudat = New System.Windows.Forms.Button()
@@ -38,6 +36,8 @@ Partial Class AnaEkranForm
         Me.BtnDerslikDuzenleme = New System.Windows.Forms.Button()
         Me.BtnDersDuzenleme = New System.Windows.Forms.Button()
         Me.GbYeniSinavOlustur = New System.Windows.Forms.GroupBox()
+        Me.LbAsistanSecilecekSayi = New System.Windows.Forms.Label()
+        Me.LbAcilanDosya = New System.Windows.Forms.Label()
         Me.lblOgrenciHata = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Lbkalanogrenci = New System.Windows.Forms.Label()
@@ -46,7 +46,6 @@ Partial Class AnaEkranForm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.flAsistanlar = New System.Windows.Forms.FlowLayoutPanel()
         Me.flSinifListele = New System.Windows.Forms.FlowLayoutPanel()
-        Me.LbAsistanSecilecekSayi = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BtnSinavIptal = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -63,7 +62,6 @@ Partial Class AnaEkranForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.LbAcilanDosya = New System.Windows.Forms.Label()
         Me.Mail = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Sil = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GbAnaSayfa.SuspendLayout()
@@ -142,36 +140,20 @@ Partial Class AnaEkranForm
         Me.dgAnaSayfa.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.dgAnaSayfa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgAnaSayfa.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgAnaSayfa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
         Me.dgAnaSayfa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgAnaSayfa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Mail, Me.Sil})
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgAnaSayfa.DefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgAnaSayfa.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgAnaSayfa.Location = New System.Drawing.Point(546, 145)
         Me.dgAnaSayfa.MultiSelect = False
         Me.dgAnaSayfa.Name = "dgAnaSayfa"
         Me.dgAnaSayfa.ReadOnly = True
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgAnaSayfa.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.dgAnaSayfa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgAnaSayfa.Size = New System.Drawing.Size(562, 479)
         Me.dgAnaSayfa.TabIndex = 11
@@ -282,10 +264,29 @@ Partial Class AnaEkranForm
         Me.GbYeniSinavOlustur.Text = "Yeni Sınav Oluştur"
         Me.GbYeniSinavOlustur.Visible = False
         '
+        'LbAsistanSecilecekSayi
+        '
+        Me.LbAsistanSecilecekSayi.AutoSize = True
+        Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(986, 383)
+        Me.LbAsistanSecilecekSayi.Name = "LbAsistanSecilecekSayi"
+        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(0, 20)
+        Me.LbAsistanSecilecekSayi.TabIndex = 9
+        '
+        'LbAcilanDosya
+        '
+        Me.LbAcilanDosya.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.LbAcilanDosya.AutoSize = True
+        Me.LbAcilanDosya.Font = New System.Drawing.Font("Arial Narrow", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.LbAcilanDosya.ForeColor = System.Drawing.Color.CornflowerBlue
+        Me.LbAcilanDosya.Location = New System.Drawing.Point(189, 468)
+        Me.LbAcilanDosya.Name = "LbAcilanDosya"
+        Me.LbAcilanDosya.Size = New System.Drawing.Size(0, 20)
+        Me.LbAcilanDosya.TabIndex = 23
+        '
         'lblOgrenciHata
         '
         Me.lblOgrenciHata.AutoSize = True
-        Me.lblOgrenciHata.Location = New System.Drawing.Point(754, 298)
+        Me.lblOgrenciHata.Location = New System.Drawing.Point(757, 352)
         Me.lblOgrenciHata.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOgrenciHata.Name = "lblOgrenciHata"
         Me.lblOgrenciHata.Size = New System.Drawing.Size(0, 20)
@@ -297,14 +298,14 @@ Partial Class AnaEkranForm
         Me.Label10.Location = New System.Drawing.Point(754, 119)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(208, 20)
+        Me.Label10.Size = New System.Drawing.Size(212, 20)
         Me.Label10.TabIndex = 21
-        Me.Label10.Text = "Yerleştirilmeyen Öğrenci Sayısı:"
+        Me.Label10.Text = "Yerleştirilmeyen Öğrenci Sayısı :"
         '
         'Lbkalanogrenci
         '
         Me.Lbkalanogrenci.AutoSize = True
-        Me.Lbkalanogrenci.Location = New System.Drawing.Point(966, 80)
+        Me.Lbkalanogrenci.Location = New System.Drawing.Point(966, 119)
         Me.Lbkalanogrenci.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Lbkalanogrenci.Name = "Lbkalanogrenci"
         Me.Lbkalanogrenci.Size = New System.Drawing.Size(0, 20)
@@ -312,7 +313,7 @@ Partial Class AnaEkranForm
         '
         'btnListeEkle
         '
-        Me.btnListeEkle.Location = New System.Drawing.Point(184, 449)
+        Me.btnListeEkle.Location = New System.Drawing.Point(184, 440)
         Me.btnListeEkle.Name = "btnListeEkle"
         Me.btnListeEkle.Size = New System.Drawing.Size(206, 28)
         Me.btnListeEkle.TabIndex = 19
@@ -322,7 +323,7 @@ Partial Class AnaEkranForm
         'LbOgrenciYerlestirilecekSayi
         '
         Me.LbOgrenciYerlestirilecekSayi.AutoSize = True
-        Me.LbOgrenciYerlestirilecekSayi.Location = New System.Drawing.Point(950, 112)
+        Me.LbOgrenciYerlestirilecekSayi.Location = New System.Drawing.Point(966, 149)
         Me.LbOgrenciYerlestirilecekSayi.Name = "LbOgrenciYerlestirilecekSayi"
         Me.LbOgrenciYerlestirilecekSayi.Size = New System.Drawing.Size(0, 20)
         Me.LbOgrenciYerlestirilecekSayi.TabIndex = 7
@@ -330,16 +331,16 @@ Partial Class AnaEkranForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(752, 151)
+        Me.Label5.Location = New System.Drawing.Point(757, 149)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(192, 20)
+        Me.Label5.Size = New System.Drawing.Size(203, 20)
         Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Yerleştirilecek Kalan Öğrenci:"
+        Me.Label5.Text = "Seçilen dersliklerin kapasitesi :"
         '
         'flAsistanlar
         '
         Me.flAsistanlar.AutoScroll = True
-        Me.flAsistanlar.Location = New System.Drawing.Point(759, 403)
+        Me.flAsistanlar.Location = New System.Drawing.Point(759, 412)
         Me.flAsistanlar.Name = "flAsistanlar"
         Me.flAsistanlar.Size = New System.Drawing.Size(263, 174)
         Me.flAsistanlar.TabIndex = 17
@@ -352,22 +353,14 @@ Partial Class AnaEkranForm
         Me.flSinifListele.Size = New System.Drawing.Size(263, 174)
         Me.flSinifListele.TabIndex = 16
         '
-        'LbAsistanSecilecekSayi
-        '
-        Me.LbAsistanSecilecekSayi.AutoSize = True
-        Me.LbAsistanSecilecekSayi.Location = New System.Drawing.Point(986, 335)
-        Me.LbAsistanSecilecekSayi.Name = "LbAsistanSecilecekSayi"
-        Me.LbAsistanSecilecekSayi.Size = New System.Drawing.Size(0, 20)
-        Me.LbAsistanSecilecekSayi.TabIndex = 9
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(755, 374)
+        Me.Label7.Location = New System.Drawing.Point(755, 383)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(225, 20)
+        Me.Label7.Size = New System.Drawing.Size(229, 20)
         Me.Label7.TabIndex = 8
-        Me.Label7.Text = "Seçilmesi Gereken Asistan Sayısı: "
+        Me.Label7.Text = "Seçilmesi Gereken Asistan Sayısı : "
         '
         'BtnSinavIptal
         '
@@ -384,7 +377,7 @@ Partial Class AnaEkranForm
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial Narrow", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.Label6.Location = New System.Drawing.Point(544, 52)
+        Me.Label6.Location = New System.Drawing.Point(510, 52)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(198, 26)
         Me.Label6.TabIndex = 14
@@ -395,7 +388,7 @@ Partial Class AnaEkranForm
         Me.GbOgrenciDosya.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GbOgrenciDosya.Controls.Add(Me.LbOgrenciSayiGoster)
         Me.GbOgrenciDosya.Controls.Add(Me.LbOgrenciSayiBilgi)
-        Me.GbOgrenciDosya.Location = New System.Drawing.Point(183, 483)
+        Me.GbOgrenciDosya.Location = New System.Drawing.Point(183, 490)
         Me.GbOgrenciDosya.Name = "GbOgrenciDosya"
         Me.GbOgrenciDosya.Size = New System.Drawing.Size(207, 96)
         Me.GbOgrenciDosya.TabIndex = 11
@@ -514,16 +507,6 @@ Partial Class AnaEkranForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'LbAcilanDosya
-        '
-        Me.LbAcilanDosya.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.LbAcilanDosya.AutoSize = True
-        Me.LbAcilanDosya.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.LbAcilanDosya.Location = New System.Drawing.Point(200, 434)
-        Me.LbAcilanDosya.Name = "LbAcilanDosya"
-        Me.LbAcilanDosya.Size = New System.Drawing.Size(0, 20)
-        Me.LbAcilanDosya.TabIndex = 23
-        '
         'Mail
         '
         Me.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -531,7 +514,7 @@ Partial Class AnaEkranForm
         Me.Mail.HeaderText = "Gönder"
         Me.Mail.Name = "Mail"
         Me.Mail.ReadOnly = True
-        Me.Mail.Text = "->"
+        Me.Mail.Text = ">"
         Me.Mail.UseColumnTextForButtonValue = True
         '
         'Sil
@@ -548,9 +531,9 @@ Partial Class AnaEkranForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1173, 727)
-        Me.Controls.Add(Me.GbMevcudatDuzenle)
         Me.Controls.Add(Me.GbAnaSayfa)
         Me.Controls.Add(Me.GbYeniSinavOlustur)
+        Me.Controls.Add(Me.GbMevcudatDuzenle)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AnaEkranForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
